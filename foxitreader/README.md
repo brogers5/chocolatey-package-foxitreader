@@ -1,7 +1,7 @@
 Foxit Reader: The Best PDF Reader. With Foxit Reader you can read and annotate PDF documents and fill out PDF forms.
 ### Important Notes
-1. **All open FoxitReader, Windows Explorer and browser instances** must be closed during installation, update and uninstallation.<br>
-   Otherwise, you might encounter error dialogs during the process asking you to close all instances.<br>
+1. **All open FoxitReader, Windows Explorer and browser instances** must be closed during installation, update and uninstallation.
+   Otherwise, you might encounter error dialogs during the process asking you to close all instances.
    Windows Explorer must be closed due to Foxit Reader's shell plugins, browser instances shall be closed proactively due to PDFs displayed inline.
 2. Only the English version is provided because it is bundled with the highest version of Foxit Reader among all languages.
 
