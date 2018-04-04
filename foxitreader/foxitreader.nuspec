@@ -4,7 +4,7 @@
   <metadata>
     <id>foxitreader</id>
     <title>Foxit Reader</title>
-    <version>9.0.1.1050</version>
+    <version>9.0.1.1051</version>
     <authors>Foxit Software Incorporated</authors>
     <owners>ComFreek H.AlanStevens</owners>
     <summary>Foxit Reader: The Best PDF Reader</summary>
@@ -38,6 +38,6 @@ Note that contrary to `/MERGETASKS`, you have to specify in `/COMPONENTS` also t
     <iconUrl>https://cdn.rawgit.com/ComFreek/chocolatey-packages/695c150e199b34151a923fa4953e46c3065a2e30/icons/FoxitReader.png</iconUrl>
   </metadata>
   <files>
-    <file src="tools\**" target="tools" />
+    <file src="tools\chocolateyInstall.ps1" target="tools" />
   </files>
 </package>

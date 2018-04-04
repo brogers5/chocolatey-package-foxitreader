@@ -30,11 +30,13 @@ function global:au_GetLatest {
 
 	$actualVersion = $version
 
-	# Fix for issue #5: Checksum fails due to IP-specific language redirect
+	# 9.0.1.1050: Fix for issue #5: Checksum fails due to IP-specific language redirect
+	# 9.0.1.1051: Fix for a modified binary on Foxit's servers:
+	#             https://chocolatey.org/packages/FoxitReader#comment-3834103556
 	if ($version -eq "9.0.1.1049") {
-		$version = "9.0.1.1050"
+		$version = "9.0.1.1051"
 	}
-	elseif ($version -eq "9.0.1.1050") {
+	elseif ($version -in @("9.0.1.1050", "9.0.1.1051")) {
 		Write-Error -Message @"
 FoxitReader's current version collides with a version used as package fix notation.
 "@
