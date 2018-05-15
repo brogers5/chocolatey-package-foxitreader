@@ -23,8 +23,11 @@ environment:
   github_api_key:
     secure: Bmf56M11nRs5dLJsKOgVSWIVSCV9IaIqSLhccTMOoLhlvApFLTzb8aXx1Z195mV9
 
-
   # Mail credentials - for error notifications
+  mail_recipient:
+    # Main mail address of ComFreek's GitHub account
+    secure: JCMvuEPjEe23sGx8Dq7mKdZIwJ39B2j/tJxJIvU2Pls=
+
   # A separate mail account registered just for this purpose
   mail_user:
     secure: MR9Kr6ULDp6T7HqTMG/q4zvV6BYGN2srYz7BB1pRzlA=
@@ -107,9 +110,7 @@ artifacts:
 
 notifications:
 - provider: Email
-  to:
-    # Main mail address of ComFreek's GitHub account
-    secure: JCMvuEPjEe23sGx8Dq7mKdZIwJ39B2j/tJxJIvU2Pls=
+  to: $(mail_recipient)
   on_build_success: true
   on_build_failure: true
   on_build_status_changed: true
