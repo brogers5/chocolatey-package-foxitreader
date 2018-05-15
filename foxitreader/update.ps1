@@ -1,5 +1,9 @@
 Import-Module au
 
+function global:au_BeforeUpdate() {
+	$Latest.Checksum32 = Get-RemoteChecksum $Latest.Url32
+}
+
 function global:au_AfterUpdate ($Package)  {
 	Set-DescriptionFromReadme $Package
 }
@@ -10,7 +14,7 @@ function global:au_SearchReplace {
 			"<version>[^<]*</version>" = "<version>$($Latest.Version)</version>"
 		}
 		'tools\chocolateyInstall.ps1' = @{
-			"(^[$]url32\s*=\s*)('.*')" = "`$1'$($Latest.URL32)'"
+			"(^[$]url32\s*=\s*)('.*')" = "`$1'$($Latest.Url32)'"
 			"(^[$]checksum32\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
 		}
 	}
@@ -33,16 +37,18 @@ function global:au_GetLatest {
 	# 9.0.1.1050: Fix for issue #5: Checksum fails due to IP-specific language redirect
 	# 9.0.1.1051: Fix for a modified binary on Foxit's servers:
 	#             https://chocolatey.org/packages/FoxitReader#comment-3834103556
+	# 9.0.1.1052: Fix for a modified binary on Foxit's servers:
+	#             https://chocolatey.org/packages/FoxitReader#comment-3839195230
 	if ($version -eq "9.0.1.1049") {
-		$version = "9.0.1.1051"
+		$version = "9.0.1.1052"
 	}
-	elseif ($version -in @("9.0.1.1050", "9.0.1.1051")) {
+	elseif ($version -in @("9.0.1.1050", "9.0.1.1051", "9.0.1.1052")) {
 		Write-Error -Message @"
 FoxitReader's current version collides with a version used as package fix notation.
 "@
 	}
 
-	return @{ URL32 = $url32; Version = $version; ActualVersion = $actualVersion }
+	return @{ Url32 = $url32; Version = $version; ActualVersion = $actualVersion }
 }
 
 # Function taken from http://stackoverflow.com/a/37663738 under CC BY-SA 3.0
@@ -60,4 +66,4 @@ function Get-FixedQuerySelectorAll {
 	}
 }
 
-Update-Package -ChecksumFor 32
+Update-Package -ChecksumFor None
