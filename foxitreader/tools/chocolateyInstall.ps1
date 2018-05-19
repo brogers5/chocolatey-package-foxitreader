@@ -6,6 +6,8 @@ $url32       = 'https://www.foxitsoftware.com/de/downloads/latest.php?product=Fo
 $checksum32  = 'cd68bfc0f362db801adf97f6d9e54d9c8d63fea4fbda3eae6c050ec46c8a6e73'
 
 function Uninstall-PreviousVersion {
+	Write-Output 'Uninstalling previous version...'
+
 	$packageArgs = @{
 		packageName   = $env:ChocolateyPackageName
 		softwareName  = 'Foxit Reader'
@@ -27,7 +29,17 @@ function Uninstall-PreviousVersion {
 	}
 }
 
-function Install-CurrentVersion {
+<#
+.SYNOPSIS
+Download the current version and unwrap the inner native installer.
+
+Return a tuple ($pathToUnwrappedNativeInstaller, $tmpDirectory) where
+$tmpDirectory is the directory where the native installer is contained
+and which should ideally be deleted after installation.
+#>
+function Download-CurrentVersion {
+	Write-Output 'Downloading current version...'
+
 	# FoxitReader has recently changed to a "wrapped" setup program:
 	# The above $url32 will download a wrapper setup EXE, which is more or less
 	# a GUI interface to the wrapped inner setup EXE.
@@ -35,7 +47,7 @@ function Install-CurrentVersion {
 	# The wrapper setup neither accepts CLI arguments for silencing nor for
 	# configuration as far as we know.
 	# Therefore, after downloading the wrapper setup, we extract the wrapped
-	# setup EXE and run it manually.
+	# setup EXE and run it manually in Install-CurrentVersion.
 
 	$toolsDir = $(Split-Path -Parent $MyInvocation.ScriptName)
 	$wrapperSetupDownloadPath = $(Join-Path $toolsDir "wrapper-setup.exe")
@@ -63,8 +75,8 @@ function Install-CurrentVersion {
 		Destination    = $wrapperSetupUnzippedPath
 	}
 
-	Get-ChocolateyWebFile @wrapperDownloadArgs
-	Get-ChocolateyUnzip @wrapperUnzipArgs
+	Get-ChocolateyWebFile @wrapperDownloadArgs | Out-Null
+	Get-ChocolateyUnzip @wrapperUnzipArgs | Out-Null
 
 	$wrappedSetupPath = $(Get-ChildItem `
 		-File `
@@ -73,20 +85,36 @@ function Install-CurrentVersion {
 		| Select -First 1 -ExpandProperty FullName
 	)
 
+	Remove-Item $wrapperSetupDownloadPath -Recurse -Force
+
+	return $wrappedSetupPath, $wrapperSetupUnzippedPath
+}
+
+function Install-CurrentVersion([string] $installerPath) {
+	Write-Output 'Installing current version...'
+
 	$installationArgs = @{
 		PackageName    = 'foxitreader'
 		FileType       = 'EXE'
-		File           = $wrappedSetupPath
+		File           = $installerPath
 		silentArgs     = '/verysilent'
 		validExitCodes = @(0)
 	}
 
 	Install-ChocolateyInstallPackage @installationArgs
-
-	Remove-Item $wrapperSetupDownloadPath -Recurse -Force
-	Remove-Item $wrapperSetupUnzippedPath -Recurse -Force
 }
 
-Write-Host 'Uninstalling previous version (if any) before performing a (re)installation or upgrade.'
-Uninstall-PreviousVersion
-Install-CurrentVersion
+Write-Output 'Downloading current version and then uninstalling previous version (if any) before performing installation of the current version.'
+
+$tmpDirectory = $null
+
+try {
+	$installerPath, $tmpDirectory = Download-CurrentVersion
+	Uninstall-PreviousVersion
+	Install-CurrentVersion $installerPath
+}
+finally {
+	if (-not ($null -eq $tmpDirectory)) {
+		Remove-Item $tmpDirectory -Recurse -Force
+	}
+}
