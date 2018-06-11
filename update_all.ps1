@@ -14,7 +14,6 @@ $Options = [ordered]@{
     PushAll       = $true                                   #Allow to push multiple packages at once
     PluginPath    = ''                                      #Path to user plugins
     IgnoreOn      = @(                                      #Error message parts to set the package ignore status
-      'Could not create SSL/TLS secure channel'
       'Could not establish trust relationship'
       'The operation has timed out'
       'Internal Server Error'
@@ -33,7 +32,7 @@ $Options = [ordered]@{
     )
     #RepeatSleep   = 250                                    #How much to sleep between repeats in seconds, by default 0
     #RepeatCount   = 2                                      #How many times to repeat on errors, by default 1
-    
+
     #NoCheckChocoVersion = $true                            #Turn on this switch for all packages
 
     Report = @{
@@ -78,7 +77,7 @@ $Options = [ordered]@{
 
     Mail = if ($Env:mail_user) {
             @{
-                To         = $Env:mail_user
+                To         = $Env:mail_to
                 From       = $Env:mail_from
                 Server     = $Env:mail_server
                 UserName   = $Env:mail_user
@@ -87,7 +86,7 @@ $Options = [ordered]@{
                 EnableSsl  = $Env:mail_enablessl -eq 'true'
                 Attachment = "$PSScriptRoot\update_info.xml"
                 UserMessage = ''
-                SendAlways  = $false                        #Send notifications every time
+                SendAlways  = $true                        #Send notifications every time
              }
            } else {}
 
