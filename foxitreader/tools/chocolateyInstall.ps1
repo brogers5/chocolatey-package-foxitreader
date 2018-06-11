@@ -38,7 +38,7 @@ $tmpDirectory is the directory where the native installer is contained
 and which should ideally be deleted after installation.
 #>
 function Download-CurrentVersion {
-	Write-Output 'Downloading current version...'
+	Write-Output 'Downloading current version...' | Out-Null
 
 	# FoxitReader has recently changed to a "wrapped" setup program:
 	# The above $url32 will download a wrapper setup EXE, which is more or less
@@ -78,12 +78,12 @@ function Download-CurrentVersion {
 	Get-ChocolateyWebFile @wrapperDownloadArgs | Out-Null
 	Get-ChocolateyUnzip @wrapperUnzipArgs | Out-Null
 
-	$wrappedSetupPath = $(Get-ChildItem `
-		-File `
-		-Path $(Join-Path $wrapperSetupUnzippedPath '$PLUGINSDIR') `
-		'FoxitReader*Setup*.exe' `
-		| Select -First 1 -ExpandProperty FullName
-	)
+	# Do not use gci -File parameter to retain PS 2 compatibility
+	$wrappedSetupPath =
+		Get-ChildItem `
+			-Path $(Join-Path $wrapperSetupUnzippedPath '$PLUGINSDIR') `
+			'FoxitReader*Setup*.exe' `
+		| Where {! $_.PSIsContainer} | Select -First 1 -ExpandProperty FullName
 
 	Remove-Item $wrapperSetupDownloadPath -Recurse -Force
 
@@ -100,7 +100,7 @@ function Install-CurrentVersion([string] $installerPath) {
 		silentArgs     = '/verysilent'
 		validExitCodes = @(0)
 	}
-
+	Write-Host $installerPath
 	Install-ChocolateyInstallPackage @installationArgs
 }
 

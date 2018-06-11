@@ -39,10 +39,11 @@ function global:au_GetLatest {
 	#             https://chocolatey.org/packages/FoxitReader#comment-3834103556
 	# 9.0.1.1052: Fix for a modified binary on Foxit's servers:
 	#             https://chocolatey.org/packages/FoxitReader#comment-3839195230
-	if ($version -eq "9.0.1.1049") {
-		$version = "9.0.1.1052"
+	# 9.1.0.5096: Fix for issue #7: PowerShell 2 does not support -File parameter of Get-ChildItem
+	if ($version -eq "9.1.0.5096") {
+		$version = "9.0.1.1057"
 	}
-	elseif ($version -in @("9.0.1.1050", "9.0.1.1051", "9.0.1.1052")) {
+	elseif ($version -in @("9.0.1.1050", "9.0.1.1051", "9.0.1.1052", "9.0.1.1057")) {
 		Write-Error -Message @"
 FoxitReader's current version collides with a version used as package fix notation.
 "@
