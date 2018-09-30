@@ -4,7 +4,7 @@
   <metadata>
     <id>foxitreader</id>
     <title>Foxit Reader</title>
-    <version>9.1.0.5097</version>
+    <version>9.3.0.10828</version>
     <authors>Foxit Software Incorporated</authors>
     <owners>ComFreek H.AlanStevens</owners>
     <summary>Foxit Reader: The Best PDF Reader</summary>
@@ -38,5 +38,6 @@ Note that contrary to `/MERGETASKS`, you have to specify in `/COMPONENTS` also t
   </metadata>
   <files>
     <file src="tools\chocolateyInstall.ps1" target="tools" />
+    <file src="tools\chocolateyUninstall.ps1" target="tools" />
   </files>
 </package>

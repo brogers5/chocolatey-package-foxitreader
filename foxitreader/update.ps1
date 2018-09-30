@@ -1,9 +1,5 @@
 Import-Module au
 
-function global:au_BeforeUpdate() {
-	$Latest.Checksum32 = Get-RemoteChecksum $Latest.Url32
-}
-
 function global:au_AfterUpdate ($Package)  {
 	Set-DescriptionFromReadme $Package
 }
@@ -40,10 +36,17 @@ function global:au_GetLatest {
 	# 9.0.1.1052: Fix for a modified binary on Foxit's servers:
 	#             https://chocolatey.org/packages/FoxitReader#comment-3839195230
 	# 9.1.0.5097: Fix for issue #7: PowerShell 2 does not support -File parameter of Get-ChildItem
+	# 9.3.0.10827: Foxit Software Inc. published a no-wrapper setup (version 9.3.0.10826), then this package's
+	#              version 9.3.0.10826 had been published, then Foxit changed its published setup to include
+	#              a wrapper (again with version 9.3.0.10826).
+	# 9.3.0.10828: chocolateyInstall.ps1 from 9.3.0.10827 contained an empty checksum string
 	if ($version -eq "9.1.0.5096") {
 		$version = "9.1.0.5097"
 	}
-	elseif ($version -in @("9.0.1.1050", "9.0.1.1051", "9.0.1.1052", "9.1.0.5097")) {
+	elseif ($version -eq "9.3.0.10826") {
+		$version = "9.3.0.10828"
+	}
+	elseif ($version -in @("9.0.1.1050", "9.0.1.1051", "9.0.1.1052", "9.1.0.5097", "9.3.0.10827", "9.3.0.10828")) {
 		Write-Error -Message @"
 FoxitReader's current version collides with a version used as package fix notation.
 "@
@@ -67,4 +70,4 @@ function Get-FixedQuerySelectorAll {
 	}
 }
 
-Update-Package -ChecksumFor None
+Update-Package

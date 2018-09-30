@@ -2,8 +2,8 @@
 
 # See the comments in  https://github.com/ComFreek/chocolatey-packages/blob/master/foxitreader/update.ps1
 # on the '/de/' part.
-$url32       = 'https://www.foxitsoftware.com/de/downloads/latest.php?product=Foxit-Reader&platform=Windows&version=9.1.0.5096&package_type=exe&language=English'
-$checksum32  = 'cd68bfc0f362db801adf97f6d9e54d9c8d63fea4fbda3eae6c050ec46c8a6e73'
+$url32       = 'https://www.foxitsoftware.com/de/downloads/latest.php?product=Foxit-Reader&platform=Windows&version=9.3.0.10826&package_type=exe&language=English'
+$checksum32  = '08133f08731c9fd4176f097eda61859dd80cf8d30683621b3fe2d700d6922add'
 
 function Uninstall-PreviousVersion {
 	Write-Output 'Uninstalling previous version...'
