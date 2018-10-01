@@ -85,7 +85,8 @@ function Download-CurrentVersion {
 			'FoxitReader*Setup*.exe' `
 		| Where {! $_.PSIsContainer} | Select -First 1 -ExpandProperty FullName
 
-	Remove-Item $wrapperSetupDownloadPath -Recurse -Force
+	# Continue and don't fail in case AV software locks files
+	Remove-Item $wrapperSetupDownloadPath -Recurse -Force -ErrorAction Continue
 
 	return $wrappedSetupPath, $wrapperSetupUnzippedPath
 }
@@ -115,6 +116,7 @@ try {
 }
 finally {
 	if (-not ($null -eq $tmpDirectory)) {
-		Remove-Item $tmpDirectory -Recurse -Force
+		# Continue and don't fail in case AV software locks files
+		Remove-Item $tmpDirectory -Recurse -Force -ErrorAction Continue
 	}
 }
