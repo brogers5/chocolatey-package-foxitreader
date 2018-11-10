@@ -40,13 +40,15 @@ function global:au_GetLatest {
 	#              version 9.3.0.10826 had been published, then Foxit changed its published setup to include
 	#              a wrapper (again with version 9.3.0.10826).
 	# 9.3.0.10828: chocolateyInstall.ps1 from 9.3.0.10827 contained an empty checksum string
+	# 9.3.0.10829: Fix for a modified binary on Foxit's servers:
+	#              https://chocolatey.org/packages/FoxitReader/9.3.0.10829#comment-4186580031
 	if ($version -eq "9.1.0.5096") {
 		$version = "9.1.0.5097"
 	}
 	elseif ($version -eq "9.3.0.10826") {
-		$version = "9.3.0.10828"
+		$version = "9.3.0.10829"
 	}
-	elseif ($version -in @("9.0.1.1050", "9.0.1.1051", "9.0.1.1052", "9.1.0.5097", "9.3.0.10827", "9.3.0.10828")) {
+	elseif ($version -in @("9.0.1.1050", "9.0.1.1051", "9.0.1.1052", "9.1.0.5097", "9.3.0.10827", "9.3.0.10828", "9.3.0.10829")) {
 		Write-Error -Message @"
 FoxitReader's current version collides with a version used as package fix notation.
 "@
