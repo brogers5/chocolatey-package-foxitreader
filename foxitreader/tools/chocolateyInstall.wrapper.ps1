@@ -1,9 +1,15 @@
-﻿$ErrorActionPreference = 'Stop'
+﻿# Installation script for times when FoxitReader bundles its installer with a wrapper setup.
+#
+# Original source of chocolateyInstall.ps1 in the repository: chocolateyInstall.wrapper.ps1
+# (chocolateyInstall.wrapper.ps1 will be automatically copied to chocolateyInstall.ps1 by
+#  the update.ps1 AU script.)
+
+$ErrorActionPreference = 'Stop'
 
 # See the comments in  https://github.com/ComFreek/chocolatey-packages/blob/master/foxitreader/update.ps1
-# on the '/de/' part.
-$url32       = 'https://www.foxitsoftware.com/de/downloads/latest.php?product=Foxit-Reader&platform=Windows&version=9.4.0.16811&package_type=exe&language=English'
-$checksum32  = 'ac3895377d3c2fb07b6608da2e6d817e60df71eea512fb013139e4d57625addb'
+# on the &language=German part.
+$url32       = 'https://www.foxitsoftware.com/downloads/latest.php?product=Foxit-Reader&platform=Windows&package_type=exe&language=German&version=9.4.1.16828'
+$checksum32  = '97b214cd90c21865b3469392870709b686e18734153fee8a0ba681420df781bb'
 
 function Uninstall-PreviousVersion {
 	Write-Output 'Uninstalling previous version...'
@@ -64,7 +70,7 @@ function Download-CurrentVersion {
 				# In addition on the '/de/' part in the URL (which actually forces
 				# an English language setup), also specify the desired language as
 				# an HTTP header even though this had no effect in the past.
-				'Accept-Language' = 'en-US;en-GB'
+				'Accept-Language' = 'de-DE'
 			}
 		}
 	}
