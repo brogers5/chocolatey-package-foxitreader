@@ -5,7 +5,7 @@
 		<!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
 		<id>netbeans</id>
 		<title>NetBeans Java SE</title>
-		<version>8.2.0.20170419</version>
+		<version>8.2.20190302</version>
 		<authors>Oracle Corporation</authors>
 		<owners>ComFreek murray</owners>
 		<summary>An open source IDE for Java (SE) development supporting Java 8.</summary>

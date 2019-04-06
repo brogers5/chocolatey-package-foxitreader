@@ -27,14 +27,29 @@ function global:au_GetLatest {
 	$versionPage.Content -match 'PAGE_ARTIFACTS_LOCATION\s*=\s*".*?/([\d.]+)/' | Out-Null
   $version = $matches[1]
 
-	$finalUri = "http://download.netbeans.org/netbeans/$version/final/bundles/netbeans-$version-javase-windows.exe"
+	$actualVersion = $version
+
+	# 8.2.20190302: Remove jdk8 as a dependency.
+	#               (Package fix notation in the third version segment is discouraged, but an older version of the package
+	#                already used it in the third segment [8.2.20171030], thus to actually increase the version, we have
+	#                to keep doing so, at least for Netbeans <= 8.2.)
+	if ($version -eq "8.2") {
+		$version = "8.2.20190302"
+	}
+	elseif ($version -in @("8.2.20190302")) {
+		Write-Error -Message @"
+Netbeans's current version collides with a version used as package fix notation.
+"@
+	}
+
+	$finalUri = "https://download.netbeans.org/netbeans/$actualVersion/final/bundles/netbeans-$actualVersion-javase-windows.exe"
 
 	# Do not use the MD5 hash provided on the website
 	# See https://www.win.tue.nl/hashclash/SoftIntCodeSign/
 
 	return @{
-		# The actual version
-		NetbeansVersion = $version
+		# The real Netbeans version
+		ActualVersion = $actualVersion
 
 		# The package version (it might differ by a version fix suffix)
 		Version = $version

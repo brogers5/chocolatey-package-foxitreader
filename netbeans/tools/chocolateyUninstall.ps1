@@ -1,4 +1,4 @@
-﻿$netbeansVersion = '8.2'
+﻿$netbeansVersion = ''
 
 function Get-UninstallString {
   $regPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\nbi-nb-base-$netbeansVersion*"
