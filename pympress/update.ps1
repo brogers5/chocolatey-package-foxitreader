@@ -1,5 +1,9 @@
 Import-Module au
 
+function global:au_BeforeUpdate() {
+	Get-RemoteFiles -Purge -FileNameBase 'pympress' -Algorithm 'sha512'
+}
+
 function global:au_AfterUpdate ($Package)  {
 	Set-DescriptionFromReadme $Package
 }
@@ -9,13 +13,14 @@ function global:au_SearchReplace {
 		'pympress.nuspec' = @{
 			"<version>[^<]*</version>" = "<version>$($Latest.Version)</version>";
 			"<releaseNotes>[^<]*</releaseNotes>" = "<releaseNotes>$($Latest.ReleasesNotesUrl)</releaseNotes>"
-		}
+		};
 		'tools\chocolateyInstall.ps1' = @{
-			"(^[$]url32\s*=\s*)('.*')" = "`$1'$($Latest.url32)'";
 			"(^[$]checksum32\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'";
-
-			"(^[$]url64\s*=\s*)('.*')" = "`$1'$($Latest.url64)'";
 			"(^[$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
+		};
+		'tools\VERIFICATION.txt' = @{
+			"^\[1\]:.*$" = "[1]: $($Latest.Url32)";
+			"^\[2\]:.*$" = "[2]: $($Latest.Url64)";
 		}
 	}
 }
@@ -57,4 +62,4 @@ function global:au_GetLatest {
 	return extractReleaseInfo(queryLatestReleaseInfoFromGitHub)
 }
 
-Update-Package
+Update-Package -ChecksumFor None

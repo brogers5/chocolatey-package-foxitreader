@@ -1,0 +1,12 @@
+VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+The embedded files
+  1. tools/pympress_x32.msi
+  2. tools/pympress_x64.msi
+can be verified by redownloading from the vendor's homepage [1-2, in that order] and
+subsequent comparison, e.g. by checksums or even bit-by-bit.
+
+[1]: https://github.com/Cimbali/pympress/releases/download/v1.2.0/pympress-1.2.0-win32.msi
+[2]: https://github.com/Cimbali/pympress/releases/download/v1.2.0/pympress-1.2.0-amd64-novlc.msi

@@ -1,15 +1,15 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$url32 = 'https://github.com/Cimbali/pympress/releases/download/v1.2.0/pympress-1.2.0-win32.msi'
-$url64 = 'https://github.com/Cimbali/pympress/releases/download/v1.2.0/pympress-1.2.0-amd64-novlc.msi'
-$checksum32  = '2f45a90705fa0059f16bead39ad52573541c0a2bfcd1c939d3a6eb5d65bc7105'
-$checksum64  = '7892bd29a545b36e1bdb08c1344b5d7f39d397051164c05b75eaa2038033f93f'
+$toolsDir     = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
+
+$checksum32  = 'BDC4C7812258848C74EC92A1BD9C5B653A74BC67F8AF4FF67CC50DBC1743468A69B37CEE5CCEB65060C3ABC259A145BC3BB26F7C889D4080F705108D96E994F2'
+$checksum64  = '26922DD70DDA3FE1705A095D9F60728E563634555DCBACE118508D2BF5ADFA614EEE433AC12E176692E73F2EC6D729EFE9E8C4142FEFAACB51D7F79D55D4234C'
 
 $packageArgs = @{
 	PackageName    = $env:ChocolateyPackageName
 	FileType       = 'MSI'
-	Url            = $url32
-	Url64Bit       = $url64
+	File           = Join-Path $toolsDir 'pympress_x32.msi'
+	File64         = Join-Path $toolsDir 'pympress_x64.msi'
 	softwareName   = 'pympress*'
 	Checksum       = $checksum32
 	ChecksumType   = 'sha256'
@@ -19,4 +19,15 @@ $packageArgs = @{
 	validExitCodes= @(0, 3010, 1641)
 }
 
-Install-ChocolateyPackage @packageArgs
+Install-ChocolateyInstallPackage @packageArgs
+
+# The installer itself fails to put itself on PATH, see https://github.com/Cimbali/pympress/issues/107
+# Hence, we heuristically try to patch this behavior here
+$allegedInstalledPympressExe = Join-Path (Join-Path $Env:Programfiles 'pympress') 'pympress.exe'
+if (Test-Path $allegedInstalledPympressExe) {
+	Install-BinFile -Name 'pympress' -Path $allegedInstalledPympressExe
+}
+
+Remove-Item (Join-Path $toolsDir 'pympress_x32.msi')
+Remove-Item (Join-Path $toolsDir 'pympress_x64.msi')
+
