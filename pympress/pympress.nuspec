@@ -28,7 +28,7 @@ Pympress was originally created and maintained by [Schnouki](https://github.com/
     <tags>pdf latex beamer presentation projector</tags>
     <licenseUrl>https://github.com/Cimbali/pympress/blob/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <!--<iconUrl></iconUrl>-->
+    <iconUrl>https://cdn.statically.io/gh/ComFreek/chocolatey-packages/883a30663d13abe53a581cefb88b0592b00a5fd8/pympress/icon.png</iconUrl>
   </metadata>
   <files>
     <file src="tools\chocolateyInstall.ps1" target="tools" />
