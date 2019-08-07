@@ -1,0 +1,17 @@
+VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+This package contains the following embedded binaries with their corresponding checksum:
+
+  File                                : tools/pympress_x32.msi
+  Checksum                            : __checksum32__
+  Official vendor's download location : __url32__
+
+  File                                : tools/pympress_x64.msi
+  Checksum                            : __checksum64__
+  Official vendor's download location : __url64__
+
+You can verify that this package indeed embeds the official files in unaltered form by
+redownloading the files from the official download locations given above.
+Independently, you should verify that these are indeed the official download locations.

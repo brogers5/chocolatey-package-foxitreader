@@ -1,2 +1,5 @@
 pympress_x32.msi
 pympress_x64.msi
+
+# This file is auto-generated from VERIFICATION.template.txt and ../update.ps1
+VERIFICATION.txt

@@ -23,7 +23,7 @@ It comes with many great features:
     <projectUrl>https://github.com/Cimbali/pympress</projectUrl>
     <docsUrl>https://cimbali.github.io/pympress/README.html</docsUrl>
     <packageSourceUrl>https://github.com/ComFreek/chocolatey-packages/tree/master/pympress</packageSourceUrl>
-    <releaseNotes></releaseNotes>
+    <releaseNotes>https://github.com/Cimbali/pympress/releases</releaseNotes>
     <tags>pdf latex beamer presentation projector</tags>
     <licenseUrl>https://github.com/Cimbali/pympress/blob/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
