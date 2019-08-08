@@ -7,5 +7,4 @@ It comes with many great features:
 - text annotations displayed in the presenter window
 - natively supports beamer's *notes on second screen*!
 
-\*) Pympress autodetects VLC installations performed by official VLC installers or by `cinst vlc`.
-
+\*) Install VLC at any time and Pympress will autodetect it on its next run. We recommend doing `cinst pympress vlc`. If you choose alternative ways, be sure to install VLC in the same bitness as Pympress, e.g. either both 32-bit or both 64-bit.

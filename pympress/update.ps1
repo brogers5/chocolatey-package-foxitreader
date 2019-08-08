@@ -5,23 +5,16 @@ function global:au_BeforeUpdate() {
 	Copy-Item 'tools\VERIFICATION.template.txt' 'tools\VERIFICATION.txt'
 }
 
-function global:au_AfterUpdate ($Package)  {
-	Set-DescriptionFromReadme $Package
-}
-
 function global:au_SearchReplace {
 	@{
-		'pympress.nuspec' = @{
-			"<version>[^<]*</version>" = "<version>$($Latest.version)</version>"
-
-			# Commented out due to Au bug https://github.com/majkinetor/au/issues/192
-			# "<releaseNotes>[^<]*</releaseNotes>" = "<releaseNotes>$($Latest.releaseNotesUrl)</releaseNotes>"
+		".\$($Latest.PackageName).nuspec" = @{
+			"(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.releaseNotes)`$2"
 		};
-		'tools\chocolateyInstall.ps1' = @{
+		'.\tools\chocolateyInstall.ps1' = @{
 			"(^[$]checksum32\s*=\s*)('.*')" = "`$1'$($Latest.checksum32)'";
 			"(^[$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.checksum64)'"
 		};
-		'tools\VERIFICATION.txt' = @{
+		'.\tools\VERIFICATION.txt' = @{
 			"__url32__" = $Latest.url32;
 			"__url64__" = $Latest.url64;
 
@@ -42,27 +35,22 @@ function queryLatestReleaseInfoFromGitHub() {
 }
 
 function extractReleaseInfo($releaseInfo) {
-	function getAssetBySuffix($suffix) {
-		return [string] ($releaseInfo.assets | Where-object {
-			$_.name.EndsWith($suffix)
+	# Get the first asset of $releaseInfo whose name is matching the regex
+	function getAssetByRegex($regex) {
+		return [string] ($releaseInfo.assets | Where-Object {
+			$_.name -match $regex
 		} | Select -First 1 -ExpandProperty browser_download_url)
 	}
 	
 	return @{
 		# Transform Git tag name (e.g. 'v1.2.0') into version string
 		version            = $releaseInfo.tag_name.TrimStart('v');
-		releaseNotesUrl    = $releaseInfo.html_url;
+		releaseNotes       = $releaseInfo.html_url;
 
-		# We currently only ship non-VLC versions with Chocolatey allowing the user
-		# to install VLC before or afterwards.
-
-		url32              = getAssetBySuffix('win32.msi');
-		# url32_withoutVLC = getAssetBySuffix('win32.msi');
-		# url32_withVLC    = getAssetBySuffix('win32-vlc.msi');
-
-		url64              = getAssetBySuffix('amd64-novlc.msi');
-		# url64_withoutVLC = getAssetBySuffix('amd64-novlc.msi');
-		# url64_withVLC    = getAssetBySuffix('amd64-vlc.msi')
+		# The Windows binaries are always named 'pympress-v{version}-{architecture}.msi'
+		# Source: https://github.com/Cimbali/pympress/issues/109#issuecomment-519553228
+		url32              = getAssetByRegex('^pympress-v[^-]+-i686\.msi$');
+		url64              = getAssetByRegex('^pympress-v[^-]+-x86_64\.msi$');
 	}
 }
 

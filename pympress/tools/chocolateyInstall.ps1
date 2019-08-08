@@ -2,8 +2,8 @@
 
 $toolsDir     = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
 
-$checksum32  = 'BDC4C7812258848C74EC92A1BD9C5B653A74BC67F8AF4FF67CC50DBC1743468A69B37CEE5CCEB65060C3ABC259A145BC3BB26F7C889D4080F705108D96E994F2'
-$checksum64  = '26922DD70DDA3FE1705A095D9F60728E563634555DCBACE118508D2BF5ADFA614EEE433AC12E176692E73F2EC6D729EFE9E8C4142FEFAACB51D7F79D55D4234C'
+$checksum32  = '57EB8FC9C9C2632F18160AB80AE1DB63E89F78F8B2AA6161A1B7112632823CCC282D6565EF0FA486B8AF293BD093B9EA03CC8ED75B5365D217DCDA3B443B7C2F'
+$checksum64  = '2E511D0F0613BA5CDA46B318E2A57A3EC5E08A2DDED1CF698FF2680FB9698993C2D6BB8E4AA2AD803CF7F76B3AC0EE38CAB783579EA45C9B5096E48692DFA84C'
 
 $packageArgs = @{
 	PackageName    = $env:ChocolateyPackageName
@@ -20,13 +20,6 @@ $packageArgs = @{
 }
 
 Install-ChocolateyInstallPackage @packageArgs
-
-# The installer itself fails to put itself on PATH, see https://github.com/Cimbali/pympress/issues/107
-# Hence, we heuristically try to patch this behavior here
-$allegedInstalledPympressExe = Join-Path (Join-Path $Env:Programfiles 'pympress') 'pympress.exe'
-if (Test-Path $allegedInstalledPympressExe) {
-	Install-BinFile -Name 'pympress' -Path $allegedInstalledPympressExe
-}
 
 Remove-Item (Join-Path $toolsDir 'pympress_x32.msi')
 Remove-Item (Join-Path $toolsDir 'pympress_x64.msi')

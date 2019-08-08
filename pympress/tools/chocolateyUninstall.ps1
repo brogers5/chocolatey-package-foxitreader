@@ -1,2 +1,0 @@
-Uninstall-BinFile -Name 'pympress'
-
