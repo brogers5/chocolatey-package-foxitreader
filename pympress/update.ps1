@@ -8,11 +8,13 @@ function global:au_BeforeUpdate() {
 function global:au_SearchReplace {
 	@{
 		".\$($Latest.PackageName).nuspec" = @{
-			"(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.releaseNotes)`$2"
+			"(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.releaseNotes)`$2";
 		};
 		'.\tools\chocolateyInstall.ps1' = @{
+			"(^[$]url32\s*=\s*)('.*')" = "`$1'$($Latest.url32)'";
+			"(^[$]url64\s*=\s*)('.*')" = "`$1'$($Latest.url64)'";
 			"(^[$]checksum32\s*=\s*)('.*')" = "`$1'$($Latest.checksum32)'";
-			"(^[$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.checksum64)'"
+			"(^[$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.checksum64)'";
 		};
 		'.\tools\VERIFICATION.txt' = @{
 			"__url32__" = $Latest.url32;
@@ -20,7 +22,7 @@ function global:au_SearchReplace {
 
 			"__checksum32__" = $Latest.checksum32;
 			"__checksum64__" = $Latest.checksum64;
-		}
+		};
 	}
 }
 
