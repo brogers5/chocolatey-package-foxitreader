@@ -38,12 +38,12 @@ function global:au_SearchReplace {
 
 function global:au_GetLatest {
 	# Query the latest version
-	$uri = 'https://www.foxitsoftware.com/downloads/downloadForm.php?product=Foxit-Reader&language=English&platform=Windows'
+	$uri = 'https://www.foxitsoftware.com/pdf-reader/version-history.html'
 	$page = Invoke-WebRequest -Uri $uri -UserAgent "Update checker of Chocolatey Community Package 'foxitreader'"
 
-	$version = Get-FixedQuerySelectorAll $page "select[name='version'] option:first-child" | Select -First 1 -ExpandProperty value
+	$version = [Regex]::Matches($page.Content, "(?i)<h3[^>]*>Foxit Reader (.*)</h3>").Groups[1].Value
 
-	# The "&language=German' parameter will force the download of "FoxitReader941_L10N_Setup_Prom.exe" containing all available languages.
+	# The "&language=German' parameter will force the download of "FoxitReader101_L10N_Setup_Prom.exe" containing all available languages.
 	$url32 = "https://www.foxitsoftware.com/downloads/latest.php?product=Foxit-Reader&platform=Windows&package_type=exe&language=German&version=$version"
 
 	$actualVersion = $version
@@ -79,21 +79,6 @@ FoxitReader's current version collides with a version used as package fix notati
 	}
 
 	return @{ Url32 = $url32; Version = $version; ActualVersion = $actualVersion }
-}
-
-# Function taken from http://stackoverflow.com/a/37663738 under CC BY-SA 3.0
-# Many thanks to author midnightfreddie: http://stackoverflow.com/users/4844551/midnightfreddie
-function Get-FixedQuerySelectorAll {
-	param (
-		$HtmlWro,
-		$CssSelector
-	)
-	# After assignment, $NodeList will crash powershell if enumerated in any way including Intellisense-completion while coding!
-	$NodeList = $HtmlWro.ParsedHtml.querySelectorAll($CssSelector)
-
-	for ($i = 0; $i -lt $NodeList.length; $i++) {
-		Write-Output $NodeList.item($i)
-	}
 }
 
 Update-Package
