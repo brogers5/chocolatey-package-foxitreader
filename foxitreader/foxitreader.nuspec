@@ -28,12 +28,12 @@ Windows Explorer must be closed due to Foxit Reader's shell plugins, browser ins
     Note that contrary to `/MERGETASKS`, you have to specify in `/COMPONENTS` also those components which you would like to retain. You can get those from the link above of Foxit Reader-specific tasks and components. An asterisk (*) prefix results in all sub-components automatically being included as well, cf. Inno Setup's documentation linked above.
 
 ]]></description>
-    <projectUrl>http://foxitsoftware.com/Secure_PDF_Reader/</projectUrl>
+    <projectUrl>https://www.foxitsoftware.com/pdf-reader/</projectUrl>
     <docsUrl>https://www.foxitsoftware.com/support/usermanuals.php</docsUrl>
     <packageSourceUrl>https://github.com/ComFreek/chocolatey-packages/tree/master/foxitreader</packageSourceUrl>
     <releaseNotes>https://www.foxitsoftware.com/products/pdf-reader/version-history.php</releaseNotes>
     <tags>Foxit PDF Reader office admin</tags>
-    <licenseUrl>https://www.foxitsoftware.com/products/pdf-reader/eula.html</licenseUrl>
+    <licenseUrl>https://www.foxitsoftware.com/pdf-reader/eula.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.jsdelivr.net/gh/ComFreek/chocolatey-packages@695c150e199b34151a923fa4953e46c3065a2e30/icons/FoxitReader.png</iconUrl>
   </metadata>
