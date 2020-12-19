@@ -31,7 +31,7 @@ Windows Explorer must be closed due to Foxit Reader's shell plugins, browser ins
     <projectUrl>https://www.foxitsoftware.com/pdf-reader/</projectUrl>
     <docsUrl>https://www.foxitsoftware.com/support/usermanuals.php</docsUrl>
     <packageSourceUrl>https://github.com/ComFreek/chocolatey-packages/tree/master/foxitreader</packageSourceUrl>
-    <releaseNotes>https://www.foxitsoftware.com/products/pdf-reader/version-history.php</releaseNotes>
+    <releaseNotes>https://www.foxitsoftware.com/pdf-reader/version-history.html</releaseNotes>
     <tags>Foxit PDF Reader office admin</tags>
     <licenseUrl>https://www.foxitsoftware.com/pdf-reader/eula.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
