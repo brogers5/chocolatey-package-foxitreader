@@ -8,8 +8,8 @@ $ErrorActionPreference = 'Stop'
 
 # See the comments in  https://github.com/ComFreek/chocolatey-packages/blob/master/foxitreader/update.ps1
 # on the &language=German part.
-$url32       = 'https://www.foxitsoftware.com/downloads/latest.php?product=Foxit-Reader&platform=Windows&package_type=exe&language=German&version=10.1.0.37527'
-$checksum32  = 'ff5c6a5fd616de5268f928016ca1db41a78796c1834c9875ff11745cf37c99c4'
+$url32       = 'https://www.foxitsoftware.com/downloads/latest.php?product=Foxit-Reader&platform=Windows&package_type=exe&language=German&version=10.1.1.37576'
+$checksum32  = ''
 
 function Uninstall-PreviousVersion {
 	Write-Output 'Uninstalling previous version...'
