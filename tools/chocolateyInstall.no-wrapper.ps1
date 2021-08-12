@@ -9,7 +9,7 @@ $ErrorActionPreference = 'Stop'
 # See the comments in  https://github.com/ComFreek/chocolatey-packages/blob/master/foxitreader/update.ps1
 # on the &language=German part.
 $url32       = 'https://www.foxitsoftware.com/downloads/latest.php?product=Foxit-Reader&platform=Windows&package_type=exe&language=German&version=10.1.1.37576'
-$checksum32  = ''
+$checksum32  = '69728969a674271794843694b6588aadb8f4517d7eefd16bd22309c1e8ae8cb5'
 
 $installationArgs = @{
 	PackageName    = 'foxitreader'
