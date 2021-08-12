@@ -17,7 +17,7 @@ function global:au_BeforeUpdate ($Package)  {
 }
 
 function global:au_AfterUpdate ($Package)  {
-	Set-DescriptionFromReadme $Package
+
 }
 
 function global:au_SearchReplace {
@@ -81,4 +81,4 @@ FoxitReader's current version collides with a version used as package fix notati
 	return @{ Url32 = $url32; Version = $version; ActualVersion = $actualVersion }
 }
 
-Update-Package
+Update-Package -NoReadme
