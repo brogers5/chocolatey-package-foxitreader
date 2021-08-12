@@ -1,17 +1,26 @@
 Import-Module au
 
+# FoxitReader changes its offered installer from time to time between two versions
+#  a) the installer comes with a wrapper setup
+#  b) the installer comes *without* a wrapper setup.
+#
+# Hence, this repository contains tools/chocolateyInstall.{wrapper|no-wrapper}.ps1 files.
+# Only one of them should be copied to the final tools/chocolateyInstall.ps1.
+#
+# If FoxitReader changes its offered installer once again, just change the path to be copied
+# from here:
+$currentInstallationScriptRelativePath = "tools/chocolateyInstall.no-wrapper.ps1"
+$targetInstallationRelativePath = "tools/chocolateyInstall.ps1"
+
+#If needed, create the install script file to ensure checksums are properly inserted on the first update.
+if (-not(Test-Path -Path $targetInstallationRelativePath -PathType Leaf))
+{
+	Copy-Item $currentInstallationScript $targetInstallationPath
+}
+
 function global:au_BeforeUpdate ($Package)  {
-	# FoxitReader changes its offered installer from time to time between two versions
-	#  a) the installer comes with a wrapper setup
-	#  b) the installer comes *without* a wrapper setup.
-	#
-	# Hence, this repository contains tools/chocolateyInstall.{wrapper|no-wrapper}.ps1 files.
-	# One of them will be copied by this function to the final tools/chocolateyInstall.ps1.
-	#
-	# If FoxitReader changes its offered installer once again, just change the path to be copied
-	# from here:
-	$currentInstallationScript = Join-Path $Package.Path "tools/chocolateyInstall.no-wrapper.ps1"
-	$targetInstallationPath    = Join-Path $Package.Path "tools/chocolateyInstall.ps1"
+	$currentInstallationScript = Join-Path $Package.Path $currentInstallationScriptRelativePath
+	$targetInstallationPath    = Join-Path $Package.Path $targetInstallationRelativePath
 
 	Copy-Item $currentInstallationScript $targetInstallationPath
 }
