@@ -34,7 +34,7 @@ if ($isWrappedInstaller)
 			Write-Warning "$($key.Count) matches found!"
 			Write-Warning "To prevent accidental data loss, no programs will be uninstalled."
 			Write-Warning "Please alert package maintainer the following keys were matched:"
-			$key | % {Write-Warning "- $($_.DisplayName)"}
+			$key | ForEach-Object {Write-Warning "- $($_.DisplayName)"}
 		}
 	}
 	
@@ -92,7 +92,7 @@ if ($isWrappedInstaller)
 			Get-ChildItem `
 				-Path $(Join-Path $wrapperSetupUnzippedPath '$PLUGINSDIR') `
 				'FoxitReader*Setup*.exe' `
-			| Where {! $_.PSIsContainer} | Select -First 1 -ExpandProperty FullName
+			| Where-Object {! $_.PSIsContainer} | Select-Object -First 1 -ExpandProperty FullName
 	
 		# Continue and don't fail in case AV software locks files
 		Remove-Item $wrapperSetupDownloadPath -Recurse -Force -ErrorAction Continue
