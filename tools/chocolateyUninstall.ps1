@@ -2,7 +2,7 @@
 
 $packageArgs = @{
 	packageName   = $env:ChocolateyPackageName
-	softwareName  = 'Foxit Reader'
+	softwareName  = 'Foxit *Reader'
 	fileType      = 'EXE'
 	silentArgs    = "/VERYSILENT /norestart"
 	validExitCodes= @(0)
