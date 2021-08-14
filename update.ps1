@@ -1,28 +1,7 @@
 Import-Module au
 
-# FoxitReader changes its offered installer from time to time between two versions
-#  a) the installer comes with a wrapper setup
-#  b) the installer comes *without* a wrapper setup.
-#
-# Hence, this repository contains tools/chocolateyInstall.{wrapper|no-wrapper}.ps1 files.
-# Only one of them should be copied to the final tools/chocolateyInstall.ps1.
-#
-# If FoxitReader changes its offered installer once again, just change the path to be copied
-# from here:
-$currentInstallationScriptRelativePath = "tools/chocolateyInstall.no-wrapper.ps1"
-$targetInstallationRelativePath = "tools/chocolateyInstall.ps1"
-
-#If needed, create the install script file to ensure checksums are properly inserted on the first update.
-if (-not(Test-Path -Path $targetInstallationRelativePath -PathType Leaf))
-{
-	Copy-Item $currentInstallationScript $targetInstallationPath
-}
-
 function global:au_BeforeUpdate ($Package)  {
-	$currentInstallationScript = Join-Path $Package.Path $currentInstallationScriptRelativePath
-	$targetInstallationPath    = Join-Path $Package.Path $targetInstallationRelativePath
-
-	Copy-Item $currentInstallationScript $targetInstallationPath
+	
 }
 
 function global:au_AfterUpdate ($Package)  {
@@ -34,11 +13,7 @@ function global:au_SearchReplace {
 		'foxitreader.nuspec' = @{
 			"<version>[^<]*</version>" = "<version>$($Latest.Version)</version>"
 		}
-		'tools\chocolateyInstall.wrapper.ps1' = @{
-			"(^[$]url32\s*=\s*)('.*')" = "`$1'$($Latest.Url32)'"
-			"(^[$]checksum32\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
-		}
-		'tools\chocolateyInstall.no-wrapper.ps1' = @{
+		'tools\chocolateyInstall.ps1' = @{
 			"(^[$]url32\s*=\s*)('.*')" = "`$1'$($Latest.Url32)'"
 			"(^[$]checksum32\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
 		}
