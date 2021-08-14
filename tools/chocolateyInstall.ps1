@@ -46,7 +46,7 @@ if ($isWrappedInstaller)
 	$tmpDirectory is the directory where the native installer is contained
 	and which should ideally be deleted after installation.
 	#>
-	function Download-CurrentVersion {
+	function Get-CurrentVersion {
 		Write-Output 'Downloading current version...' | Out-Null
 	
 		# FoxitReader has recently changed to a "wrapped" setup program:
@@ -119,7 +119,7 @@ if ($isWrappedInstaller)
 	$tmpDirectory = $null
 	
 	try {
-		$installerPath, $tmpDirectory = Download-CurrentVersion
+		$installerPath, $tmpDirectory = Get-CurrentVersion
 		Uninstall-PreviousVersion
 		Install-CurrentVersion $installerPath
 	}
