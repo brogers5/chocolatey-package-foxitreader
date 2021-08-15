@@ -2,8 +2,8 @@
 
 # See the comments in https://github.com/brogers5/chocolatey-package-foxitreader/blob/main/update.ps1
 # on the &language=German part.
-$url32       = 'https://www.foxitsoftware.com/downloads/latest.php?product=Foxit-Reader&platform=Windows&package_type=exe&language=German&version=10.1.1.37576'
-$checksum32  = '69728969a674271794843694b6588aadb8f4517d7eefd16bd22309c1e8ae8cb5'
+$url32       = 'https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&package_type=exe&language=German&version=11.0.0.49893'
+$checksum32  = '6d33ca56b5c6e7f412ff7e7af6a78036df4e7affd1754975ca9a0a89df9d570c'
 
 # FoxitReader changes its offered installer from time to time between two versions
 #  a) the installer comes with a wrapper setup

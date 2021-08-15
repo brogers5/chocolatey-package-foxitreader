@@ -4,7 +4,7 @@
   <metadata>
     <id>foxitreader</id>
     <title>Foxit PDF Reader</title>
-    <version>10.1.1.37576</version>
+    <version>11.0.0.49893</version>
     <authors>Foxit Software Incorporated</authors>
     <owners>ComFreek H.AlanStevens sublym0nal</owners>
     <summary>Foxit PDF Reader: The Best PDF Reader</summary>
@@ -30,7 +30,7 @@ Windows Explorer must be closed due to Foxit PDF Reader's shell plugins, browser
 ]]></description>
     <projectUrl>https://www.foxit.com/pdf-reader/</projectUrl>
     <docsUrl>https://www.foxit.com/support/usermanuals.html</docsUrl>
-    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-foxitreader/tree/main</packageSourceUrl>
+    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-foxitreader/tree/v11.0.0.49893</packageSourceUrl>
     <releaseNotes>https://www.foxit.com/pdf-reader/version-history.html</releaseNotes>
     <tags>Foxit PDF Reader office admin</tags>
     <licenseUrl>https://www.foxit.com/pdf-editor/eula.html</licenseUrl>
