@@ -12,6 +12,7 @@ function global:au_SearchReplace {
 	@{
 		'foxitreader.nuspec' = @{
 			"<version>[^<]*</version>" = "<version>$($Latest.Version)</version>"
+			"<packageSourceUrl>[^<]*</packageSourceUrl>" = "<packageSourceUrl>https://github.com/brogers5/chocolatey-package-foxitreader/tree/v$($Latest.Version)</packageSourceUrl>"
 		}
 		'tools\chocolateyInstall.ps1' = @{
 			"(^[$]url32\s*=\s*)('.*')" = "`$1'$($Latest.Url32)'"
