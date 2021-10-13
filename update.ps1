@@ -5,7 +5,7 @@ function global:au_BeforeUpdate ($Package)  {
 }
 
 function global:au_AfterUpdate ($Package)  {
-
+	Set-DescriptionFromReadme -Package $Package -ReadmePath ".\DESCRIPTION.md"
 }
 
 function global:au_SearchReplace {
