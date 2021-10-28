@@ -1,8 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-# See the comments in https://github.com/brogers5/chocolatey-package-foxitreader/blob/main/update.ps1
-# on the &language=German part.
-$url32       = 'https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&package_type=exe&language=German&version=11.1.0.52543'
+$url32       = 'https://cdn06.foxitsoftware.com/product/reader/desktop/win/11.1.0/FoxitPDFReader111_L10N_Setup_Prom.exe'
 $checksum32  = '696c6d7136788b339620b59af9c431936124e451314d60532ab5c71e2a7bd490'
 
 # FoxitReader changes its offered installer from time to time between two versions

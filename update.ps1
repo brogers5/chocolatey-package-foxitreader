@@ -26,10 +26,9 @@ function global:au_GetLatest {
 	$uri = 'https://www.foxit.com/pdf-reader/version-history.html'
 	$page = Invoke-WebRequest -Uri $uri -UserAgent "Update checker of Chocolatey Community Package 'foxitreader'"
 
-	$version = [Regex]::Matches($page.Content, "(?i)<h3[^>]*>(Foxit Reader|Version) (.*)</h3>").Groups[2].Value
+	$version = [Version] [Regex]::Matches($page.Content, "(?i)<h3[^>]*>(Foxit Reader|Version) (.*)</h3>").Groups[2].Value
 
-	# The "&language=German' query parameter will download an installer that contains all available languages.
-	$url32 = "https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&package_type=exe&language=German&version=$version"
+	$url32 = "https://cdn06.foxitsoftware.com/product/reader/desktop/win/$($version.Major).$($version.Minor).$($version.Build)/FoxitPDFReader$($version.Major)$($version.Minor)_L10N_Setup_Prom.exe"
 
 	$actualVersion = $version
 
