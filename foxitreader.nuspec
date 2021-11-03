@@ -4,7 +4,7 @@
   <metadata>
     <id>foxitreader</id>
     <title>Foxit PDF Reader</title>
-    <version>11.1.0.5254300</version>
+    <version>11.1.0.5254301</version>
     <authors>Foxit Software Incorporated</authors>
     <owners>ComFreek H.AlanStevens sublym0nal</owners>
     <summary>Foxit PDF Reader: The Best PDF Reader</summary>
@@ -39,5 +39,6 @@ Windows Explorer must be closed due to Foxit PDF Reader's shell plugins, browser
   <files>
     <file src="tools\chocolateyInstall.ps1" target="tools" />
     <file src="tools\chocolateyUninstall.ps1" target="tools" />
+    <file src="tools\helpers.ps1" target="tools" />
   </files>
 </package>

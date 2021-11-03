@@ -1,5 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
+$toolsPath = Split-Path $MyInvocation.MyCommand.Definition
+. $toolsPath\helpers.ps1
+
 $url32       = 'https://cdn06.foxitsoftware.com/product/reader/desktop/win/11.1.0/FoxitPDFReader111_L10N_Setup_Prom.exe'
 $checksum32  = '696c6d7136788b339620b59af9c431936124e451314d60532ab5c71e2a7bd490'
 
@@ -12,30 +15,6 @@ $isWrappedInstaller = $false
 
 if ($isWrappedInstaller)
 {
-	function Uninstall-PreviousVersion {
-		Write-Output 'Uninstalling previous version...'
-	
-		$packageArgs = @{
-			packageName   = $env:ChocolateyPackageName
-			softwareName  = 'Foxit *Reader'
-			fileType      = 'EXE'
-			silentArgs    = "/VERYSILENT /norestart"
-			validExitCodes= @(0)
-		}
-	
-		[array]$key = Get-UninstallRegistryKey -SoftwareName $packageArgs['softwareName']
-	
-		if ($key.Count -eq 1) {
-			$packageArgs['file'] = $($key[0].UninstallString)
-			Uninstall-ChocolateyPackage @packageArgs
-		} elseif ($key.Count -gt 1) {
-			Write-Warning "$($key.Count) matches found!"
-			Write-Warning "To prevent accidental data loss, no programs will be uninstalled."
-			Write-Warning "Please alert package maintainer the following keys were matched:"
-			$key | ForEach-Object {Write-Warning "- $($_.DisplayName)"}
-		}
-	}
-	
 	<#
 	.SYNOPSIS
 	Download the current version and unwrap the inner native installer.
@@ -118,7 +97,8 @@ if ($isWrappedInstaller)
 	
 	try {
 		$installerPath, $tmpDirectory = Get-CurrentVersion
-		Uninstall-PreviousVersion
+		Write-Output 'Uninstalling previous version...'
+		Uninstall-FoxitPDFReader
 		Install-CurrentVersion $installerPath
 	}
 	finally {
