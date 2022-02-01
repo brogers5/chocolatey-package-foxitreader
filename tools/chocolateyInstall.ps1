@@ -3,8 +3,8 @@
 $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 . $toolsPath\helpers.ps1
 
-$url32       = 'https://cdn06.foxitsoftware.com/product/reader/desktop/win/11.1.0/FoxitPDFReader111_L10N_Setup_Prom.exe'
-$checksum32  = '696c6d7136788b339620b59af9c431936124e451314d60532ab5c71e2a7bd490'
+$url32       = 'https://cdn06.foxitsoftware.com/product/reader/desktop/win/11.2.1/FoxitPDFReader1121_L10N_Setup_Prom.exe'
+$checksum32  = '0d8530dd92ce5a3ea9b0284b605778ed8bbae01b0d385c0bb1d5287b821cd0f8'
 
 # FoxitReader changes its offered installer from time to time between two versions
 #  a) the installer comes with a wrapper setup

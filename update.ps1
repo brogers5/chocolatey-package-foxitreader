@@ -28,7 +28,7 @@ function global:au_GetLatest {
 
 	$version = [Version] [Regex]::Matches($page.Content, "(?i)<h3[^>]*>(Foxit Reader|Version) (.*)</h3>").Groups[2].Value
 
-	$url32 = "https://cdn06.foxitsoftware.com/product/reader/desktop/win/$($version.Major).$($version.Minor).$($version.Build)/FoxitPDFReader$($version.Major)$($version.Minor)_L10N_Setup_Prom.exe"
+	$url32 = "https://cdn06.foxitsoftware.com/product/reader/desktop/win/$($version.Major).$($version.Minor).$($version.Build)/FoxitPDFReader$($version.Major)$($version.Minor)$($version.Build)_L10N_Setup_Prom.exe"
 
 	$actualVersion = $version
 
