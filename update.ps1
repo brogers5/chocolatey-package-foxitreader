@@ -11,7 +11,6 @@ function global:au_AfterUpdate ($Package)  {
 function global:au_SearchReplace {
 	@{
 		"$($Latest.PackageName).nuspec" = @{
-			"<version>[^<]*</version>" = "<version>$($Latest.Version)</version>"
 			"<packageSourceUrl>[^<]*</packageSourceUrl>" = "<packageSourceUrl>https://github.com/brogers5/chocolatey-package-$($Latest.PackageName)/tree/v$($Latest.Version)</packageSourceUrl>"
 		}
 		'tools\chocolateyInstall.ps1' = @{
