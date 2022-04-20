@@ -1,4 +1,4 @@
-# <img src="https://cdn.jsdelivr.net/gh/brogers5/chocolatey-package-foxitreader@9c187bf10fdd40a24d833d10211baf0991de5f8f/FoxitReader.png" width="48" height="48"/> Chocolatey Package: [FoxitReader](https://community.chocolatey.org/packages/FoxitReader/)
+# <img src="https://cdn.jsdelivr.net/gh/brogers5/chocolatey-package-foxitreader@9c187bf10fdd40a24d833d10211baf0991de5f8f/FoxitReader.png" width="48" height="48"/> Chocolatey Package: [Foxit PDF Reader](https://community.chocolatey.org/packages/FoxitReader/)
 [![Chocolatey package version](https://img.shields.io/chocolatey/v/foxitreader.svg)](https://community.chocolatey.org/packages/FoxitReader/)
 [![Chocolatey package download count](https://img.shields.io/chocolatey/dt/foxitreader.svg)](https://community.chocolatey.org/packages/FoxitReader/)
 
