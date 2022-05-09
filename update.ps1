@@ -32,6 +32,7 @@ function global:au_SearchReplace {
         }
         "$($Latest.PackageName).nuspec" = @{
             "<packageSourceUrl>[^<]*</packageSourceUrl>" = "<packageSourceUrl>https://github.com/brogers5/chocolatey-package-$($Latest.PackageName)/tree/v$($Latest.Version)</packageSourceUrl>"
+            "<copyright>[^<]*</copyright>" = "<copyright>$(Get-Date -Format yyyy) © Foxit Software Incorporated. All rights reserved.</copyright>"
         }
         'tools\chocolateyInstall.ps1' = @{
             "(^[$]url32\s*=\s*)('.*')" = "`$1'$($Latest.Url32)'"
