@@ -1,11 +1,28 @@
 Import-Module au
 
+function Get-InstallScript($Url, $Destination)
+{
+    if (!(Get-Command "innounp.exe" -ErrorAction SilentlyContinue))
+    {
+        Write-Information "innounp is not available on PATH, installing..."
+        choco install innounp 
+    }
+
+    $tempFilePath = New-TemporaryFile
+    Invoke-WebRequest -Uri $Url -OutFile $tempFilePath
+
+    $installScriptFileName = "install_script.iss"
+    innounp -x $tempFilePath $installScriptFileName
+    Move-Item -Path $installScriptFileName -Destination $destination -Force
+    Remove-Item $tempFilePath -Force
+}
+
 function global:au_BeforeUpdate ($Package)  {
     Set-DescriptionFromReadme -Package $Package -ReadmePath ".\DESCRIPTION.md"
 }
 
-function global:au_AfterUpdate ($Package)  {
-    
+function global:au_AfterUpdate ($Package) {
+    Get-InstallScript -Url $($Latest.Url32) -Destination ".\install_script.iss"
 }
 
 function global:au_SearchReplace {
