@@ -1,17 +1,17 @@
-# <img src="https://cdn.jsdelivr.net/gh/brogers5/chocolatey-package-foxitreader@9c187bf10fdd40a24d833d10211baf0991de5f8f/FoxitReader.png" width="48" height="48"/> Chocolatey Package: [Foxit PDF Reader](https://community.chocolatey.org/packages/FoxitReader/)
-[![Chocolatey package version](https://img.shields.io/chocolatey/v/foxitreader.svg)](https://community.chocolatey.org/packages/FoxitReader/)
-[![Chocolatey package download count](https://img.shields.io/chocolatey/dt/foxitreader.svg)](https://community.chocolatey.org/packages/FoxitReader/)
+# <img src="https://cdn.jsdelivr.net/gh/brogers5/chocolatey-package-foxitreader@b05f9599629ce6ad99e1889e4651f3c4f870b476/FoxitReader.png" width="48" height="48"/> Chocolatey Package: [Foxit PDF Reader](https://community.chocolatey.org/packages/foxitreader/)
+[![Chocolatey package version](https://img.shields.io/chocolatey/v/foxitreader.svg)](https://community.chocolatey.org/packages/foxitreader/)
+[![Chocolatey package download count](https://img.shields.io/chocolatey/dt/foxitreader.svg)](https://community.chocolatey.org/packages/foxitreader/)
 
 ## Install
-[Install Chocolatey](https://chocolatey.org/install), and run the following command to install the latest approved version on the community repository:
+[Install Chocolatey](https://chocolatey.org/install), and run the following command to install the latest approved version on the Chocolatey Community Repository:
 ```shell
 choco install foxitreader
 ```
 
-Alternatively, the packages as published on the Chocolatey Community Repository (starting with v11.0.0.49893) will also be mirrored on this repository's [Releases page](https://github.com/brogers5/chocolatey-package-foxitreader/releases). The install command can also target the distributed `nupkg` file:
+Alternatively, the packages as published on the Chocolatey Community Repository (starting with v11.0.0.49893) will also be mirrored on this repository's [Releases page](https://github.com/brogers5/chocolatey-package-foxitreader/releases). The `nupkg` can be installed from the current directory as follows:
 
 ```shell
-choco install foxitreader.11.0.0.49893.nupkg
+choco install foxitreader -s .
 ```
 
 ## Build
@@ -25,9 +25,9 @@ A successful build will create `foxitreader.w.x.y.z.nupkg`, where `w.x.y.z` shou
 Note that Chocolatey package builds are non-deterministic. Consequently, an independently built package will fail a checksum validation against officially published packages.
 
 ## Update
-This package should be automatically updated by [au](https://github.com/majkinetor/au). If it is outdated by more than a few days, please [open an issue](https://github.com/brogers5/chocolatey-package-foxitreader/issues).
+This package should be automatically updated by the [Chocolatey Automatic Package Updater Module](https://github.com/majkinetor/au). If it is outdated by more than a few days, please [open an issue](https://github.com/brogers5/chocolatey-package-foxitreader/issues).
 
-AU expects the parent directory that contains this repository to share a name with the Nuspec (`foxitreader`). The local repository should therefore be cloned accordingly:
+AU expects the parent directory that contains this repository to share a name with the Nuspec (`foxitreader`). Your local repository should therefore be cloned accordingly:
 ```shell
 git clone git@github.com:brogers5/chocolatey-package-foxitreader.git foxitreader
 ```
@@ -37,6 +37,6 @@ Alternatively, a junction point can be created that points to the local reposito
 mklink /J foxitreader ..\chocolatey-package-foxitreader
 ```
 
-Once created, simply run `update.ps1` from within the created directory/junction point. Assuming all goes well, the Nuspec and install script should change to reflect the latest version available. This will also build a new package version using the modified files.
+Once created, simply run `update.ps1` from within the created directory/junction point. Assuming all goes well, all relevant files should change to reflect the latest version available. This will also build a new package version using the modified files.
 
-Before submitting a pull request, please test the package install/uninstall process using the [Chocolatey Testing Environment](https://github.com/chocolatey-community/chocolatey-test-environment) first.
+Before submitting a pull request, please [test the package](https://docs.chocolatey.org/en-us/community-repository/moderation/package-verifier#steps-for-each-package) using the [Chocolatey Testing Environment](https://github.com/chocolatey-community/chocolatey-test-environment) first.
