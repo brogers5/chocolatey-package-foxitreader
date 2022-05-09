@@ -37,7 +37,6 @@ Windows Explorer must be closed due to Foxit PDF Reader's shell plugins, browser
     <iconUrl>https://cdn.jsdelivr.net/gh/brogers5/chocolatey-package-foxitreader@b05f9599629ce6ad99e1889e4651f3c4f870b476/FoxitReader.png</iconUrl>
   </metadata>
   <files>
-    <file src="tools\chocolateyInstall.ps1" target="tools" />
-    <file src="tools\chocolateyUninstall.ps1" target="tools" />
+    <file src="tools\*" target="tools" />
   </files>
 </package>
