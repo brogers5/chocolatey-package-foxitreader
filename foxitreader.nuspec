@@ -43,6 +43,7 @@ choco feature enable -n=useRememberedArgumentsForUpgrades
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.jsdelivr.net/gh/brogers5/chocolatey-package-foxitreader@b05f9599629ce6ad99e1889e4651f3c4f870b476/FoxitReader.png</iconUrl>
     <copyright>2022 © Foxit Software Incorporated. All rights reserved.</copyright>
+    <mailingListUrl>https://forums.foxitsoftware.com/forum/portable-document-format-pdf-tools/foxit-reader</mailingListUrl>
   </metadata>
   <files>
     <file src="tools\*" target="tools" />
