@@ -85,4 +85,4 @@ FoxitReader's current version collides with a version used as package fix notati
     return @{ Url32 = $url32; Version = $version; ActualVersion = $actualVersion }
 }
 
-Update-Package -NoReadme
+Update-Package -ChecksumFor 32 -NoReadme
