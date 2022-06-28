@@ -1,6 +1,6 @@
 Import-Module au
 
-function Get-InstallScript($Url, $Destination)
+function Get-InstallScript($FilePath)
 {
     if (!(Get-Command "innounp.exe" -ErrorAction SilentlyContinue))
     {
@@ -8,21 +8,24 @@ function Get-InstallScript($Url, $Destination)
         choco install innounp 
     }
 
-    $tempFilePath = New-TemporaryFile
-    Invoke-WebRequest -Uri $Url -OutFile $tempFilePath
-
     $installScriptFileName = "install_script.iss"
-    innounp -x $tempFilePath $installScriptFileName
-    Move-Item -Path $installScriptFileName -Destination $destination -Force
-    Remove-Item $tempFilePath -Force
+    innounp -x $FilePath $installScriptFileName -y
 }
 
 function global:au_BeforeUpdate ($Package)  {
+    $tempFilePath = New-TemporaryFile
+    Invoke-WebRequest -Uri $Latest.Url32 -OutFile $tempFilePath
+
+    $Latest.Checksum32 = (Get-FileHash -Path $tempFilePath -Algorithm SHA256).Hash.ToLower()
+    Get-InstallScript -FilePath $tempFilePath
+
+    Remove-Item $tempFilePath -Force
+
     Set-DescriptionFromReadme -Package $Package -ReadmePath ".\DESCRIPTION.md"
 }
 
 function global:au_AfterUpdate ($Package) {
-    Get-InstallScript -Url $($Latest.Url32) -Destination ".\install_script.iss"
+
 }
 
 function global:au_SearchReplace {
@@ -64,4 +67,4 @@ function global:au_GetLatest {
     }
 }
 
-Update-Package -ChecksumFor 32 -NoReadme
+Update-Package -ChecksumFor None -NoReadme
