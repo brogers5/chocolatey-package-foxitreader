@@ -21,7 +21,15 @@ function global:au_BeforeUpdate ($Package)  {
 
     Remove-Item $tempFilePath -Force
 
-    Set-DescriptionFromReadme -Package $Package -ReadmePath ".\DESCRIPTION.md"
+    $readmePath = ".\DESCRIPTION.md"
+    $readmeContents = Get-Content $readmePath -Encoding UTF8
+    $readmeContents = $readmeContents -replace "/tree/v.*\/", "/tree/v$($Latest.Version)/"
+
+    $encoding = New-Object System.Text.UTF8Encoding($false)
+    $output = $readmeContents | Out-String
+    [System.IO.File]::WriteAllText((Get-Item $readmePath).FullName, $output, $encoding)
+
+    Set-DescriptionFromReadme -Package $Package -ReadmePath $readmePath
 }
 
 function global:au_AfterUpdate ($Package) {
@@ -30,9 +38,6 @@ function global:au_AfterUpdate ($Package) {
 
 function global:au_SearchReplace {
     @{
-        "DESCRIPTION.md" = @{
-            "/tree/v.*\/" = "/tree/v$($Latest.Version)/"
-        }
         "$($Latest.PackageName).nuspec" = @{
             "<packageSourceUrl>[^<]*</packageSourceUrl>" = "<packageSourceUrl>https://github.com/brogers5/chocolatey-package-$($Latest.PackageName)/tree/v$($Latest.Version)</packageSourceUrl>"
             "<copyright>[^<]*</copyright>" = "<copyright>$(Get-Date -Format yyyy) © Foxit Software Incorporated. All rights reserved.</copyright>"
