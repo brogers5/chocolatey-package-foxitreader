@@ -38,8 +38,8 @@ function global:au_SearchReplace {
             "<copyright>[^<]*</copyright>" = "<copyright>$(Get-Date -Format yyyy) © Foxit Software Incorporated. All rights reserved.</copyright>"
         }
         'tools\chocolateyInstall.ps1' = @{
-            "(^[$]url32\s*=\s*)('.*')" = "`$1'$($Latest.Url32)'"
-            "(^[$]checksum32\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
+            "(^[$]?\s*url\s*=\s*)('.*')" = "`$1'$($Latest.Url32)'"
+            "(^[$]?\s*checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
         }
     }
 }
