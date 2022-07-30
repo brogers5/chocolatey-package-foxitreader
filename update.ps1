@@ -54,21 +54,20 @@ function global:au_SearchReplace
 
 function global:au_GetLatest
 {
-    # Query the latest version
     $uri = 'https://www.foxit.com/pdf-reader/version-history.html'
     $page = Invoke-WebRequest -Uri $uri -UserAgent "Update checker of Chocolatey Community Package 'foxitreader'"
 
     $version = [Version] [Regex]::Matches($page.Content, "(?i)<h3[^>]*>(Foxit Reader|Version) (.*)</h3>").Groups[2].Value
 
-    if ($version.Build -eq 0)
-    {
-        $fileNameVersion = "$($version.Major)$($version.Minor)"
-    }
-    else
-    {
-        $fileNameVersion = "$($version.Major)$($version.Minor)$($version.Build)"
-    }
-    $url32 = "https://cdn06.foxitsoftware.com/product/reader/desktop/win/$($version.Major).$($version.Minor).$($version.Build)/FoxitPDFReader$($fileNameVersion)_L10N_Setup_Prom.exe"
+    # Using a non-English language selection to be directed toward the L10N installer binary.
+    $canonicalUrl = 'https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&version=&package_type=exe&language=German'
+    
+    # Foxit's version directory placement has not been consistent. Source a server-local path dynamically.
+    $headResponse = Invoke-WebRequest -Uri $canonicalUrl -Method Head
+    $localPath = $headResponse.BaseResponse.RequestMessage.RequestUri.LocalPath
+
+    # Use cdn06 node specifically for optimal download speeds 
+    $url32 = "https://cdn06.foxitsoftware.com$localPath"
 
     return @{
         Url32 = $url32
