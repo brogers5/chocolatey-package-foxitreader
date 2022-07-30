@@ -12,7 +12,8 @@ function Get-InstallScript($FilePath)
     innounp -x $FilePath $installScriptFileName -y
 }
 
-function global:au_BeforeUpdate ($Package)  {
+function global:au_BeforeUpdate ($Package)
+{
     $tempFilePath = New-TemporaryFile
     Invoke-WebRequest -Uri $Latest.Url32 -OutFile $tempFilePath
 
@@ -32,11 +33,13 @@ function global:au_BeforeUpdate ($Package)  {
     Set-DescriptionFromReadme -Package $Package -ReadmePath $readmePath
 }
 
-function global:au_AfterUpdate ($Package) {
+function global:au_AfterUpdate ($Package)
+{
 
 }
 
-function global:au_SearchReplace {
+function global:au_SearchReplace
+{
     @{
         "$($Latest.PackageName).nuspec" = @{
             "<packageSourceUrl>[^<]*</packageSourceUrl>" = "<packageSourceUrl>https://github.com/brogers5/chocolatey-package-$($Latest.PackageName)/tree/v$($Latest.Version)</packageSourceUrl>"
@@ -49,7 +52,8 @@ function global:au_SearchReplace {
     }
 }
 
-function global:au_GetLatest {
+function global:au_GetLatest
+{
     # Query the latest version
     $uri = 'https://www.foxit.com/pdf-reader/version-history.html'
     $page = Invoke-WebRequest -Uri $uri -UserAgent "Update checker of Chocolatey Community Package 'foxitreader'"
