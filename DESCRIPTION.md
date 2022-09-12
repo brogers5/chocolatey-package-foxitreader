@@ -5,13 +5,24 @@ To use choco:// protocol URLs, install [(unofficial) choco:// Protocol support](
 
 ---
 
-Foxit PDF Reader: The Best PDF Reader. With Foxit PDF Reader you can read and annotate PDF documents and fill out PDF forms.
+## Foxit PDF Reader
 
-**All open Foxit PDF Reader, Windows Explorer and browser instances must be closed during installation, update and uninstallation.**
-Otherwise, you might encounter error dialogs during the process asking you to close all instances.
-Windows Explorer must be closed due to Foxit PDF Reader's shell plugins, browser instances shall be closed proactively due to PDFs displayed inline.
+The industry’s most powerful PDF reader. View, annotate, form fill, and sign PDFs across your desktop, mobile device, and the web – no matter if you’re at the office, home, or on the go.
 
----
+![Foxit PDF Reader Screenshot](https://cdn.jsdelivr.net/gh/brogers5/chocolatey-package-foxitreader@bc276314a2bd44d6443a09ef7e8a2d1e2ed99ba9/Screenshot.png)
+
+### Features
+#### Read and Print
+Experience the power of PDFs through a full functioned PDF Reader. Reading and printing PDFs couldn’t be easier. Leverage existing forms and workflows with standard PDF (Acroforms) and XFA (XML Form Architecture) form filling.
+
+#### Read PDF Anywhere
+Foxit PDF Reader is available on Windows, macOS, iOS, Android, the web, and Linux, and provides a consistent reading experience no matter where you are and what device you’re using.
+
+#### Collaborate and Share
+Integrate with leading cloud storage services and popular enterprise CMS. Collaborate through shared reviews while providing document feedback with a large variety of annotation tools. Add images, videos, and file attachments.
+
+#### Protect and Sign
+Sign documents in your own handwriting or utilize eSignature and verify the status of digital signatures. Be safe from vulnerabilities by utilizing Trust Manager/Safe Mode, ASLR & DEP, Disable JavaScript, and Security Warning Dialogs.
 
 ## **PACKAGE NOTES**
 
