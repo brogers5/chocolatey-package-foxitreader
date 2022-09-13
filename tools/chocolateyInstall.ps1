@@ -11,3 +11,23 @@ $installationArgs = @{
 }
 
 Install-ChocolateyPackage @installationArgs
+
+$pp = Get-PackageParameters
+$shimName = 'FoxitPDFReader'
+if ($pp.NoShim)
+{
+    Uninstall-BinFile -Name $shimName
+}
+else
+{
+    $installLocation = Get-AppInstallLocation -AppNamePattern 'Foxit *Reader'
+    if ($null -ne $installLocation)
+    {
+        $shimPath = Join-Path -Path $installLocation -ChildPath 'FoxitPDFReader.exe'
+        Install-BinFile -Name $shimName -Path $shimPath -UseStart
+    }
+    else
+    {
+        Write-Warning 'Skipping shim creation - install location not detected'
+    }
+}
