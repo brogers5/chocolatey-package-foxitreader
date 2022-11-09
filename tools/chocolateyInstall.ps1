@@ -3,8 +3,8 @@
 $installationArgs = @{
     packageName    = $env:ChocolateyPackageName
     fileType       = 'EXE'
-    url            = 'https://cdn06.foxitsoftware.com/product/reader/desktop/win/12.0.0/FoxitPDFReader1201_L10N_Setup_Prom.exe'
-    checksum       = '4bc1f0238be0129d5dba96e46803269e0bed27051bef7d745e7b9119bd60a8d7'
+    url            = 'https://cdn06.foxitsoftware.com/product/reader/desktop/win/12.0.2/FoxitPDFReader1202_L10N_Setup_Prom.exe'
+    checksum       = 'e96b55271e16746494c5ef2e29f04124975c4089fd0e3e5c9bd6d3be4ec7ffd8'
     checksumType   = 'sha256'
     silentArgs     = '/verysilent'
     validExitCodes = @(0)

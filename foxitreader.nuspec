@@ -4,39 +4,52 @@
   <metadata>
     <id>foxitreader</id>
     <title>Foxit PDF Reader</title>
-    <version>12.0.1.12430</version>
+    <version>12.0.2.12465</version>
     <authors>Foxit Software Incorporated</authors>
     <owners>ComFreek H.AlanStevens sublym0nal</owners>
     <summary>Foxit PDF Reader: The Best PDF Reader</summary>
     <description><![CDATA[
 ---
+
 ### [choco://foxitreader](choco://foxitreader)
-To use choco:// protocol URLs, install [(unofficial) choco:// Protocol support](https://chocolatey.org/packages/choco-protocol-support)
+
+To use choco:// protocol URLs, install [(unofficial) choco:// Protocol support](https://community.chocolatey.org/packages/choco-protocol-support)
 
 ---
 
-Foxit PDF Reader: The Best PDF Reader. With Foxit PDF Reader you can read and annotate PDF documents and fill out PDF forms.
+## Foxit PDF Reader
 
-**All open Foxit PDF Reader, Windows Explorer and browser instances must be closed during installation, update and uninstallation.**
-Otherwise, you might encounter error dialogs during the process asking you to close all instances.
-Windows Explorer must be closed due to Foxit PDF Reader's shell plugins, browser instances shall be closed proactively due to PDFs displayed inline.
+The industry’s most powerful PDF reader. View, annotate, form fill, and sign PDFs across your desktop, mobile device, and the web – no matter if you’re at the office, home, or on the go.
 
----
+![Foxit PDF Reader Screenshot](https://cdn.jsdelivr.net/gh/brogers5/chocolatey-package-foxitreader@bc276314a2bd44d6443a09ef7e8a2d1e2ed99ba9/Screenshot.png)
 
-## **PACKAGE NOTES**
+### Features
 
-The installer executed by this package was built using Inno Setup. For advanced setup scenarios, refer to [Inno Setup's command-line interface documentation](https://jrsoftware.org/ishelp/index.php?topic=setupcmdline). Any desired arguments can be appended to (or optionally overriding with the `--override-arguments` switch) the package's default install arguments with the `--install-arguments` option.
+#### Read and Print
 
-Installer-specific details (e.g. Setup configuration and supported Languages, Components, and Tasks) can be found in the Inno Setup Script file, which has been extracted using [Inno Setup Unpacker](https://community.chocolatey.org/packages/innounp) and [reuploaded for quick reference](https://github.com/brogers5/chocolatey-package-foxitreader/tree/v12.0.1.12430/install_script.iss).
+Experience the power of PDFs through a full functioned PDF Reader. Reading and printing PDFs couldn’t be easier. Leverage existing forms and workflows with standard PDF (Acroforms) and XFA (XML Form Architecture) form filling.
 
-For future upgrade operations, consider opting into Chocolatey's `useRememberedArgumentsForUpgrades` feature to avoid having to pass the same arguments with each upgrade:
-```
-choco feature enable -n=useRememberedArgumentsForUpgrades
-```
+#### Read PDF Anywhere
+
+Foxit PDF Reader is available on Windows, macOS, iOS, Android, the web, and Linux, and provides a consistent reading experience no matter where you are and what device you’re using.
+
+#### Collaborate and Share
+
+Integrate with leading cloud storage services and popular enterprise CMS. Collaborate through shared reviews while providing document feedback with a large variety of annotation tools. Add images, videos, and file attachments.
+
+#### Protect and Sign
+
+Sign documents in your own handwriting or utilize eSignature and verify the status of digital signatures. Be safe from vulnerabilities by utilizing Trust Manager/Safe Mode, ASLR & DEP, Disable JavaScript, and Security Warning Dialogs.
+
+## Package Parameters
+
+* `/NoShim` - Opt out of creating a shim, and removes any existing shim.
+
+## [Package Notes](https://github.com/brogers5/chocolatey-package-foxitreader/blob/v12.0.2.12465/PACKAGE-NOTES.md)
 ]]></description>
     <projectUrl>https://www.foxit.com/pdf-reader/</projectUrl>
     <docsUrl>https://www.foxit.com/support/usermanuals.html</docsUrl>
-    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-foxitreader/tree/v12.0.1.12430</packageSourceUrl>
+    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-foxitreader/tree/v12.0.2.12465</packageSourceUrl>
     <releaseNotes>https://www.foxit.com/pdf-reader/version-history.html</releaseNotes>
     <tags>Foxit PDF Reader office cross-platform freeware</tags>
     <licenseUrl>https://www.foxit.com/pdf-editor/eula.html</licenseUrl>

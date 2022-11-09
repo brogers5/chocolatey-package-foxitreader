@@ -4,7 +4,7 @@
 AppName={cm:AppName}
 AppVerName={cm:AppName}
 AppId=Foxit Reader
-AppVersion=12.0.1.12430
+AppVersion=12.0.2.12465
 AppPublisher=Foxit Software Inc.
 AppPublisherURL={cm:AppSupportURL}0
 AppSupportURL={cm:AppPublisherURL}0
@@ -13,7 +13,7 @@ DefaultDirName={pf}\Foxit Software\Foxit PDF Reader
 DefaultGroupName={cm:AppName}
 UninstallDisplayIcon={app}\FoxitPDFReader.exe
 UninstallDisplayName={cm:AppName}
-OutputBaseFilename=tmpAF9B.tmp
+OutputBaseFilename=tmp2A23.tmp
 Compression=lzma
 DisableDirPage=auto
 DisableProgramGroupPage=yes
