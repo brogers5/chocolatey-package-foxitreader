@@ -4,7 +4,7 @@
 AppName={cm:AppName}
 AppVerName={cm:AppName}
 AppId=Foxit Reader
-AppVersion=12.0.2.12465
+AppVersion=12.1.0.15250
 AppPublisher=Foxit Software Inc.
 AppPublisherURL={cm:AppSupportURL}0
 AppSupportURL={cm:AppPublisherURL}0
@@ -13,7 +13,7 @@ DefaultDirName={pf}\Foxit Software\Foxit PDF Reader
 DefaultGroupName={cm:AppName}
 UninstallDisplayIcon={app}\FoxitPDFReader.exe
 UninstallDisplayName={cm:AppName}
-OutputBaseFilename=tmp2A23.tmp
+OutputBaseFilename=tmp8D8A.tmp
 Compression=lzma
 DisableDirPage=auto
 DisableProgramGroupPage=yes
@@ -398,6 +398,7 @@ Source: "{app}\Start\da-DK\css\bootstrap.min.css"; DestDir: "{app}\Start\da-DK\c
 Source: "{app}\Start\da-DK\css\reader.css"; DestDir: "{app}\Start\da-DK\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\da-DK\css\reader_dark.css"; DestDir: "{app}\Start\da-DK\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\da-DK\Default\config.css"; DestDir: "{app}\Start\da-DK\Default"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\da-DK\history\history.json"; DestDir: "{app}\Start\da-DK\history"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\da-DK\images\5-star-rating.png"; DestDir: "{app}\Start\da-DK\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\da-DK\images\background-foxit-blog.jpg"; DestDir: "{app}\Start\da-DK\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\da-DK\images\background-phantompdf.jpg"; DestDir: "{app}\Start\da-DK\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -440,6 +441,7 @@ Source: "{app}\Start\de-DE\css\bootstrap.min.css"; DestDir: "{app}\Start\de-DE\c
 Source: "{app}\Start\de-DE\css\reader.css"; DestDir: "{app}\Start\de-DE\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\de-DE\css\reader_dark.css"; DestDir: "{app}\Start\de-DE\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\de-DE\Default\config.css"; DestDir: "{app}\Start\de-DE\Default"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\de-DE\history\history.json"; DestDir: "{app}\Start\de-DE\history"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\de-DE\images\5-star-rating.png"; DestDir: "{app}\Start\de-DE\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\de-DE\images\background-foxit-blog.jpg"; DestDir: "{app}\Start\de-DE\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\de-DE\images\background-phantompdf.jpg"; DestDir: "{app}\Start\de-DE\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -526,6 +528,7 @@ Source: "{app}\Start\es-419\css\bootstrap.min.css"; DestDir: "{app}\Start\es-419
 Source: "{app}\Start\es-419\css\reader.css"; DestDir: "{app}\Start\es-419\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\es-419\css\reader_dark.css"; DestDir: "{app}\Start\es-419\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\es-419\Default\config.css"; DestDir: "{app}\Start\es-419\Default"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\es-419\history\history.json"; DestDir: "{app}\Start\es-419\history"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\es-419\images\5-star-rating.png"; DestDir: "{app}\Start\es-419\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\es-419\images\background-foxit-blog.jpg"; DestDir: "{app}\Start\es-419\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\es-419\images\background-phantompdf.jpg"; DestDir: "{app}\Start\es-419\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -569,6 +572,7 @@ Source: "{app}\Start\fi-FI\css\bootstrap.min.css"; DestDir: "{app}\Start\fi-FI\c
 Source: "{app}\Start\fi-FI\css\reader.css"; DestDir: "{app}\Start\fi-FI\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\fi-FI\css\reader_dark.css"; DestDir: "{app}\Start\fi-FI\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\fi-FI\Default\config.css"; DestDir: "{app}\Start\fi-FI\Default"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\fi-FI\history\history.json"; DestDir: "{app}\Start\fi-FI\history"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\fi-FI\images\5-star-rating.png"; DestDir: "{app}\Start\fi-FI\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\fi-FI\images\background-foxit-blog.jpg"; DestDir: "{app}\Start\fi-FI\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\fi-FI\images\background-phantompdf.jpg"; DestDir: "{app}\Start\fi-FI\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -612,6 +616,7 @@ Source: "{app}\Start\fr-FR\css\bootstrap.min.css"; DestDir: "{app}\Start\fr-FR\c
 Source: "{app}\Start\fr-FR\css\reader.css"; DestDir: "{app}\Start\fr-FR\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\fr-FR\css\reader_dark.css"; DestDir: "{app}\Start\fr-FR\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\fr-FR\Default\config.css"; DestDir: "{app}\Start\fr-FR\Default"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\fr-FR\history\history.json"; DestDir: "{app}\Start\fr-FR\history"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\fr-FR\images\5-star-rating.png"; DestDir: "{app}\Start\fr-FR\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\fr-FR\images\background-foxit-blog.jpg"; DestDir: "{app}\Start\fr-FR\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\fr-FR\images\background-phantompdf.jpg"; DestDir: "{app}\Start\fr-FR\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -655,6 +660,7 @@ Source: "{app}\Start\it-IT\css\bootstrap.min.css"; DestDir: "{app}\Start\it-IT\c
 Source: "{app}\Start\it-IT\css\reader.css"; DestDir: "{app}\Start\it-IT\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\it-IT\css\reader_dark.css"; DestDir: "{app}\Start\it-IT\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\it-IT\Default\config.css"; DestDir: "{app}\Start\it-IT\Default"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\it-IT\history\history.json"; DestDir: "{app}\Start\it-IT\history"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\it-IT\images\5-star-rating.png"; DestDir: "{app}\Start\it-IT\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\it-IT\images\background-foxit-blog.jpg"; DestDir: "{app}\Start\it-IT\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\it-IT\images\background-phantompdf.jpg"; DestDir: "{app}\Start\it-IT\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -698,6 +704,7 @@ Source: "{app}\Start\ja-JP\css\bootstrap.min.css"; DestDir: "{app}\Start\ja-JP\c
 Source: "{app}\Start\ja-JP\css\reader.css"; DestDir: "{app}\Start\ja-JP\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ja-JP\css\reader_dark.css"; DestDir: "{app}\Start\ja-JP\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ja-JP\Default\config.css"; DestDir: "{app}\Start\ja-JP\Default"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\ja-JP\history\history.json"; DestDir: "{app}\Start\ja-JP\history"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ja-JP\images\5-star-rating.png"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ja-JP\images\background-foxit-blog.jpg"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ja-JP\images\background-phantompdf.jpg"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -745,6 +752,7 @@ Source: "{app}\Start\ko-KR\css\bootstrap.min.css"; DestDir: "{app}\Start\ko-KR\c
 Source: "{app}\Start\ko-KR\css\reader.css"; DestDir: "{app}\Start\ko-KR\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ko-KR\css\reader_dark.css"; DestDir: "{app}\Start\ko-KR\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ko-KR\Default\config.css"; DestDir: "{app}\Start\ko-KR\Default"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\ko-KR\history\history.json"; DestDir: "{app}\Start\ko-KR\history"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ko-KR\images\5-star-rating.png"; DestDir: "{app}\Start\ko-KR\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ko-KR\images\background-foxit-blog.jpg"; DestDir: "{app}\Start\ko-KR\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ko-KR\images\background-phantompdf.jpg"; DestDir: "{app}\Start\ko-KR\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -788,6 +796,7 @@ Source: "{app}\Start\nb-NO\css\bootstrap.min.css"; DestDir: "{app}\Start\nb-NO\c
 Source: "{app}\Start\nb-NO\css\reader.css"; DestDir: "{app}\Start\nb-NO\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\nb-NO\css\reader_dark.css"; DestDir: "{app}\Start\nb-NO\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\nb-NO\Default\config.css"; DestDir: "{app}\Start\nb-NO\Default"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\nb-NO\history\history.json"; DestDir: "{app}\Start\nb-NO\history"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\nb-NO\images\5-star-rating.png"; DestDir: "{app}\Start\nb-NO\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\nb-NO\images\background-foxit-blog.jpg"; DestDir: "{app}\Start\nb-NO\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\nb-NO\images\background-phantompdf.jpg"; DestDir: "{app}\Start\nb-NO\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -831,6 +840,7 @@ Source: "{app}\Start\nl-NL\css\bootstrap.min.css"; DestDir: "{app}\Start\nl-NL\c
 Source: "{app}\Start\nl-NL\css\reader.css"; DestDir: "{app}\Start\nl-NL\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\nl-NL\css\reader_dark.css"; DestDir: "{app}\Start\nl-NL\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\nl-NL\Default\config.css"; DestDir: "{app}\Start\nl-NL\Default"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\nl-NL\history\history.json"; DestDir: "{app}\Start\nl-NL\history"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\nl-NL\images\5-star-rating.png"; DestDir: "{app}\Start\nl-NL\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\nl-NL\images\background-foxit-blog.jpg"; DestDir: "{app}\Start\nl-NL\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\nl-NL\images\background-phantompdf.jpg"; DestDir: "{app}\Start\nl-NL\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -874,6 +884,7 @@ Source: "{app}\Start\pl-PL\css\bootstrap.min.css"; DestDir: "{app}\Start\pl-PL\c
 Source: "{app}\Start\pl-PL\css\reader.css"; DestDir: "{app}\Start\pl-PL\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\pl-PL\css\reader_dark.css"; DestDir: "{app}\Start\pl-PL\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\pl-PL\Default\config.css"; DestDir: "{app}\Start\pl-PL\Default"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\pl-PL\history\history.json"; DestDir: "{app}\Start\pl-PL\history"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\pl-PL\images\5-star-rating.png"; DestDir: "{app}\Start\pl-PL\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\pl-PL\images\background-foxit-blog.jpg"; DestDir: "{app}\Start\pl-PL\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\pl-PL\images\background-phantompdf.jpg"; DestDir: "{app}\Start\pl-PL\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -917,6 +928,7 @@ Source: "{app}\Start\pt-BR\css\bootstrap.min.css"; DestDir: "{app}\Start\pt-BR\c
 Source: "{app}\Start\pt-BR\css\reader.css"; DestDir: "{app}\Start\pt-BR\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\pt-BR\css\reader_dark.css"; DestDir: "{app}\Start\pt-BR\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\pt-BR\Default\config.css"; DestDir: "{app}\Start\pt-BR\Default"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\pt-BR\history\history.json"; DestDir: "{app}\Start\pt-BR\history"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\pt-BR\images\5-star-rating.png"; DestDir: "{app}\Start\pt-BR\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\pt-BR\images\background-foxit-blog.jpg"; DestDir: "{app}\Start\pt-BR\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\pt-BR\images\background-phantompdf.jpg"; DestDir: "{app}\Start\pt-BR\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -960,6 +972,7 @@ Source: "{app}\Start\ru-RU\css\bootstrap.min.css"; DestDir: "{app}\Start\ru-RU\c
 Source: "{app}\Start\ru-RU\css\reader.css"; DestDir: "{app}\Start\ru-RU\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ru-RU\css\reader_dark.css"; DestDir: "{app}\Start\ru-RU\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ru-RU\Default\config.css"; DestDir: "{app}\Start\ru-RU\Default"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\ru-RU\history\history.json"; DestDir: "{app}\Start\ru-RU\history"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ru-RU\images\5-star-rating.png"; DestDir: "{app}\Start\ru-RU\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ru-RU\images\background-foxit-blog.jpg"; DestDir: "{app}\Start\ru-RU\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ru-RU\images\background-phantompdf.jpg"; DestDir: "{app}\Start\ru-RU\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -1003,6 +1016,7 @@ Source: "{app}\Start\sv-SE\css\bootstrap.min.css"; DestDir: "{app}\Start\sv-SE\c
 Source: "{app}\Start\sv-SE\css\reader.css"; DestDir: "{app}\Start\sv-SE\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\sv-SE\css\reader_dark.css"; DestDir: "{app}\Start\sv-SE\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\sv-SE\Default\config.css"; DestDir: "{app}\Start\sv-SE\Default"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\sv-SE\history\history.json"; DestDir: "{app}\Start\sv-SE\history"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\sv-SE\images\5-star-rating.png"; DestDir: "{app}\Start\sv-SE\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\sv-SE\images\background-foxit-blog.jpg"; DestDir: "{app}\Start\sv-SE\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\sv-SE\images\background-phantompdf.jpg"; DestDir: "{app}\Start\sv-SE\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -1046,6 +1060,7 @@ Source: "{app}\Start\zh-CN\css\bootstrap.min.css"; DestDir: "{app}\Start\zh-CN\c
 Source: "{app}\Start\zh-CN\css\reader.css"; DestDir: "{app}\Start\zh-CN\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\zh-CN\css\reader_dark.css"; DestDir: "{app}\Start\zh-CN\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\zh-CN\Default\config.css"; DestDir: "{app}\Start\zh-CN\Default"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\zh-CN\history\history.json"; DestDir: "{app}\Start\zh-CN\history"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\zh-CN\images\5-star-rating.png"; DestDir: "{app}\Start\zh-CN\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\zh-CN\images\background-foxit-blog.jpg"; DestDir: "{app}\Start\zh-CN\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\zh-CN\images\background-phantompdf.jpg"; DestDir: "{app}\Start\zh-CN\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -1089,6 +1104,7 @@ Source: "{app}\Start\zh-TW\css\bootstrap.min.css"; DestDir: "{app}\Start\zh-TW\c
 Source: "{app}\Start\zh-TW\css\reader.css"; DestDir: "{app}\Start\zh-TW\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\zh-TW\css\reader_dark.css"; DestDir: "{app}\Start\zh-TW\css"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\zh-TW\Default\config.css"; DestDir: "{app}\Start\zh-TW\Default"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\zh-TW\history\history.json"; DestDir: "{app}\Start\zh-TW\history"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\zh-TW\images\5-star-rating.png"; DestDir: "{app}\Start\zh-TW\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\zh-TW\images\background-foxit-blog.jpg"; DestDir: "{app}\Start\zh-TW\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\zh-TW\images\background-phantompdf.jpg"; DestDir: "{app}\Start\zh-TW\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -1214,6 +1230,7 @@ Source: "{app}\skins\Ribbon\Black\Thumbnail\Thumbnail.png"; DestDir: "{app}\skin
 Source: "{app}\skins\Ribbon\Blue\Blue.xml"; DestDir: "{app}\skins\Ribbon\Blue"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Ribbon\Orange\Orange.xml"; DestDir: "{app}\skins\Ribbon\Orange"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Ribbon\Purple\Purple.xml"; DestDir: "{app}\skins\Ribbon\Purple"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\skins\UseSystem\Thumbnail\Thumbnail.png"; DestDir: "{app}\skins\UseSystem\Thumbnail"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\stamps\da-DK\Dynamic Stamps.pdf"; DestDir: "{app}\stamps\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\stamps\da-DK\Sign Here.pdf"; DestDir: "{app}\stamps\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\stamps\da-DK\Standard Stamps.pdf"; DestDir: "{app}\stamps\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -1378,6 +1395,28 @@ Source: "{app}\auiresources\FoxitSign\ui\SignPasswordDlg.ui.fx"; DestDir: "{app}
 Source: "{app}\auiresources\FoxitSign\ui\signpreviewpage.ui.fx"; DestDir: "{app}\auiresources\FoxitSign\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\FoxitSign\ui\StyleManageDlg.ui.fx"; DestDir: "{app}\auiresources\FoxitSign\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\FoxitSign\ui\tooltip.ui.fx"; DestDir: "{app}\auiresources\FoxitSign\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\img\info16.png"; DestDir: "{app}\auiresources\FXExport\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\img\info24.png"; DestDir: "{app}\auiresources\FXExport\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\img\info32.png"; DestDir: "{app}\auiresources\FXExport\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\img\info_24.png"; DestDir: "{app}\auiresources\FXExport\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\ui\bmpseting_dialog.ui.fx"; DestDir: "{app}\auiresources\FXExport\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\ui\enginedlg.ui.fx"; DestDir: "{app}\auiresources\FXExport\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\ui\errordlg.ui.fx"; DestDir: "{app}\auiresources\FXExport\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\ui\excelseting_dialog.ui.fx"; DestDir: "{app}\auiresources\FXExport\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\ui\exporthtml.ui.fx"; DestDir: "{app}\auiresources\FXExport\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\ui\exportimage.ui.fx"; DestDir: "{app}\auiresources\FXExport\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\ui\exportmsoffice.ui.fx"; DestDir: "{app}\auiresources\FXExport\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\ui\exportother.ui.fx"; DestDir: "{app}\auiresources\FXExport\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\ui\htmlseting_dialog.ui.fx"; DestDir: "{app}\auiresources\FXExport\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\ui\jpegseting_dialog.ui.fx"; DestDir: "{app}\auiresources\FXExport\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\ui\jpxseting_dialog.ui.fx"; DestDir: "{app}\auiresources\FXExport\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\ui\otherseting_dialog.ui.fx"; DestDir: "{app}\auiresources\FXExport\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\ui\pageselect_subdlg.ui.fx"; DestDir: "{app}\auiresources\FXExport\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\ui\pngseting_dialog.ui.fx"; DestDir: "{app}\auiresources\FXExport\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\ui\tiffseting_dialog.ui.fx"; DestDir: "{app}\auiresources\FXExport\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\ui\wodrtfsetingdlg.ui.fx"; DestDir: "{app}\auiresources\FXExport\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\ui\wordsettingdlg.ui.fx"; DestDir: "{app}\auiresources\FXExport\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FXExport\ui\xpsseting_dialog.ui.fx"; DestDir: "{app}\auiresources\FXExport\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Globalwnd\img\info_16.png"; DestDir: "{app}\auiresources\Globalwnd\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Globalwnd\img\info_24.png"; DestDir: "{app}\auiresources\Globalwnd\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Globalwnd\img\info_32.png"; DestDir: "{app}\auiresources\Globalwnd\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -1402,7 +1441,19 @@ Source: "{app}\auiresources\Globalwnd\ui\rg_filelistdialog.ui.fx"; DestDir: "{ap
 Source: "{app}\auiresources\Globalwnd\ui\rg_outputoptiondlg.ui.fx"; DestDir: "{app}\auiresources\Globalwnd\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Globalwnd\ui\sgpkcs12dlg.ui.fx"; DestDir: "{app}\auiresources\Globalwnd\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Globalwnd\ui\xlistctrldlg.ui.fx"; DestDir: "{app}\auiresources\Globalwnd\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\IDoxAI\img\bulb.png"; DestDir: "{app}\auiresources\IDoxAI\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\IDoxAI\img\bulb@2x.png"; DestDir: "{app}\auiresources\IDoxAI\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\IDoxAI\img\bulb_dark.png"; DestDir: "{app}\auiresources\IDoxAI\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\IDoxAI\img\bulb_dark@2x.png"; DestDir: "{app}\auiresources\IDoxAI\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\IDoxAI\img\infomation.png"; DestDir: "{app}\auiresources\IDoxAI\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\IDoxAI\img\infomation@2x.png"; DestDir: "{app}\auiresources\IDoxAI\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\IDoxAI\img\welcomeLeftImg.png"; DestDir: "{app}\auiresources\IDoxAI\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\IDoxAI\img\welcomeLeftImg@2x.png"; DestDir: "{app}\auiresources\IDoxAI\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\IDoxAI\img\welcomeLeftImg_dark.png"; DestDir: "{app}\auiresources\IDoxAI\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\IDoxAI\img\welcomeLeftImg_dark@2x.png"; DestDir: "{app}\auiresources\IDoxAI\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\IDoxAI\ui\sr_info.ui.fx"; DestDir: "{app}\auiresources\IDoxAI\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\IDoxAI\ui\sr_multifilesdlg.ui.fx"; DestDir: "{app}\auiresources\IDoxAI\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\IDoxAI\ui\sr_welcomedlg.ui.fx"; DestDir: "{app}\auiresources\IDoxAI\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\InkSign\img\bulb.png"; DestDir: "{app}\auiresources\InkSign\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\InkSign\img\bulb@2x.png"; DestDir: "{app}\auiresources\InkSign\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\InkSign\img\bulb_dark.png"; DestDir: "{app}\auiresources\InkSign\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -1834,6 +1885,8 @@ Source: "{app}\lang\da-DK\Email_da-DK.ts.fx"; DestDir: "{app}\lang\da-DK"; Befor
 Source: "{app}\lang\da-DK\Email_strings_da-DK.xml.fx"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\da-DK\FoxitSign_da-DK.ts.fx"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\da-DK\FoxitSign_strings_da-DK.xml.fx"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\da-DK\FXExport_da-DK.ts.fx"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\da-DK\FXExport_strings_da-DK.xml.fx"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\da-DK\Globalwnd_da-DK.ts.fx"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\da-DK\Globalwnd_strings_da-DK.xml.fx"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\da-DK\InkSign_da-DK.ts.fx"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -1866,6 +1919,8 @@ Source: "{app}\lang\de-DE\Email_de-DE.ts.fx"; DestDir: "{app}\lang\de-DE"; Befor
 Source: "{app}\lang\de-DE\Email_strings_de-DE.xml.fx"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\de-DE\FoxitSign_de-DE.ts.fx"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\de-DE\FoxitSign_strings_de-DE.xml.fx"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\de-DE\FXExport_de-DE.ts.fx"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\de-DE\FXExport_strings_de-DE.xml.fx"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\de-DE\Globalwnd_de-DE.ts.fx"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\de-DE\Globalwnd_strings_de-DE.xml.fx"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\de-DE\InkSign_de-DE.ts.fx"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -1894,6 +1949,7 @@ Source: "{app}\lang\de-DE\touchup_strings_de-DE.xml.fx"; DestDir: "{app}\lang\de
 Source: "{app}\lang\en-US\DocProcess_strings_en-US.xml.fx"; DestDir: "{app}\lang\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\en-US\Email_strings_en-US.xml.fx"; DestDir: "{app}\lang\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\en-US\FoxitSign_strings_en-US.xml.fx"; DestDir: "{app}\lang\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\en-US\FXExport_strings_en-US.xml.fx"; DestDir: "{app}\lang\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\en-US\Globalwnd_strings_en-US.xml.fx"; DestDir: "{app}\lang\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\en-US\IDoxAI_strings_en-US.xml.fx"; DestDir: "{app}\lang\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\en-US\InkSign_strings_en-US.xml.fx"; DestDir: "{app}\lang\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -1915,6 +1971,8 @@ Source: "{app}\lang\es-419\Email_strings_es-419.xml.fx"; DestDir: "{app}\lang\es
 Source: "{app}\lang\es-419\es-419.ts.fx"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\es-419\FoxitSign_es-419.ts.fx"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\es-419\FoxitSign_strings_es-419.xml.fx"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\es-419\FXExport_es-419.ts.fx"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\es-419\FXExport_strings_es-419.xml.fx"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\es-419\Globalwnd_es-419.ts.fx"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\es-419\Globalwnd_strings_es-419.xml.fx"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\es-419\InkSign_es-419.ts.fx"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -1947,6 +2005,8 @@ Source: "{app}\lang\fi-FI\Email_strings_fi-FI.xml.fx"; DestDir: "{app}\lang\fi-F
 Source: "{app}\lang\fi-FI\fi-FI.ts.fx"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fi-FI\FoxitSign_fi-FI.ts.fx"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fi-FI\FoxitSign_strings_fi-FI.xml.fx"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\fi-FI\FXExport_fi-FI.ts.fx"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\fi-FI\FXExport_strings_fi-FI.xml.fx"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fi-FI\Globalwnd_fi-FI.ts.fx"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fi-FI\Globalwnd_strings_fi-FI.xml.fx"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fi-FI\InkSign_fi-FI.ts.fx"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -1979,6 +2039,8 @@ Source: "{app}\lang\fr-FR\Email_strings_fr-FR.xml.fx"; DestDir: "{app}\lang\fr-F
 Source: "{app}\lang\fr-FR\FoxitSign_fr-FR.ts.fx"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fr-FR\FoxitSign_strings_fr-FR.xml.fx"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fr-FR\fr-FR.ts.fx"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\fr-FR\FXExport_fr-FR.ts.fx"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\fr-FR\FXExport_strings_fr-FR.xml.fx"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fr-FR\Globalwnd_fr-FR.ts.fx"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fr-FR\Globalwnd_strings_fr-FR.xml.fx"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fr-FR\InkSign_fr-FR.ts.fx"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2010,6 +2072,8 @@ Source: "{app}\lang\it-IT\Email_it-IT.ts.fx"; DestDir: "{app}\lang\it-IT"; Befor
 Source: "{app}\lang\it-IT\Email_strings_it-IT.xml.fx"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\it-IT\FoxitSign_it-IT.ts.fx"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\it-IT\FoxitSign_strings_it-IT.xml.fx"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\it-IT\FXExport_it-IT.ts.fx"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\it-IT\FXExport_strings_it-IT.xml.fx"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\it-IT\Globalwnd_it-IT.ts.fx"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\it-IT\Globalwnd_strings_it-IT.xml.fx"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\it-IT\InkSign_it-IT.ts.fx"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2042,6 +2106,8 @@ Source: "{app}\lang\ja-JP\Email_ja-JP.ts.fx"; DestDir: "{app}\lang\ja-JP"; Befor
 Source: "{app}\lang\ja-JP\Email_strings_ja-JP.xml.fx"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ja-JP\FoxitSign_ja-JP.ts.fx"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ja-JP\FoxitSign_strings_ja-JP.xml.fx"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\ja-JP\FXExport_ja-JP.ts.fx"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\ja-JP\FXExport_strings_ja-JP.xml.fx"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ja-JP\Globalwnd_ja-JP.ts.fx"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ja-JP\Globalwnd_strings_ja-JP.xml.fx"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ja-JP\InkSign_ja-JP.ts.fx"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2074,6 +2140,8 @@ Source: "{app}\lang\ko-KR\Email_ko-KR.ts.fx"; DestDir: "{app}\lang\ko-KR"; Befor
 Source: "{app}\lang\ko-KR\Email_strings_ko-KR.xml.fx"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ko-KR\FoxitSign_ko-KR.ts.fx"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ko-KR\FoxitSign_strings_ko-KR.xml.fx"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\ko-KR\FXExport_ko-KR.ts.fx"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\ko-KR\FXExport_strings_ko-KR.xml.fx"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ko-KR\Globalwnd_ko-KR.ts.fx"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ko-KR\Globalwnd_strings_ko-KR.xml.fx"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ko-KR\InkSign_ko-KR.ts.fx"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2106,6 +2174,8 @@ Source: "{app}\lang\nb-NO\Email_nb-NO.ts.fx"; DestDir: "{app}\lang\nb-NO"; Befor
 Source: "{app}\lang\nb-NO\Email_strings_nb-NO.xml.fx"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nb-NO\FoxitSign_nb-NO.ts.fx"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nb-NO\FoxitSign_strings_nb-NO.xml.fx"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\nb-NO\FXExport_nb-NO.ts.fx"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\nb-NO\FXExport_strings_nb-NO.xml.fx"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nb-NO\Globalwnd_nb-NO.ts.fx"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nb-NO\Globalwnd_strings_nb-NO.xml.fx"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nb-NO\InkSign_nb-NO.ts.fx"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2138,6 +2208,8 @@ Source: "{app}\lang\nl-NL\Email_nl-NL.ts.fx"; DestDir: "{app}\lang\nl-NL"; Befor
 Source: "{app}\lang\nl-NL\Email_strings_nl-NL.xml.fx"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nl-NL\FoxitSign_nl-NL.ts.fx"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nl-NL\FoxitSign_strings_nl-NL.xml.fx"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\nl-NL\FXExport_nl-NL.ts.fx"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\nl-NL\FXExport_strings_nl-NL.xml.fx"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nl-NL\Globalwnd_nl-NL.ts.fx"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nl-NL\Globalwnd_strings_nl-NL.xml.fx"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nl-NL\InkSign_nl-NL.ts.fx"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2170,6 +2242,8 @@ Source: "{app}\lang\pl-PL\Email_pl-PL.ts.fx"; DestDir: "{app}\lang\pl-PL"; Befor
 Source: "{app}\lang\pl-PL\Email_strings_pl-PL.xml.fx"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pl-PL\FoxitSign_pl-PL.ts.fx"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pl-PL\FoxitSign_strings_pl-PL.xml.fx"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\pl-PL\FXExport_pl-PL.ts.fx"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\pl-PL\FXExport_strings_pl-PL.xml.fx"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pl-PL\Globalwnd_pl-PL.ts.fx"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pl-PL\Globalwnd_strings_pl-PL.xml.fx"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pl-PL\InkSign_pl-PL.ts.fx"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2202,6 +2276,8 @@ Source: "{app}\lang\pt-BR\Email_pt-BR.ts.fx"; DestDir: "{app}\lang\pt-BR"; Befor
 Source: "{app}\lang\pt-BR\Email_strings_pt-BR.xml.fx"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pt-BR\FoxitSign_pt-BR.ts.fx"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pt-BR\FoxitSign_strings_pt-BR.xml.fx"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\pt-BR\FXExport_pt-BR.ts.fx"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\pt-BR\FXExport_strings_pt-BR.xml.fx"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pt-BR\Globalwnd_pt-BR.ts.fx"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pt-BR\Globalwnd_strings_pt-BR.xml.fx"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pt-BR\InkSign_pt-BR.ts.fx"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2234,6 +2310,8 @@ Source: "{app}\lang\ru-RU\Email_ru-RU.ts.fx"; DestDir: "{app}\lang\ru-RU"; Befor
 Source: "{app}\lang\ru-RU\Email_strings_ru-RU.xml.fx"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ru-RU\FoxitSign_ru-RU.ts.fx"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ru-RU\FoxitSign_strings_ru-RU.xml.fx"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\ru-RU\FXExport_ru-RU.ts.fx"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\ru-RU\FXExport_strings_ru-RU.xml.fx"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ru-RU\Globalwnd_ru-RU.ts.fx"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ru-RU\Globalwnd_strings_ru-RU.xml.fx"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ru-RU\InkSign_ru-RU.ts.fx"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2266,6 +2344,8 @@ Source: "{app}\lang\sv-SE\Email_strings_sv-SE.xml.fx"; DestDir: "{app}\lang\sv-S
 Source: "{app}\lang\sv-SE\Email_sv-SE.ts.fx"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\sv-SE\FoxitSign_strings_sv-SE.xml.fx"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\sv-SE\FoxitSign_sv-SE.ts.fx"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\sv-SE\FXExport_strings_sv-SE.xml.fx"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\sv-SE\FXExport_sv-SE.ts.fx"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\sv-SE\Globalwnd_strings_sv-SE.xml.fx"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\sv-SE\Globalwnd_sv-SE.ts.fx"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\sv-SE\InkSign_strings_sv-SE.xml.fx"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2298,6 +2378,8 @@ Source: "{app}\lang\zh-CN\Email_strings_zh-CN.xml.fx"; DestDir: "{app}\lang\zh-C
 Source: "{app}\lang\zh-CN\Email_zh-CN.ts.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\FoxitSign_strings_zh-CN.xml.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\FoxitSign_zh-CN.ts.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\zh-CN\FXExport_strings_zh-CN.xml.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\zh-CN\FXExport_zh-CN.ts.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\Globalwnd_strings_zh-CN.xml.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\Globalwnd_zh-CN.ts.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\InkSign_strings_zh-CN.xml.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2330,6 +2412,8 @@ Source: "{app}\lang\zh-TW\Email_strings_zh-TW.xml.fx"; DestDir: "{app}\lang\zh-T
 Source: "{app}\lang\zh-TW\Email_zh-TW.ts.fx"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-TW\FoxitSign_strings_zh-TW.xml.fx"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-TW\FoxitSign_zh-TW.ts.fx"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\zh-TW\FXExport_strings_zh-TW.xml.fx"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\zh-TW\FXExport_zh-TW.ts.fx"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-TW\Globalwnd_strings_zh-TW.xml.fx"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-TW\Globalwnd_zh-TW.ts.fx"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-TW\InkSign_strings_zh-TW.xml.fx"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -3046,17 +3130,6 @@ Source: "{tmp}\Splash.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: delete
 
 [Dirs]
 Name: "{app}\Javascripts"; Flags: uninsalwaysuninstall 
-Name: "{app}\Start\de-DE\history\"; 
-Name: "{app}\Start\es-419\history\"; 
-Name: "{app}\Start\fr-FR\history\"; 
-Name: "{app}\Start\it-IT\history\"; 
-Name: "{app}\Start\ja-JP\history\"; 
-Name: "{app}\Start\ko-KR\history\"; 
-Name: "{app}\Start\nl-NL\history\"; 
-Name: "{app}\Start\pl-PL\history\"; 
-Name: "{app}\Start\pt-BR\history\"; 
-Name: "{app}\Start\ru-RU\history\"; 
-Name: "{app}\Start\zh-TW\history\"; 
 
 [Registry]
 Root: HKLM; Subkey: "SOFTWARE\Foxit Software\Foxit PDF Reader"; ValueName: "Edition"; ValueType: String; ValueData: "0"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
@@ -3068,10 +3141,10 @@ Root: HKLM; Subkey: "SOFTWARE\Classes\FoxitPDFReader"; ValueName: "URL Protocol"
 Root: HKLM; Subkey: "SOFTWARE\Classes\FoxitPDFReader\DefaultIcon"; ValueType: String; ValueData: "{app}\FoxitPDFReader.exe 0"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader 12.0\Preferences\General"; ValueName: "bCollectData"; ValueType: String; ValueData: "1"; Check: "IsTaskSelected('setCollectData')"; MinVersion: 0.0,5.0; 
 Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader 12.0\Preferences\General"; ValueName: "bCollectData"; ValueType: String; ValueData: "0"; Check: "not IsTaskSelected('setCollectData')"; MinVersion: 0.0,5.0; 
-Root: HKCU; Subkey: "Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache"; ValueName: "{app}\FoxitPDFReader.exe"; ValueType: String; ValueData: "Foxit PDF Reader 12.0"; MinVersion: 0.0,5.0; 
-Root: HKCU; Subkey: "Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache"; ValueName: "{app}\FoxitPDFReader.exe.FriendlyAppName"; ValueType: String; ValueData: "Foxit PDF Reader 12.0"; MinVersion: 0.0,5.0; 
-Root: HKCU; Subkey: "Software\Microsoft\Windows\ShellNoRoam\MUICache"; ValueName: "{app}\FoxitPDFReader.exe"; ValueType: String; ValueData: "Foxit PDF Reader 12.0"; MinVersion: 0.0,5.0; 
-Root: HKCU; Subkey: "Software\Microsoft\Windows\ShellNoRoam\MUICache"; ValueName: "{app}\FoxitPDFReader.exe.FriendlyAppName"; ValueType: String; ValueData: "Foxit PDF Reader 12.0"; MinVersion: 0.0,5.0; 
+Root: HKCU; Subkey: "Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache"; ValueName: "{app}\FoxitPDFReader.exe"; ValueType: String; ValueData: "Foxit PDF Reader 12.1"; MinVersion: 0.0,5.0; 
+Root: HKCU; Subkey: "Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache"; ValueName: "{app}\FoxitPDFReader.exe.FriendlyAppName"; ValueType: String; ValueData: "Foxit PDF Reader 12.1"; MinVersion: 0.0,5.0; 
+Root: HKCU; Subkey: "Software\Microsoft\Windows\ShellNoRoam\MUICache"; ValueName: "{app}\FoxitPDFReader.exe"; ValueType: String; ValueData: "Foxit PDF Reader 12.1"; MinVersion: 0.0,5.0; 
+Root: HKCU; Subkey: "Software\Microsoft\Windows\ShellNoRoam\MUICache"; ValueName: "{app}\FoxitPDFReader.exe.FriendlyAppName"; ValueType: String; ValueData: "Foxit PDF Reader 12.1"; MinVersion: 0.0,5.0; 
 Root: HKLM; Subkey: "SOFTWARE\Foxit Software\Foxit PDF Reader\Capabilities\FileAssociations"; ValueName: ".pdf"; ValueType: String; ValueData: "FoxitReader.Document"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKLM; Subkey: "SOFTWARE\Foxit Software\Foxit PDF Reader\Capabilities\FileAssociations"; ValueName: ".fdf"; ValueType: String; ValueData: "FoxitReader.FDFDoc"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKLM; Subkey: "SOFTWARE\Foxit Software\Foxit PDF Reader\Capabilities\FileAssociations"; ValueName: ".xfdf"; ValueType: String; ValueData: "FoxitReader.XFDFDoc"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
