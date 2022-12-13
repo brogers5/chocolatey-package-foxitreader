@@ -63,17 +63,7 @@ function global:au_GetLatest
     $versionHistoryPage = Invoke-WebRequest -Uri $versionHistoryUri -UserAgent $userAgent -UseBasicParsing
 
     $version = [Regex]::Matches($versionHistoryPage.Content, "(?i)<h3[^>]*>(Foxit Reader|Version) (.*)</h3>").Groups[2].Value
-
-    # Using a non-English language selection to be directed toward the L10N installer binary.
-    $canonicalUrl = 'https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&version=&package_type=exe&language=German'
-    
-    # Foxit's version directory placement has not been consistent. Source a server-local path dynamically.
-    $headResponse = Invoke-WebRequest -Uri $canonicalUrl -UserAgent $userAgent -Method Head
-    $redirectedRequestUri = $headResponse.BaseResponse.RequestMessage.RequestUri
-    $localPath = $redirectedRequestUri.LocalPath
-
-    # Use cdn06 node specifically for optimal download speeds 
-    $url32 = "https://cdn06.foxitsoftware.com$localPath"
+    $url32 = "https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&package_type=exe&language=L10N&version=$version"
 
     return @{
         Url32 = $url32
