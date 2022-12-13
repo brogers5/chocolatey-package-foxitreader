@@ -68,7 +68,7 @@ function global:au_GetLatest
     $canonicalUrl = 'https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&version=&package_type=exe&language=German'
     
     # Foxit's version directory placement has not been consistent. Source a server-local path dynamically.
-    $headResponse = Invoke-WebRequest -Uri $canonicalUrl -Method Head
+    $headResponse = Invoke-WebRequest -Uri $canonicalUrl -UserAgent $userAgent -Method Head
     $redirectedRequestUri = $headResponse.BaseResponse.RequestMessage.RequestUri
     $localPath = $redirectedRequestUri.LocalPath
 
