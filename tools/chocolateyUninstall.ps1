@@ -1,11 +1,11 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageArgs = @{
-    packageName   = $env:ChocolateyPackageName
-    softwareName  = 'Foxit *Reader'
-    fileType      = 'EXE'
-    silentArgs    = "/VERYSILENT /norestart"
-    validExitCodes= @(0)
+    packageName    = $env:ChocolateyPackageName
+    softwareName   = 'Foxit *Reader'
+    fileType       = 'EXE'
+    silentArgs     = "/VERYSILENT /norestart"
+    validExitCodes = @(0)
 }
 
 [array] $keys = Get-UninstallRegistryKey -SoftwareName $packageArgs['softwareName']
@@ -21,7 +21,7 @@ elseif ($keys.Count -gt 1) {
     Write-Warning "$($keys.Count) matches found!"
     Write-Warning "To prevent accidental data loss, no programs will be uninstalled."
     Write-Warning "Please alert package maintainer the following keys were matched:"
-    $keys | ForEach-Object {Write-Warning "- $($_.DisplayName)"}
+    $keys | ForEach-Object { Write-Warning "- $($_.DisplayName)" }
 }
 
 Uninstall-BinFile -Name 'FoxitPDFReader'

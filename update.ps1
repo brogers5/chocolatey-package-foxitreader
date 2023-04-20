@@ -1,9 +1,7 @@
 Import-Module au
 
-function Get-InstallScript($FilePath)
-{
-    if (!(Get-Command "innounp.exe" -ErrorAction SilentlyContinue))
-    {
+function Get-InstallScript($FilePath) {
+    if (!(Get-Command "innounp.exe" -ErrorAction SilentlyContinue)) {
         Write-Information "innounp is not available on PATH, installing..."
         choco install innounp 
     }
@@ -12,8 +10,7 @@ function Get-InstallScript($FilePath)
     innounp -x $FilePath $installScriptFileName -y
 }
 
-function global:au_BeforeUpdate ($Package)
-{
+function global:au_BeforeUpdate ($Package) {
     $tempFilePath = New-TemporaryFile
     Invoke-WebRequest -Uri $Latest.Url32 -OutFile $tempFilePath
 
@@ -34,20 +31,18 @@ function global:au_BeforeUpdate ($Package)
     Set-DescriptionFromReadme -Package $Package -ReadmePath $readmePath
 }
 
-function global:au_AfterUpdate ($Package)
-{
+function global:au_AfterUpdate ($Package) {
 
 }
 
-function global:au_SearchReplace
-{
+function global:au_SearchReplace {
     @{
         "$($Latest.PackageName).nuspec" = @{
             "(<packageSourceUrl>)[^<]*(</packageSourceUrl>)" = "`$1https://github.com/brogers5/chocolatey-package-$($Latest.PackageName)/tree/v$($Latest.Version)`$2"
-            "(<copyright>)[^<]*(</copyright>)" = "`${1}$($(Get-Date -Format yyyy)) © Foxit Software Incorporated. All rights reserved.`$2"
+            "(<copyright>)[^<]*(</copyright>)"               = "`${1}$($(Get-Date -Format yyyy)) © Foxit Software Incorporated. All rights reserved.`$2"
         }
-        'tools\chocolateyInstall.ps1' = @{
-            "(^[$]?\s*url\s*=\s*)('.*')" = "`$1'$($Latest.Url32)'"
+        'tools\chocolateyInstall.ps1'   = @{
+            "(^[$]?\s*url\s*=\s*)('.*')"      = "`$1'$($Latest.Url32)'"
             "(^[$]?\s*checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
         }
         'PACKAGE-NOTES.md' = @{
@@ -56,8 +51,7 @@ function global:au_SearchReplace
     }
 }
 
-function global:au_GetLatest
-{
+function global:au_GetLatest {
     $versionHistoryUri = 'https://www.foxit.com/pdf-reader/version-history.html'
     $userAgent = 'Update checker of Chocolatey Community Package ''foxitreader'''
     $versionHistoryPage = Invoke-WebRequest -Uri $versionHistoryUri -UserAgent $userAgent -UseBasicParsing
@@ -66,7 +60,7 @@ function global:au_GetLatest
     $url32 = "https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&package_type=exe&language=L10N&version=$version"
 
     return @{
-        Url32 = $url32
+        Url32   = $url32
         Version = $version
     }
 }
