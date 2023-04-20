@@ -56,7 +56,7 @@ Sign documents in your own handwriting or utilize eSignature and verify the stat
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.jsdelivr.net/gh/brogers5/chocolatey-package-foxitreader@b05f9599629ce6ad99e1889e4651f3c4f870b476/FoxitReader.png</iconUrl>
     <copyright>2023 © Foxit Software Incorporated. All rights reserved.</copyright>
-    <mailingListUrl>https://forums.foxitsoftware.com/forum/portable-document-format-pdf-tools/foxit-reader</mailingListUrl>
+    <mailingListUrl>https://kb.foxit.com/hc/en-us/community/topics/5008047080724-Foxit-PDF-Reader</mailingListUrl>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.0.0" />
     </dependencies>
