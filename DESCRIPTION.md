@@ -9,7 +9,7 @@ To use choco:// protocol URLs, install [(unofficial) choco:// Protocol support](
 
 ## Foxit PDF Reader
 
-The industry’s most powerful PDF reader. View, annotate, form fill, and sign PDFs across your desktop, mobile device, and the web – no matter if you’re at the office, home, or on the go.
+The industry's most powerful PDF reader. View, annotate, form fill, and sign PDFs across your desktop, mobile device, and the web – no matter if you're at the office, home, or on the go.
 
 ![Foxit PDF Reader Screenshot](https://cdn.jsdelivr.net/gh/brogers5/chocolatey-package-foxitreader@bc276314a2bd44d6443a09ef7e8a2d1e2ed99ba9/Screenshot.png)
 
@@ -17,11 +17,11 @@ The industry’s most powerful PDF reader. View, annotate, form fill, and sign P
 
 #### Read and Print
 
-Experience the power of PDFs through a full functioned PDF Reader. Reading and printing PDFs couldn’t be easier. Leverage existing forms and workflows with standard PDF (Acroforms) and XFA (XML Form Architecture) form filling.
+Experience the power of PDFs through a full functioned PDF Reader. Reading and printing PDFs couldn't be easier. Leverage existing forms and workflows with standard PDF (Acroforms) and XFA (XML Form Architecture) form filling.
 
 #### Read PDF Anywhere
 
-Foxit PDF Reader is available on Windows, macOS, iOS, Android, the web, and Linux, and provides a consistent reading experience no matter where you are and what device you’re using.
+Foxit PDF Reader is available on Windows, macOS, iOS, Android, the web, and Linux, and provides a consistent reading experience no matter where you are and what device you're using.
 
 #### Collaborate and Share
 
