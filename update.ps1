@@ -52,12 +52,30 @@ function global:au_GetLatest {
     $userAgent = 'Update checker of Chocolatey Community Package ''foxitreader'''
     $versionHistoryPage = Invoke-WebRequest -Uri $versionHistoryUri -UserAgent $userAgent -UseBasicParsing
 
-    $version = [Regex]::Matches($versionHistoryPage.Content, "(?i)<h3[^>]*>(Foxit Reader|Version) (.*)</h3>").Groups[2].Value
-    $url32 = "https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&package_type=exe&language=L10N&version=$version"
+    $version = [Version] [Regex]::Matches($versionHistoryPage.Content, "(?i)<h3[^>]*>(Foxit Reader|Version) (.*)</h3>").Groups[2].Value
+
+    if ($version.Build -eq 0) {
+        $fileNameVersion = "$($version.Major)$($version.Minor)"
+    }
+    else {
+        $fileNameVersion = "$($version.Major)$($version.Minor)$($version.Build)"
+    }
+
+    # Using a non-English language selection to be directed toward the L10N installer binary.
+    $canonicalUrl = 'https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&version=&package_type=exe&language=L10N'
+    
+    # Foxit's version directory placement has not been consistent. Source a server-local path dynamically.
+    $headResponse = Invoke-WebRequest -Uri $canonicalUrl -UserAgent $userAgent -Method Head
+    $redirectedRequestUri = $headResponse.BaseResponse.ResponseUri
+    $redirectedUriSegments = $redirectedRequestUri.Segments
+    $redirectedUriDirectory = $redirectedRequestUri.AbsoluteUri.TrimEnd($redirectedUriSegments[$redirectedUriSegments.Length - 1])
+
+    # Probe specifically for Multi-Language Promotion with Editor EXE installer, as the canonical URL may sometimes point to a different installer type
+    $url32 = "$($redirectedUriDirectory)FoxitPDFReader$($fileNameVersion)_L10N_Setup_Prom.exe"
 
     return @{
         Url32   = $url32
-        Version = $version
+        Version = $version.ToString()
     }
 }
 
