@@ -4,7 +4,7 @@
 AppName={cm:AppName}
 AppVerName={cm:AppName}
 AppId=Foxit Reader
-AppVersion=12.1.1.15289
+AppVersion=12.1.2.15332
 AppPublisher=Foxit Software Inc.
 AppPublisherURL={cm:AppSupportURL}0
 AppSupportURL={cm:AppPublisherURL}0
@@ -13,7 +13,7 @@ DefaultDirName={pf}\Foxit Software\Foxit PDF Reader
 DefaultGroupName={cm:AppName}
 UninstallDisplayIcon={app}\FoxitPDFReader.exe
 UninstallDisplayName={cm:AppName}
-OutputBaseFilename=tmp83AF.tmp
+OutputBaseFilename=tmp94D4.tmp
 Compression=lzma
 DisableDirPage=auto
 DisableProgramGroupPage=yes
@@ -3108,7 +3108,7 @@ Source: "{app}\FoxitUpdater.exe"; DestDir: "{app}"; BeforeInstall: "ChangeDispla
 Source: "{app}\UpdaterInfo.xml"; DestDir: "{app}"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{userappdata}\Foxit Software\Foxit PDF Reader\SilentInstall\UpdaterInfo.xml"; DestDir: "{userappdata}\Foxit Software\Foxit PDF Reader\SilentInstall"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; Flags: onlyifdoesntexist 
 Source: "{app}\plugins\Updater.fpi"; DestDir: "{app}\plugins"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\FoxitPDFReaderUpdateService.exe"; DestDir: "{app}"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{cf}\Foxit\Foxit PDF Reader\FoxitPDFReaderUpdateService.exe"; DestDir: "{cf}\Foxit\Foxit PDF Reader"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{tmp}\CountInstallation.exe"; DestDir: "{tmp}"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{userappdata}\Foxit Software\CertFile\PR\eutlfile.foxitdata1"; DestDir: "{userappdata}\Foxit Software\CertFile\PR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{userappdata}\Foxit Software\CertFile\PR\tsfile.foxitdata1"; DestDir: "{userappdata}\Foxit Software\CertFile\PR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -3221,7 +3221,7 @@ Filename: "{app}\Shell Extensions\FoxitPreviewhost.exe"; Parameters: "/regserver
 
 [UninstallRun]
 Filename: "{app}\plugins\uninst\unins000.exe"; Parameters: "/verysilent /norestart"; MinVersion: 0.0,5.0; Flags: skipifdoesntexist 
-Filename: "{app}\FoxitPDFReaderUpdateService.exe"; Parameters: "-uninstall"; MinVersion: 0.0,5.0; 
+Filename: "{cf}\Foxit\Foxit PDF Reader\FoxitPDFReaderUpdateService.exe"; Parameters: "-uninstall"; MinVersion: 0.0,5.0; 
 
 [Icons]
 Name: "{group}\{cm:AppName}"; Filename: "{app}\FoxitPDFReader.exe"; WorkingDir: "{app}"; IconFilename: "{app}\FoxitPDFReader.exe"; Tasks: startmenufolder; Check: "Checkstartmenufolder"; MinVersion: 0.0,5.0; 
