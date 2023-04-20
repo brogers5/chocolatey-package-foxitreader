@@ -21,7 +21,6 @@ function global:au_BeforeUpdate ($Package) {
 
     $readmePath = ".\DESCRIPTION.md"
     $readmeContents = Get-Content $readmePath -Encoding UTF8
-    $readmeContents = $readmeContents -replace "/tree/v.*\/", "/tree/v$($Latest.Version)/"
     $readmeContents = $readmeContents -replace "/blob/v.*\/", "/blob/v$($Latest.Version)/"
 
     $encoding = New-Object System.Text.UTF8Encoding($false)
@@ -44,9 +43,6 @@ function global:au_SearchReplace {
         'tools\chocolateyInstall.ps1'   = @{
             "(^[$]?\s*url\s*=\s*)('.*')"      = "`$1'$($Latest.Url32)'"
             "(^[$]?\s*checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
-        }
-        'PACKAGE-NOTES.md' = @{
-            "/tree/v.*\/" = "/tree/v$($Latest.Version)/"
         }
     }
 }
