@@ -66,7 +66,14 @@ function global:au_GetLatest {
     
     # Foxit's version directory placement has not been consistent. Source a server-local path dynamically.
     $headResponse = Invoke-WebRequest -Uri $canonicalUrl -UserAgent $userAgent -Method Head
-    $redirectedRequestUri = $headResponse.BaseResponse.ResponseUri
+
+    if ($null -ne $headResponse.BaseResponse.ResponseUri) {
+        $redirectedRequestUri = $headResponse.BaseResponse.ResponseUri
+    }
+    elseif ($null -ne $headResponse.BaseResponse.RequestMessage.RequestUri) {
+        $redirectedRequestUri = $headResponse.BaseResponse.RequestMessage.RequestUri
+    }
+
     $redirectedUriSegments = $redirectedRequestUri.Segments
     $redirectedUriDirectory = $redirectedRequestUri.AbsoluteUri.TrimEnd($redirectedUriSegments[$redirectedUriSegments.Length - 1])
 
