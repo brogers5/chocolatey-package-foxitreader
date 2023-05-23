@@ -65,7 +65,7 @@ function global:au_GetLatest {
     $canonicalUrl = 'https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&version=&package_type=exe&language=L10N'
     
     # Foxit's version directory placement has not been consistent. Source a server-local path dynamically.
-    $headResponse = Invoke-WebRequest -Uri $canonicalUrl -UserAgent $userAgent -Method Head
+    $headResponse = Invoke-WebRequest -Uri $canonicalUrl -UserAgent $userAgent -Method Head -MaximumRedirection 1 -SkipHttpErrorCheck
 
     if ($null -ne $headResponse.BaseResponse.ResponseUri) {
         $redirectedRequestUri = $headResponse.BaseResponse.ResponseUri
@@ -75,10 +75,11 @@ function global:au_GetLatest {
     }
 
     $redirectedUriSegments = $redirectedRequestUri.Segments
-    $redirectedUriDirectory = $redirectedRequestUri.AbsoluteUri.TrimEnd($redirectedUriSegments[$redirectedUriSegments.Length - 1])
+    $redirectedUriLocalDirectory = $redirectedRequestUri.AbsolutePath.TrimEnd($redirectedUriSegments[$redirectedUriSegments.Length - 1])
 
     # Probe specifically for Multi-Language Promotion with Editor EXE installer, as the canonical URL may sometimes point to a different installer type
-    $url32 = "$($redirectedUriDirectory)FoxitPDFReader$($fileNameVersion)_L10N_Setup_Prom.exe"
+    # Using cdn01 specifically to avoid HTTP 403 (Forbidden) errors
+    $url32 = "https://cdn01.foxitsoftware.com$($redirectedUriLocalDirectory)FoxitPDFReader$($fileNameVersion)_L10N_Setup_Prom.exe"
 
     return @{
         Url32   = $url32
