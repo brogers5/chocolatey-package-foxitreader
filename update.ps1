@@ -1,12 +1,12 @@
 Import-Module au
 
 function Get-InstallScript($FilePath) {
-    if (!(Get-Command "innounp.exe" -ErrorAction SilentlyContinue)) {
-        Write-Information "innounp is not available on PATH, installing..."
-        choco install innounp 
+    if (!(Get-Command 'innounp.exe' -ErrorAction SilentlyContinue)) {
+        Write-Information 'innounp is not available on PATH, installing...'
+        choco install innounp
     }
 
-    $installScriptFileName = "install_script.iss"
+    $installScriptFileName = 'install_script.iss'
     innounp -x $FilePath $installScriptFileName -y
 }
 
@@ -19,9 +19,9 @@ function global:au_BeforeUpdate ($Package) {
 
     Remove-Item $tempFilePath -Force
 
-    $readmePath = ".\DESCRIPTION.md"
+    $readmePath = '.\DESCRIPTION.md'
     $readmeContents = Get-Content $readmePath -Encoding UTF8
-    $readmeContents = $readmeContents -replace "/blob/v.*\/", "/blob/v$($Latest.Version)/"
+    $readmeContents = $readmeContents -replace '/blob/v.*\/', "/blob/v$($Latest.Version)/"
 
     $encoding = New-Object System.Text.UTF8Encoding($false)
     $output = $readmeContents | Out-String
@@ -37,8 +37,8 @@ function global:au_AfterUpdate ($Package) {
 function global:au_SearchReplace {
     @{
         "$($Latest.PackageName).nuspec" = @{
-            "(<packageSourceUrl>)[^<]*(</packageSourceUrl>)" = "`$1https://github.com/brogers5/chocolatey-package-$($Latest.PackageName)/tree/v$($Latest.Version)`$2"
-            "(<copyright>)[^<]*(</copyright>)"               = "`${1}$($(Get-Date -Format yyyy)) © Foxit Software Incorporated. All rights reserved.`$2"
+            '(<packageSourceUrl>)[^<]*(</packageSourceUrl>)' = "`$1https://github.com/brogers5/chocolatey-package-$($Latest.PackageName)/tree/v$($Latest.Version)`$2"
+            '(<copyright>)[^<]*(</copyright>)'               = "`${1}$($(Get-Date -Format yyyy)) © Foxit Software Incorporated. All rights reserved.`$2"
         }
         'tools\chocolateyInstall.ps1'   = @{
             "(^[$]?\s*url\s*=\s*)('.*')"      = "`$1'$($Latest.Url32)'"
@@ -52,7 +52,7 @@ function global:au_GetLatest {
     $userAgent = 'Update checker of Chocolatey Community Package ''foxitreader'''
     $versionHistoryPage = Invoke-WebRequest -Uri $versionHistoryUri -UserAgent $userAgent -UseBasicParsing
 
-    $version = [Version] [Regex]::Matches($versionHistoryPage.Content, "(?i)<h3[^>]*>(Foxit Reader|Version) (.*)</h3>").Groups[2].Value
+    $version = [Version] [Regex]::Matches($versionHistoryPage.Content, '(?i)<h3[^>]*>(Foxit Reader|Version) (.*)</h3>').Groups[2].Value
 
     if ($version.Build -eq 0) {
         $fileNameVersion = "$($version.Major)$($version.Minor)"
@@ -63,7 +63,7 @@ function global:au_GetLatest {
 
     # Using a non-English language selection to be directed toward the L10N installer binary.
     $canonicalUrl = 'https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&version=&package_type=exe&language=L10N'
-    
+
     # Foxit's version directory placement has not been consistent. Source a server-local path dynamically.
     $headResponse = Invoke-WebRequest -Uri $canonicalUrl -UserAgent $userAgent -Method Head -MaximumRedirection 1 -SkipHttpErrorCheck
 
