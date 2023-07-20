@@ -3,7 +3,7 @@ Import-Module au
 function Get-InstallScript($FilePath) {
     if (!(Get-Command 'innounp.exe' -ErrorAction SilentlyContinue)) {
         Write-Information 'innounp is not available on PATH, installing...'
-        choco install innounp
+        choco install innounp -y
     }
 
     $installScriptFileName = 'install_script.iss'
