@@ -1,4 +1,4 @@
-Import-Module au
+﻿Import-Module au
 
 function Get-InstallScript($FilePath) {
     if (!(Get-Command 'innounp.exe' -ErrorAction SilentlyContinue)) {
