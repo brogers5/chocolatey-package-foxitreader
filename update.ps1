@@ -10,6 +10,17 @@ function Get-InstallScript($FilePath) {
     innounp -x $FilePath $installScriptFileName -y
 }
 
+function Set-DocumentVersion($RelativeFilePath) {
+    $fileContents = Get-Content -Path $RelativeFilePath -Encoding UTF8
+    $fileContents = $fileContents -replace '/blob/v.*\/', "/blob/v$($Latest.Version)/"
+    $fileContents = $fileContents -replace '/tree/v.*\/', "/tree/v$($Latest.Version)/"
+
+    $encoding = New-Object System.Text.UTF8Encoding($false)
+    $output = $fileContents | Out-String
+    $absoluteFilePath = (Get-Item -Path $RelativeFilePath).FullName
+    [System.IO.File]::WriteAllText($absoluteFilePath, $output, $encoding)
+}
+
 function global:au_BeforeUpdate ($Package) {
     $tempFilePath = New-TemporaryFile
     Invoke-WebRequest -Uri $Latest.Url32 -OutFile $tempFilePath
@@ -19,15 +30,11 @@ function global:au_BeforeUpdate ($Package) {
 
     Remove-Item $tempFilePath -Force
 
-    $readmePath = '.\DESCRIPTION.md'
-    $readmeContents = Get-Content $readmePath -Encoding UTF8
-    $readmeContents = $readmeContents -replace '/blob/v.*\/', "/blob/v$($Latest.Version)/"
+    $descriptionRelativePath = '.\DESCRIPTION.md'
+    Set-DocumentVersion -RelativeFilePath $descriptionRelativePath
+    Set-DocumentVersion -RelativeFilePath '.\PACKAGE-NOTES.md'
 
-    $encoding = New-Object System.Text.UTF8Encoding($false)
-    $output = $readmeContents | Out-String
-    [System.IO.File]::WriteAllText((Get-Item $readmePath).FullName, $output, $encoding)
-
-    Set-DescriptionFromReadme -Package $Package -ReadmePath $readmePath
+    Set-DescriptionFromReadme -Package $Package -ReadmePath $descriptionRelativePath
 }
 
 function global:au_SearchReplace {
