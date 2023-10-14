@@ -106,13 +106,15 @@ function global:au_GetLatest {
     }
 
     if ($global:au_Force -or $Force) {
-        #Bump the package version number manually, since AU won't do it for us with a populated revision
-        if ($softwareVersion -eq $lastPackageVersion) {
-            $packageVersion = "$($packageVersion)00"
-        }
-        elseif ($softwareVersion -lt $lastPackageVersion) {
-            $incrementedVersion = New-Object -TypeName System.Version -ArgumentList $lastPackageVersion.Major, $lastPackageVersion.Minor, $lastPackageVersion.Build, ($lastPackageVersion.Revision + 1)
-            $packageVersion = $incrementedVersion.ToString()
+        if ($softwareVersion -le $lastPackageVersion) {
+            #Bump the package version number manually, since AU won't do it for us with a populated revision
+            if ($softwareVersion -eq $lastPackageVersion) {
+                $packageVersion = "$($packageVersion)00"
+            }
+            else {
+                $incrementedVersion = New-Object -TypeName System.Version -ArgumentList $lastPackageVersion.Major, $lastPackageVersion.Minor, $lastPackageVersion.Build, ($lastPackageVersion.Revision + 1)
+                $packageVersion = $incrementedVersion.ToString()
+            }
         }
     }
 
