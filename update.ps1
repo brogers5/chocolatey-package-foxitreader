@@ -86,9 +86,30 @@ function global:au_GetLatest {
     # Using cdn01 specifically to avoid HTTP 403 (Forbidden) errors
     $url32 = "https://cdn01.foxitsoftware.com$($redirectedUriLocalDirectory)FoxitPDFReader$($fileNameVersion)_L10N_Setup_Prom.exe"
 
+    $versionString = $version.ToString()
+    $headRequest = Invoke-WebRequest -Uri $url32 -Method Head -UserAgent $userAgent
+    $currentETagValue = $headRequest.Headers['ETag']
+    $etagFilePath = '.\ETag.txt'
+
+    if (!($global:au_Force -or $Force)) {
+        #Check whether the ETag value has changed to determine if we need to force an update
+        $lastETagInfo = Get-Content -Path $etagFilePath -Encoding UTF8
+        if ($lastETagInfo -ne $currentETagValue) {
+            [xml] $nuspec = Get-Content -Path "$($Latest.PackageName).nuspec"
+            $lastPackageVersion = [version] $nuspec.package.metadata.version
+
+            if ($versionString -le $lastPackageVersion) {
+                Write-Warning 'Updated ETag detected, forcing package update'
+            }
+            $global:au_Force = $true
+        }
+    }
+
+    $currentETagValue | Out-File -FilePath $etagFilePath -Encoding UTF8
+
     return @{
         Url32   = $url32
-        Version = $version.ToString()
+        Version = $versionString    #This may change if building a package fix version
     }
 }
 
