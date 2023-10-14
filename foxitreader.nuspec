@@ -4,7 +4,7 @@
   <metadata>
     <id>foxitreader</id>
     <title>Foxit PDF Reader</title>
-    <version>2023.2.0.21408</version>
+    <version>2023.2.0.2140800</version>
     <authors>Foxit Software Incorporated</authors>
     <owners>ComFreek H.AlanStevens sublym0nal</owners>
     <summary>Foxit PDF Reader: The Best PDF Reader</summary>
@@ -45,11 +45,11 @@ Sign documents in your own handwriting or utilize eSignature and verify the stat
 
 * `/NoShim` - Opt out of creating a shim, and removes any existing shim.
 
-## [Package Notes](https://github.com/brogers5/chocolatey-package-foxitreader/blob/v2023.2.0.21408/PACKAGE-NOTES.md)
+## [Package Notes](https://github.com/brogers5/chocolatey-package-foxitreader/blob/v2023.2.0.2140800/PACKAGE-NOTES.md)
 ]]></description>
     <projectUrl>https://www.foxit.com/pdf-reader/</projectUrl>
     <docsUrl>https://www.foxit.com/support/usermanuals.html</docsUrl>
-    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-foxitreader/tree/v2023.2.0.21408</packageSourceUrl>
+    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-foxitreader/tree/v2023.2.0.2140800</packageSourceUrl>
     <releaseNotes>https://www.foxit.com/pdf-reader/version-history.html</releaseNotes>
     <tags>Foxit PDF Reader office cross-platform freeware</tags>
     <licenseUrl>https://www.foxit.com/pdf-editor/eula.html</licenseUrl>

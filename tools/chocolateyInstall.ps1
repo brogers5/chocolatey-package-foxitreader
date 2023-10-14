@@ -4,7 +4,7 @@ $installationArgs = @{
     packageName    = $env:ChocolateyPackageName
     fileType       = 'EXE'
     url            = 'https://cdn01.foxitsoftware.com/product/phantomPDF/desktop/win/2023.2.0/FoxitPDFReader20232_L10N_Setup_Prom.exe'
-    checksum       = '80b2cbec4b085f960cea9a88fee7b6d2905f6f870cc550ac677706eedd496877'
+    checksum       = '6ee026b0aa76a918780cae66c0d1acf9d6ec4b1af46554fc42f3b863e11f5b6d'
     checksumType   = 'sha256'
     silentArgs     = "/verysilent /log=`"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).Install.log`""
     validExitCodes = @(0)
