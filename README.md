@@ -47,4 +47,13 @@ mklink /J foxitreader ..\chocolatey-package-foxitreader
 
 Once created, simply run `update.ps1` from within the created directory/junction point. Assuming all goes well, all relevant files should change to reflect the latest version available. This will also build a new package version using the modified files.
 
+To forcibly create an updated package (regardless of whether a new software version or package is available), pass the `-Force` switch:
+
+```powershell
+.\update.ps1 -Force
+```
+
+>[!Note]
+>The update script stores the last [`ETag`](https://developer.mozilla.org/docs/Web/HTTP/Headers/ETag) value served with the download, in order to detect possible silent updates (which would require a new package to update the installer's checksum). If a new value is detected, package updates will be forced, even if `-Force` was not passed.
+
 Before submitting a pull request, please [test the package](https://docs.chocolatey.org/en-us/community-repository/moderation/package-verifier#steps-for-each-package) using the [Chocolatey Testing Environment](https://github.com/chocolatey-community/chocolatey-test-environment) first.
