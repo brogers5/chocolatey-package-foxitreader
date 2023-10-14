@@ -1,4 +1,6 @@
-﻿Import-Module au
+﻿[CmdletBinding()]
+param([switch] $Force)
+Import-Module au
 
 function Get-InstallScript($FilePath) {
     if (!(Get-Command 'innounp.exe' -ErrorAction SilentlyContinue)) {
@@ -90,4 +92,4 @@ function global:au_GetLatest {
     }
 }
 
-Update-Package -ChecksumFor None -NoReadme
+Update-Package -ChecksumFor None -NoReadme -Force:$Force
