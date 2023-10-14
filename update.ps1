@@ -91,17 +91,28 @@ function global:au_GetLatest {
     $currentETagValue = $headRequest.Headers['ETag']
     $etagFilePath = '.\ETag.txt'
 
+    [xml] $nuspec = Get-Content -Path "$($Latest.PackageName).nuspec"
+    $lastPackageVersion = [version] $nuspec.package.metadata.version
+
     if (!($global:au_Force -or $Force)) {
         #Check whether the ETag value has changed to determine if we need to force an update
         $lastETagInfo = Get-Content -Path $etagFilePath -Encoding UTF8
         if ($lastETagInfo -ne $currentETagValue) {
-            [xml] $nuspec = Get-Content -Path "$($Latest.PackageName).nuspec"
-            $lastPackageVersion = [version] $nuspec.package.metadata.version
-
-            if ($versionString -le $lastPackageVersion) {
+            if ($version -le $lastPackageVersion) {
                 Write-Warning 'Updated ETag detected, forcing package update'
+                $global:au_Force = $true
             }
-            $global:au_Force = $true
+        }
+    }
+
+    if ($global:au_Force -or $Force) {
+        #Bump the package version number manually, since AU won't do it for us with a populated revision
+        if ($versionString -eq $lastPackageVersion) {
+            $versionString = "$($versionString)00"
+        }
+        elseif ($version -lt $lastPackageVersion) {
+            $incrementedVersion = New-Object -TypeName System.Version -ArgumentList $lastPackageVersion.Major, $lastPackageVersion.Minor, $lastPackageVersion.Build, ($lastPackageVersion.Revision + 1)
+            $versionString = $incrementedVersion.ToString()
         }
     }
 
@@ -109,7 +120,7 @@ function global:au_GetLatest {
 
     return @{
         Url32   = $url32
-        Version = $versionString    #This may change if building a package fix version
+        Version = $versionString
     }
 }
 
