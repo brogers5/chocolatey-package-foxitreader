@@ -57,17 +57,17 @@ function global:au_GetLatest {
     $userAgent = 'Update checker of Chocolatey Community Package ''foxitreader'''
     $versionHistoryPage = Invoke-WebRequest -Uri $versionHistoryUri -UserAgent $userAgent -UseBasicParsing
 
-    $version = [Version] [Regex]::Matches($versionHistoryPage.Content, '(?i)<h3[^>]*>(Foxit Reader|Version) (.*)</h3>').Groups[2].Value
+    $softwareVersion = [version] [regex]::Matches($versionHistoryPage.Content, '(?i)<h3[^>]*>(Foxit Reader|Version) (.*)</h3>').Groups[2].Value
 
-    if ($version.Build -eq 0) {
-        $fileNameVersion = "$($version.Major)$($version.Minor)"
+    if ($softwareVersion.Build -eq 0) {
+        $fileNameVersion = "$($softwareVersion.Major)$($softwareVersion.Minor)"
     }
     else {
-        $fileNameVersion = "$($version.Major)$($version.Minor)$($version.Build)"
+        $fileNameVersion = "$($softwareVersion.Major)$($softwareVersion.Minor)$($softwareVersion.Build)"
     }
 
     # Using a non-English language selection to be directed toward the L10N installer binary.
-    $canonicalUrl = 'https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&version=&package_type=exe&language=L10N'
+    $canonicalUrl = 'https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&softwareVersion=&package_type=exe&language=L10N'
 
     # Foxit's version directory placement has not been consistent. Source a server-local path dynamically.
     $headResponse = Invoke-WebRequest -Uri $canonicalUrl -UserAgent $userAgent -Method Head -MaximumRedirection 1 -SkipHttpErrorCheck
@@ -86,7 +86,7 @@ function global:au_GetLatest {
     # Using cdn01 specifically to avoid HTTP 403 (Forbidden) errors
     $url32 = "https://cdn01.foxitsoftware.com$($redirectedUriLocalDirectory)FoxitPDFReader$($fileNameVersion)_L10N_Setup_Prom.exe"
 
-    $versionString = $version.ToString()
+    $packageVersion = $softwareVersion.ToString()
     $headRequest = Invoke-WebRequest -Uri $url32 -Method Head -UserAgent $userAgent
     $currentETagValue = $headRequest.Headers['ETag']
     $etagFilePath = '.\ETag.txt'
@@ -98,7 +98,7 @@ function global:au_GetLatest {
         #Check whether the ETag value has changed to determine if we need to force an update
         $lastETagInfo = Get-Content -Path $etagFilePath -Encoding UTF8
         if ($lastETagInfo -ne $currentETagValue) {
-            if ($version -le $lastPackageVersion) {
+            if ($softwareVersion -le $lastPackageVersion) {
                 Write-Warning 'Updated ETag detected, forcing package update'
                 $global:au_Force = $true
             }
@@ -107,12 +107,12 @@ function global:au_GetLatest {
 
     if ($global:au_Force -or $Force) {
         #Bump the package version number manually, since AU won't do it for us with a populated revision
-        if ($versionString -eq $lastPackageVersion) {
-            $versionString = "$($versionString)00"
+        if ($softwareVersion -eq $lastPackageVersion) {
+            $packageVersion = "$($packageVersion)00"
         }
-        elseif ($version -lt $lastPackageVersion) {
+        elseif ($softwareVersion -lt $lastPackageVersion) {
             $incrementedVersion = New-Object -TypeName System.Version -ArgumentList $lastPackageVersion.Major, $lastPackageVersion.Minor, $lastPackageVersion.Build, ($lastPackageVersion.Revision + 1)
-            $versionString = $incrementedVersion.ToString()
+            $packageVersion = $incrementedVersion.ToString()
         }
     }
 
@@ -120,7 +120,7 @@ function global:au_GetLatest {
 
     return @{
         Url32   = $url32
-        Version = $versionString
+        Version = $packageVersion
     }
 }
 
