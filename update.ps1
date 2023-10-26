@@ -59,13 +59,6 @@ function global:au_GetLatest {
 
     $softwareVersion = [version] [regex]::Matches($versionHistoryPage.Content, '(?i)<h3[^>]*>(Foxit Reader|Version) (.*)</h3>').Groups[2].Value
 
-    if ($softwareVersion.Build -eq 0) {
-        $fileNameVersion = "$($softwareVersion.Major)$($softwareVersion.Minor)"
-    }
-    else {
-        $fileNameVersion = "$($softwareVersion.Major)$($softwareVersion.Minor)$($softwareVersion.Build)"
-    }
-
     # Using a non-English language selection to be directed toward the L10N installer binary.
     $canonicalUrl = 'https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&softwareVersion=&package_type=exe&language=L10N'
 
@@ -82,11 +75,17 @@ function global:au_GetLatest {
     $redirectedUriSegments = $redirectedRequestUri.Segments
     $redirectedUriLocalDirectory = $redirectedRequestUri.AbsolutePath.TrimEnd($redirectedUriSegments[$redirectedUriSegments.Length - 1])
 
+    if ($softwareVersion.Build -eq 0) {
+        $fileNameVersion = "$($softwareVersion.Major)$($softwareVersion.Minor)"
+    }
+    else {
+        $fileNameVersion = "$($softwareVersion.Major)$($softwareVersion.Minor)$($softwareVersion.Build)"
+    }
+
     # Probe specifically for Multi-Language Promotion with Editor EXE installer, as the canonical URL may sometimes point to a different installer type
     # Using cdn01 specifically to avoid HTTP 403 (Forbidden) errors
     $url32 = "https://cdn01.foxitsoftware.com$($redirectedUriLocalDirectory)FoxitPDFReader$($fileNameVersion)_L10N_Setup_Prom.exe"
 
-    $packageVersion = $softwareVersion.ToString()
     $headRequest = Invoke-WebRequest -Uri $url32 -Method Head -UserAgent $userAgent
     $currentETagValue = $headRequest.Headers['ETag']
     $etagFilePath = '.\ETag.txt'
@@ -105,6 +104,10 @@ function global:au_GetLatest {
         }
     }
 
+    $currentETagValue | Out-File -FilePath $etagFilePath -Encoding UTF8
+
+    $packageVersion = $softwareVersion.ToString()
+
     if ($global:au_Force -or $Force) {
         if ($softwareVersion -le $lastPackageVersion) {
             #Bump the package version number manually, since AU won't do it for us with a populated revision
@@ -117,8 +120,6 @@ function global:au_GetLatest {
             }
         }
     }
-
-    $currentETagValue | Out-File -FilePath $etagFilePath -Encoding UTF8
 
     return @{
         Url32   = $url32
