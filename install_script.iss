@@ -4,7 +4,7 @@
 AppName={cm:AppName}
 AppVerName={cm:AppName}
 AppId=Foxit Reader
-AppVersion=2023.2.0.21408
+AppVersion=2023.3.0.23028
 AppPublisher=Foxit Software Inc.
 AppPublisherURL={cm:AppSupportURL}0
 AppSupportURL={cm:AppPublisherURL}0
@@ -13,7 +13,7 @@ DefaultDirName={pf}\Foxit Software\Foxit PDF Reader
 DefaultGroupName={cm:AppName}
 UninstallDisplayIcon={app}\FoxitPDFReader.exe
 UninstallDisplayName={cm:AppName}
-OutputBaseFilename=tmp242F.tmp
+OutputBaseFilename=tmp0m1rux.tmp
 Compression=lzma
 DisableDirPage=auto
 DisableProgramGroupPage=yes
@@ -27,6 +27,9 @@ Source: "{app}\icudtl.dat"; DestDir: "{app}"; BeforeInstall: "ChangeDisplay"; Mi
 Source: "{app}\V8\icudtl.dat"; DestDir: "{app}\V8"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\plugins\FoxitSign.fpi"; DestDir: "{app}\plugins"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\plugins\InkSign.fpi"; DestDir: "{app}\plugins"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\FoxitPDFReaderConnectedPDFService.exe"; DestDir: "{app}"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\plugins\ConnectPDFService.dll"; DestDir: "{app}\plugins"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\plugins\Collaboration.fpi"; DestDir: "{app}\plugins"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\plugins\U3DBrowser.fpi"; DestDir: "{app}\plugins"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\plugins\PDF3D\ACCAMERA_22.12_15.tx"; DestDir: "{app}\plugins\PDF3D"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\plugins\PDF3D\AcDbPointCloudObj_22.12_15.tx"; DestDir: "{app}\plugins\PDF3D"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -205,7 +208,7 @@ Source: "{app}\FPCSDK64.dll"; DestDir: "{app}"; BeforeInstall: "ChangeDisplay"; 
 Source: "{app}\plugins\FoxitAccountManagement.fpi"; DestDir: "{app}\plugins"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\fxhostobject.tlb"; DestDir: "{app}"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\WebView2Loader.dll"; DestDir: "{app}"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\WebView2Loader64.dll"; DestDir: "{app}"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\WebView\x64\WebView2Loader.dll"; DestDir: "{app}\WebView\x64"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\mfc140u.dll"; DestDir: "{app}"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\mfcm140u.dll"; DestDir: "{app}"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\msvcp140.dll"; DestDir: "{app}"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -441,6 +444,9 @@ Source: "{app}\Start\en-US\css\reader_dark.css"; DestDir: "{app}\Start\en-US\css
 Source: "{app}\Start\en-US\Default\config.css"; DestDir: "{app}\Start\en-US\Default"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\en-US\history\history.json"; DestDir: "{app}\Start\en-US\history"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\en-US\images\5-star-rating.png"; DestDir: "{app}\Start\en-US\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\en-US\images\background-foxit-blog.jpg"; DestDir: "{app}\Start\en-US\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\en-US\images\background-phantompdf.jpg"; DestDir: "{app}\Start\en-US\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\en-US\images\background-web-apps.jpg"; DestDir: "{app}\Start\en-US\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\en-US\images\foxit-logo-white.png"; DestDir: "{app}\Start\en-US\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\en-US\images\foxit-pdf-editor-title-image.jpg"; DestDir: "{app}\Start\en-US\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\en-US\images\foxit-pdf-editor-title-image_dark.jpg"; DestDir: "{app}\Start\en-US\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -461,6 +467,7 @@ Source: "{app}\Start\en-US\images\icon_pdf_dark.svg"; DestDir: "{app}\Start\en-U
 Source: "{app}\Start\en-US\images\icon_remove.png"; DestDir: "{app}\Start\en-US\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\en-US\images\icon_remove.svg"; DestDir: "{app}\Start\en-US\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\en-US\images\icon_remove_dark.svg"; DestDir: "{app}\Start\en-US\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\en-US\images\phantom-title-image.png"; DestDir: "{app}\Start\en-US\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\en-US\images\remove-all.svg"; DestDir: "{app}\Start\en-US\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\en-US\images\right-default-bg.jpg"; DestDir: "{app}\Start\en-US\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\en-US\images\right-default-dark-bg.jpg"; DestDir: "{app}\Start\en-US\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -776,6 +783,7 @@ Source: "{app}\Start\ja-JP\images\icon_pdf_dark.png"; DestDir: "{app}\Start\ja-J
 Source: "{app}\Start\ja-JP\images\icon_pdf_dark.svg"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ja-JP\images\icon_remove.png"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ja-JP\images\icon_remove.svg"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\ja-JP\images\icon_remove_dark.svg"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ja-JP\images\phantom-title-image.png"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ja-JP\images\remove-all.png"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ja-JP\images\remove-all.svg"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -1527,19 +1535,6 @@ Source: "{app}\auiresources\ActionWizard\ui\InstrutionDlg.ui.fx"; DestDir: "{app
 Source: "{app}\auiresources\ActionWizard\ui\manageactiondlg.ui.fx"; DestDir: "{app}\auiresources\ActionWizard\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\ActionWizard\ui\ManageCustom_dialog.ui.fx"; DestDir: "{app}\auiresources\ActionWizard\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\AiAssistant\ui\aiasstdlg.ui.fx"; DestDir: "{app}\auiresources\AiAssistant\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Annotation\ui\ba_propertyactions.ui.fx"; DestDir: "{app}\auiresources\Annotation\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Annotation\ui\fa_addfilesdlg.ui.fx"; DestDir: "{app}\auiresources\Annotation\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Annotation\ui\fa_descriptiondlg.ui.fx"; DestDir: "{app}\auiresources\Annotation\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Annotation\ui\fa_securityadddlg.ui.fx"; DestDir: "{app}\auiresources\Annotation\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Annotation\ui\fa_securitydlg.ui.fx"; DestDir: "{app}\auiresources\Annotation\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Annotation\ui\la_dlgappearance.ui.fx"; DestDir: "{app}\auiresources\Annotation\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Annotation\ui\la_dlgcreate.ui.fx"; DestDir: "{app}\auiresources\Annotation\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Annotation\ui\rd_appearancedlg.ui.fx"; DestDir: "{app}\auiresources\Annotation\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Annotation\ui\rd_editcodedlg.ui.fx"; DestDir: "{app}\auiresources\Annotation\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Annotation\ui\rd_pagedlg.ui.fx"; DestDir: "{app}\auiresources\Annotation\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Annotation\ui\rd_usingdlg.ui.fx"; DestDir: "{app}\auiresources\Annotation\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Bookmark\img\nocolorgray_19.bmp"; DestDir: "{app}\auiresources\Bookmark\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Bookmark\img\nocolor_19.bmp"; DestDir: "{app}\auiresources\Bookmark\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Bookmark\ui\AddPageFromBM.ui.fx"; DestDir: "{app}\auiresources\Bookmark\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Bookmark\ui\AddStructureElements.ui.fx"; DestDir: "{app}\auiresources\Bookmark\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Bookmark\ui\AppearancePropertyPage.ui.fx"; DestDir: "{app}\auiresources\Bookmark\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -1588,6 +1583,10 @@ Source: "{app}\auiresources\FoxitSign\img\bulb.png"; DestDir: "{app}\auiresource
 Source: "{app}\auiresources\FoxitSign\img\bulb@2x.png"; DestDir: "{app}\auiresources\FoxitSign\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\FoxitSign\img\bulb_dark.png"; DestDir: "{app}\auiresources\FoxitSign\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\FoxitSign\img\bulb_dark@2x.png"; DestDir: "{app}\auiresources\FoxitSign\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FoxitSign\img\Framelogo.png"; DestDir: "{app}\auiresources\FoxitSign\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FoxitSign\img\Framelogo@2x.png"; DestDir: "{app}\auiresources\FoxitSign\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FoxitSign\img\Framelogo_dark.png"; DestDir: "{app}\auiresources\FoxitSign\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FoxitSign\img\Framelogo_dark@2x.png"; DestDir: "{app}\auiresources\FoxitSign\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\FoxitSign\img\infomation.png"; DestDir: "{app}\auiresources\FoxitSign\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\FoxitSign\img\infomation@2x.png"; DestDir: "{app}\auiresources\FoxitSign\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\FoxitSign\img\Pompt_24.png"; DestDir: "{app}\auiresources\FoxitSign\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -1629,9 +1628,20 @@ Source: "{app}\auiresources\FoxitSign\ui\SignPasswordDlg.ui.fx"; DestDir: "{app}
 Source: "{app}\auiresources\FoxitSign\ui\signpreviewpage.ui.fx"; DestDir: "{app}\auiresources\FoxitSign\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\FoxitSign\ui\StyleManageDlg.ui.fx"; DestDir: "{app}\auiresources\FoxitSign\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\FoxitSign\ui\tooltip.ui.fx"; DestDir: "{app}\auiresources\FoxitSign\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\FoxitSign\ui\upgradedlg.ui.fx"; DestDir: "{app}\auiresources\FoxitSign\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Globalwnd\img\info_16.png"; DestDir: "{app}\auiresources\Globalwnd\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Globalwnd\img\info_24.png"; DestDir: "{app}\auiresources\Globalwnd\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Globalwnd\img\info_32.png"; DestDir: "{app}\auiresources\Globalwnd\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\Globalwnd\img\ps_background.png"; DestDir: "{app}\auiresources\Globalwnd\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\Globalwnd\img\ps_background@2x.png"; DestDir: "{app}\auiresources\Globalwnd\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\Globalwnd\img\ps_dragrange.png"; DestDir: "{app}\auiresources\Globalwnd\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\Globalwnd\img\ps_dragrange@2x.png"; DestDir: "{app}\auiresources\Globalwnd\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\Globalwnd\img\ps_refresh.png"; DestDir: "{app}\auiresources\Globalwnd\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\Globalwnd\img\ps_refresh@2x.png"; DestDir: "{app}\auiresources\Globalwnd\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\Globalwnd\img\ps_stamp.png"; DestDir: "{app}\auiresources\Globalwnd\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\Globalwnd\img\ps_stamp@2x.png"; DestDir: "{app}\auiresources\Globalwnd\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\Globalwnd\img\ps_tips.png"; DestDir: "{app}\auiresources\Globalwnd\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\Globalwnd\img\ps_tips@2x.png"; DestDir: "{app}\auiresources\Globalwnd\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Globalwnd\img\warning_32.png"; DestDir: "{app}\auiresources\Globalwnd\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Globalwnd\img\warning_32@2x.png"; DestDir: "{app}\auiresources\Globalwnd\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Globalwnd\img\warning_32x32.png"; DestDir: "{app}\auiresources\Globalwnd\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -1644,14 +1654,7 @@ Source: "{app}\auiresources\Globalwnd\ui\certdetail.ui.fx"; DestDir: "{app}\auir
 Source: "{app}\auiresources\Globalwnd\ui\digitalfromdialog.ui.fx"; DestDir: "{app}\auiresources\Globalwnd\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Globalwnd\ui\digitalfromfiledialog.ui.fx"; DestDir: "{app}\auiresources\Globalwnd\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Globalwnd\ui\errordlg.ui.fx"; DestDir: "{app}\auiresources\Globalwnd\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Globalwnd\ui\gw_addarticle.ui.fx"; DestDir: "{app}\auiresources\Globalwnd\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Globalwnd\ui\gw_gotopageview.ui.fx"; DestDir: "{app}\auiresources\Globalwnd\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Globalwnd\ui\gw_javascriptdlg.ui.fx"; DestDir: "{app}\auiresources\Globalwnd\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Globalwnd\ui\gw_openurl.ui.fx"; DestDir: "{app}\auiresources\Globalwnd\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Globalwnd\ui\gw_resetform.ui.fx"; DestDir: "{app}\auiresources\Globalwnd\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Globalwnd\ui\gw_selectmenutree.ui.fx"; DestDir: "{app}\auiresources\Globalwnd\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Globalwnd\ui\gw_showhidefield.ui.fx"; DestDir: "{app}\auiresources\Globalwnd\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\Globalwnd\ui\gw_submitform.ui.fx"; DestDir: "{app}\auiresources\Globalwnd\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\Globalwnd\ui\gw_pagingsealsigndlg.ui.fx"; DestDir: "{app}\auiresources\Globalwnd\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Globalwnd\ui\identitydlg.ui.fx"; DestDir: "{app}\auiresources\Globalwnd\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Globalwnd\ui\openfiledialog.ui.fx"; DestDir: "{app}\auiresources\Globalwnd\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Globalwnd\ui\outputoptiondlg.ui.fx"; DestDir: "{app}\auiresources\Globalwnd\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -1724,7 +1727,6 @@ Source: "{app}\auiresources\InkSign\img\Sign\CloundSign.png"; DestDir: "{app}\au
 Source: "{app}\auiresources\InkSign\img\Sign\loading.png"; DestDir: "{app}\auiresources\InkSign\img\Sign"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\InkSign\img\Sign\loading@2x.png"; DestDir: "{app}\auiresources\InkSign\img\Sign"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\InkSign\ui\Ink_CreateSignatureDlg.ui.fx"; DestDir: "{app}\auiresources\InkSign\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\auiresources\InkSign\ui\Ink_DeleteSignPromptDlg.ui.fx"; DestDir: "{app}\auiresources\InkSign\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\InkSign\ui\Ink_DrawSignWidget.ui.fx"; DestDir: "{app}\auiresources\InkSign\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\InkSign\ui\Ink_DrawView.ui.fx"; DestDir: "{app}\auiresources\InkSign\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\InkSign\ui\Ink_InfoSignDlg.ui.fx"; DestDir: "{app}\auiresources\InkSign\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2172,7 +2174,6 @@ Source: "{app}\lang\de-DE\touchup_de-DE.ts.fx"; DestDir: "{app}\lang\de-DE"; Bef
 Source: "{app}\lang\de-DE\touchup_strings_de-DE.xml.fx"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\en-US\ActionWizard_strings_en-US.xml.fx"; DestDir: "{app}\lang\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\en-US\AiAssistant_strings_en-US.xml.fx"; DestDir: "{app}\lang\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\lang\en-US\Annotation_strings_en-US.xml.fx"; DestDir: "{app}\lang\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\en-US\Bookmark_strings_en-US.xml.fx"; DestDir: "{app}\lang\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\en-US\DocProcess_strings_en-US.xml.fx"; DestDir: "{app}\lang\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\en-US\Email_strings_en-US.xml.fx"; DestDir: "{app}\lang\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2651,7 +2652,6 @@ Source: "{app}\lang\zh-CN\ActionWizard_strings_zh-CN.xml.fx"; DestDir: "{app}\la
 Source: "{app}\lang\zh-CN\ActionWizard_zh-CN.ts.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\AiAssistant_strings_zh-CN.xml.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\AiAssistant_zh-CN.ts.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\lang\zh-CN\Annotation_strings_zh-CN.xml.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\Bookmark_strings_zh-CN.xml.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\Bookmark_zh-CN.ts.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\DocProcess_strings_zh-CN.xml.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2731,11 +2731,11 @@ Source: "{app}\lang\da-DK\Alfrescolang_da-DK.xml"; DestDir: "{app}\lang\da-DK"; 
 Source: "{app}\lang\da-DK\BoxPluginlang_da-DK.xml"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\da-DK\Browserlang_da-DK.xml"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\da-DK\BrowserPluginlang_da-DK.xml"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\da-DK\Collaborationlang_da-DK.xml"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\da-DK\CommentsSummarylang_da-DK.xml"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\da-DK\ConnectedPDFDRMlang_da-DK.xml"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\da-DK\ConnectedPDFPluginlang_da-DK.xml"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\da-DK\CPDFOCLinklang_da-DK.xml"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\lang\da-DK\CReviewlang_da-DK.xml"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\da-DK\DmsForLegallang_da-DK.xml"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\da-DK\DocProcesslang_da-DK.xml"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\da-DK\docusign_pluginlang_da-DK.xml"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2770,11 +2770,11 @@ Source: "{app}\lang\de-DE\Alfrescolang_de-DE.xml"; DestDir: "{app}\lang\de-DE"; 
 Source: "{app}\lang\de-DE\BoxPluginlang_de-DE.xml"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\de-DE\Browserlang_de-DE.xml"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\de-DE\BrowserPluginlang_de-DE.xml"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\de-DE\Collaborationlang_de-DE.xml"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\de-DE\CommentsSummarylang_de-DE.xml"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\de-DE\ConnectedPDFDRMlang_de-DE.xml"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\de-DE\ConnectedPDFPluginlang_de-DE.xml"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\de-DE\CPDFOCLinklang_de-DE.xml"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\lang\de-DE\CReviewlang_de-DE.xml"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\de-DE\DmsForLegallang_de-DE.xml"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\de-DE\DocProcesslang_de-DE.xml"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\de-DE\docusign_pluginlang_de-DE.xml"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2809,11 +2809,11 @@ Source: "{app}\lang\es-419\Alfrescolang_es-419.xml"; DestDir: "{app}\lang\es-419
 Source: "{app}\lang\es-419\BoxPluginlang_es-419.xml"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\es-419\Browserlang_es-419.xml"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\es-419\BrowserPluginlang_es-419.xml"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\es-419\Collaborationlang_es-419.xml"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\es-419\CommentsSummarylang_es-419.xml"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\es-419\ConnectedPDFDRMlang_es-419.xml"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\es-419\ConnectedPDFPluginlang_es-419.xml"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\es-419\CPDFOCLinklang_es-419.xml"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\lang\es-419\CReviewlang_es-419.xml"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\es-419\DmsForLegallang_es-419.xml"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\es-419\DocProcesslang_es-419.xml"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\es-419\docusign_pluginlang_es-419.xml"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2848,11 +2848,11 @@ Source: "{app}\lang\fi-FI\Alfrescolang_fi-FI.xml"; DestDir: "{app}\lang\fi-FI"; 
 Source: "{app}\lang\fi-FI\BoxPluginlang_fi-FI.xml"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fi-FI\Browserlang_fi-FI.xml"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fi-FI\BrowserPluginlang_fi-FI.xml"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\fi-FI\Collaborationlang_fi-FI.xml"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fi-FI\CommentsSummarylang_fi-FI.xml"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fi-FI\ConnectedPDFDRMlang_fi-FI.xml"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fi-FI\ConnectedPDFPluginlang_fi-FI.xml"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fi-FI\CPDFOCLinklang_fi-FI.xml"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\lang\fi-FI\CReviewlang_fi-FI.xml"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fi-FI\DmsForLegallang_fi-FI.xml"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fi-FI\DocProcesslang_fi-FI.xml"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fi-FI\docusign_pluginlang_fi-FI.xml"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2887,11 +2887,11 @@ Source: "{app}\lang\fr-FR\Alfrescolang_fr-FR.xml"; DestDir: "{app}\lang\fr-FR"; 
 Source: "{app}\lang\fr-FR\BoxPluginlang_fr-FR.xml"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fr-FR\Browserlang_fr-FR.xml"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fr-FR\BrowserPluginlang_fr-FR.xml"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\fr-FR\Collaborationlang_fr-FR.xml"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fr-FR\CommentsSummarylang_fr-FR.xml"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fr-FR\ConnectedPDFDRMlang_fr-FR.xml"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fr-FR\ConnectedPDFPluginlang_fr-FR.xml"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fr-FR\CPDFOCLinklang_fr-FR.xml"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\lang\fr-FR\CReviewlang_fr-FR.xml"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fr-FR\DmsForLegallang_fr-FR.xml"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fr-FR\DocProcesslang_fr-FR.xml"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fr-FR\docusign_pluginlang_fr-FR.xml"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2926,11 +2926,11 @@ Source: "{app}\lang\it-IT\Alfrescolang_it-IT.xml"; DestDir: "{app}\lang\it-IT"; 
 Source: "{app}\lang\it-IT\BoxPluginlang_it-IT.xml"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\it-IT\Browserlang_it-IT.xml"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\it-IT\BrowserPluginlang_it-IT.xml"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\it-IT\Collaborationlang_it-IT.xml"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\it-IT\CommentsSummarylang_it-IT.xml"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\it-IT\ConnectedPDFDRMlang_it-IT.xml"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\it-IT\ConnectedPDFPluginlang_it-IT.xml"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\it-IT\CPDFOCLinklang_it-IT.xml"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\lang\it-IT\CReviewlang_it-IT.xml"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\it-IT\DmsForLegallang_it-IT.xml"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\it-IT\DocProcesslang_it-IT.xml"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\it-IT\docusign_pluginlang_it-IT.xml"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2965,11 +2965,11 @@ Source: "{app}\lang\ja-JP\Alfrescolang_ja-JP.xml"; DestDir: "{app}\lang\ja-JP"; 
 Source: "{app}\lang\ja-JP\BoxPluginlang_ja-JP.xml"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ja-JP\Browserlang_ja-JP.xml"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ja-JP\BrowserPluginlang_ja-JP.xml"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\ja-JP\Collaborationlang_ja-JP.xml"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ja-JP\CommentsSummarylang_ja-JP.xml"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ja-JP\ConnectedPDFDRMlang_ja-JP.xml"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ja-JP\ConnectedPDFPluginlang_ja-JP.xml"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ja-JP\CPDFOCLinklang_ja-JP.xml"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\lang\ja-JP\CReviewlang_ja-JP.xml"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ja-JP\DmsForLegallang_ja-JP.xml"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ja-JP\DocProcesslang_ja-JP.xml"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ja-JP\docusign_pluginlang_ja-JP.xml"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -3004,11 +3004,11 @@ Source: "{app}\lang\ko-KR\Alfrescolang_ko-KR.xml"; DestDir: "{app}\lang\ko-KR"; 
 Source: "{app}\lang\ko-KR\BoxPluginlang_ko-KR.xml"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ko-KR\Browserlang_ko-KR.xml"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ko-KR\BrowserPluginlang_ko-KR.xml"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\ko-KR\Collaborationlang_ko-KR.xml"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ko-KR\CommentsSummarylang_ko-KR.xml"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ko-KR\ConnectedPDFDRMlang_ko-KR.xml"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ko-KR\ConnectedPDFPluginlang_ko-KR.xml"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ko-KR\CPDFOCLinklang_ko-KR.xml"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\lang\ko-KR\CReviewlang_ko-KR.xml"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ko-KR\DmsForLegallang_ko-KR.xml"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ko-KR\DocProcesslang_ko-KR.xml"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ko-KR\docusign_pluginlang_ko-KR.xml"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -3043,11 +3043,11 @@ Source: "{app}\lang\nb-NO\Alfrescolang_nb-NO.xml"; DestDir: "{app}\lang\nb-NO"; 
 Source: "{app}\lang\nb-NO\BoxPluginlang_nb-NO.xml"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nb-NO\Browserlang_nb-NO.xml"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nb-NO\BrowserPluginlang_nb-NO.xml"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\nb-NO\Collaborationlang_nb-NO.xml"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nb-NO\CommentsSummarylang_nb-NO.xml"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nb-NO\ConnectedPDFDRMlang_nb-NO.xml"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nb-NO\ConnectedPDFPluginlang_nb-NO.xml"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nb-NO\CPDFOCLinklang_nb-NO.xml"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\lang\nb-NO\CReviewlang_nb-NO.xml"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nb-NO\DmsForLegallang_nb-NO.xml"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nb-NO\DocProcesslang_nb-NO.xml"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nb-NO\docusign_pluginlang_nb-NO.xml"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -3082,11 +3082,11 @@ Source: "{app}\lang\nl-NL\Alfrescolang_nl-NL.xml"; DestDir: "{app}\lang\nl-NL"; 
 Source: "{app}\lang\nl-NL\BoxPluginlang_nl-NL.xml"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nl-NL\Browserlang_nl-NL.xml"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nl-NL\BrowserPluginlang_nl-NL.xml"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\nl-NL\Collaborationlang_nl-NL.xml"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nl-NL\CommentsSummarylang_nl-NL.xml"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nl-NL\ConnectedPDFDRMlang_nl-NL.xml"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nl-NL\ConnectedPDFPluginlang_nl-NL.xml"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nl-NL\CPDFOCLinklang_nl-NL.xml"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\lang\nl-NL\CReviewlang_nl-NL.xml"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nl-NL\DmsForLegallang_nl-NL.xml"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nl-NL\DocProcesslang_nl-NL.xml"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nl-NL\docusign_pluginlang_nl-NL.xml"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -3121,11 +3121,11 @@ Source: "{app}\lang\pl-PL\Alfrescolang_pl-PL.xml"; DestDir: "{app}\lang\pl-PL"; 
 Source: "{app}\lang\pl-PL\BoxPluginlang_pl-PL.xml"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pl-PL\Browserlang_pl-PL.xml"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pl-PL\BrowserPluginlang_pl-PL.xml"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\pl-PL\Collaborationlang_pl-PL.xml"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pl-PL\CommentsSummarylang_pl-PL.xml"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pl-PL\ConnectedPDFDRMlang_pl-PL.xml"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pl-PL\ConnectedPDFPluginlang_pl-PL.xml"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pl-PL\CPDFOCLinklang_pl-PL.xml"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\lang\pl-PL\CReviewlang_pl-PL.xml"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pl-PL\DmsForLegallang_pl-PL.xml"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pl-PL\DocProcesslang_pl-PL.xml"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pl-PL\docusign_pluginlang_pl-PL.xml"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -3160,11 +3160,11 @@ Source: "{app}\lang\pt-BR\Alfrescolang_pt-BR.xml"; DestDir: "{app}\lang\pt-BR"; 
 Source: "{app}\lang\pt-BR\BoxPluginlang_pt-BR.xml"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pt-BR\Browserlang_pt-BR.xml"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pt-BR\BrowserPluginlang_pt-BR.xml"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\pt-BR\Collaborationlang_pt-BR.xml"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pt-BR\CommentsSummarylang_pt-BR.xml"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pt-BR\ConnectedPDFDRMlang_pt-BR.xml"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pt-BR\ConnectedPDFPluginlang_pt-BR.xml"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pt-BR\CPDFOCLinklang_pt-BR.xml"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\lang\pt-BR\CReviewlang_pt-BR.xml"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pt-BR\DmsForLegallang_pt-BR.xml"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pt-BR\DocProcesslang_pt-BR.xml"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pt-BR\docusign_pluginlang_pt-BR.xml"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -3199,11 +3199,11 @@ Source: "{app}\lang\ru-RU\Alfrescolang_ru-RU.xml"; DestDir: "{app}\lang\ru-RU"; 
 Source: "{app}\lang\ru-RU\BoxPluginlang_ru-RU.xml"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ru-RU\Browserlang_ru-RU.xml"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ru-RU\BrowserPluginlang_ru-RU.xml"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\ru-RU\Collaborationlang_ru-RU.xml"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ru-RU\CommentsSummarylang_ru-RU.xml"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ru-RU\ConnectedPDFDRMlang_ru-RU.xml"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ru-RU\ConnectedPDFPluginlang_ru-RU.xml"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ru-RU\CPDFOCLinklang_ru-RU.xml"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\lang\ru-RU\CReviewlang_ru-RU.xml"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ru-RU\DmsForLegallang_ru-RU.xml"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ru-RU\DocProcesslang_ru-RU.xml"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ru-RU\docusign_pluginlang_ru-RU.xml"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -3238,11 +3238,11 @@ Source: "{app}\lang\sv-SE\Alfrescolang_sv-SE.xml"; DestDir: "{app}\lang\sv-SE"; 
 Source: "{app}\lang\sv-SE\BoxPluginlang_sv-SE.xml"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\sv-SE\Browserlang_sv-SE.xml"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\sv-SE\BrowserPluginlang_sv-SE.xml"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\sv-SE\Collaborationlang_sv-SE.xml"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\sv-SE\CommentsSummarylang_sv-SE.xml"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\sv-SE\ConnectedPDFDRMlang_sv-SE.xml"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\sv-SE\ConnectedPDFPluginlang_sv-SE.xml"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\sv-SE\CPDFOCLinklang_sv-SE.xml"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\lang\sv-SE\CReviewlang_sv-SE.xml"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\sv-SE\DmsForLegallang_sv-SE.xml"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\sv-SE\DocProcesslang_sv-SE.xml"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\sv-SE\docusign_pluginlang_sv-SE.xml"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -3277,11 +3277,11 @@ Source: "{app}\lang\zh-CN\Alfrescolang_zh-CN.xml"; DestDir: "{app}\lang\zh-CN"; 
 Source: "{app}\lang\zh-CN\BoxPluginlang_zh-CN.xml"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\Browserlang_zh-CN.xml"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\BrowserPluginlang_zh-CN.xml"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\zh-CN\Collaborationlang_zh-CN.xml"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\CommentsSummarylang_zh-CN.xml"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\ConnectedPDFDRMlang_zh-CN.xml"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\ConnectedPDFPluginlang_zh-CN.xml"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\CPDFOCLinklang_zh-CN.xml"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\lang\zh-CN\CReviewlang_zh-CN.xml"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\DmsForLegallang_zh-CN.xml"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\DocProcesslang_zh-CN.xml"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\docusign_pluginlang_zh-CN.xml"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -3316,11 +3316,11 @@ Source: "{app}\lang\zh-TW\Alfrescolang_zh-TW.xml"; DestDir: "{app}\lang\zh-TW"; 
 Source: "{app}\lang\zh-TW\BoxPluginlang_zh-TW.xml"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-TW\Browserlang_zh-TW.xml"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-TW\BrowserPluginlang_zh-TW.xml"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\zh-TW\Collaborationlang_zh-TW.xml"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-TW\CommentsSummarylang_zh-TW.xml"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-TW\ConnectedPDFDRMlang_zh-TW.xml"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-TW\ConnectedPDFPluginlang_zh-TW.xml"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-TW\CPDFOCLinklang_zh-TW.xml"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\lang\zh-TW\CReviewlang_zh-TW.xml"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-TW\DmsForLegallang_zh-TW.xml"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-TW\DocProcesslang_zh-TW.xml"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-TW\docusign_pluginlang_zh-TW.xml"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -3363,8 +3363,6 @@ Source: "{tmp}\dlgbmp_de_de.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: 
 Source: "{tmp}\dlgbmp250_de_de.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp_pt_br.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp250_pt_br.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
-Source: "{tmp}\dlgbmp_pt_pt.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
-Source: "{tmp}\dlgbmp250_pt_pt.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp_pl_pl.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp250_pl_pl.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp_ru_ru.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
@@ -3377,8 +3375,6 @@ Source: "{tmp}\dlgbmp_zh_cn.bmp"; DestDir: "{tmp}"; BeforeInstall: "ChangeDispla
 Source: "{tmp}\dlgbmp250_zh_cn.bmp"; DestDir: "{tmp}"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp_tw_cn.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp250_tw_cn.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
-Source: "{tmp}\dlgbmp_hk_cn.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
-Source: "{tmp}\dlgbmp250_hk_cn.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp_jp_jp.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp250_jp_jp.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp_ko_kr.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
@@ -3420,11 +3416,11 @@ Source: "{tmp}\Splash.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: delete
 
 [Dirs]
 Name: "{app}\Javascripts"; Flags: uninsalwaysuninstall 
-Name: "{app}\lang\en-US\"; 
 
 [Registry]
 Root: HKLM; Subkey: "SOFTWARE\Foxit Software\Foxit PDF Reader"; ValueName: "Edition"; ValueType: String; ValueData: "0"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKLM; Subkey: "SOFTWARE\Foxit Software\Foxit PDF Reader"; ValueName: "InstallerType"; ValueType: String; ValueData: "exe"; MinVersion: 0.0,5.0; 
+Root: HKLM; Subkey: "SOFTWARE\Foxit Software\Foxit PDF Reader"; ValueName: "bContinue"; ValueType: String; ValueData: "1"; MinVersion: 0.0,5.0; 
 Root: HKLM; Subkey: "SOFTWARE\Classes\FoxitReader"; ValueType: String; ValueData: "Foxit Reader"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKLM; Subkey: "SOFTWARE\Classes\FoxitReader"; ValueName: "URL Protocol"; ValueType: String; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKLM; Subkey: "SOFTWARE\Classes\FoxitReader\DefaultIcon"; ValueType: String; ValueData: "{app}\FoxitPDFReader.exe 0"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
@@ -3476,8 +3472,6 @@ Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Prefere
 Root: HKLM; Subkey: "Software\Foxit Software\Foxit PDF Reader"; ValueName: "installLangid"; ValueType: String; ValueData: "49027d"; Languages: "ru"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Preferences\Languages"; ValueName: "langid"; ValueType: String; ValueData: "49025d"; Languages: "pt"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKLM; Subkey: "Software\Foxit Software\Foxit PDF Reader"; ValueName: "installLangid"; ValueType: String; ValueData: "49025d"; Languages: "pt"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
-Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Preferences\Languages"; ValueName: "langid"; ValueType: String; ValueData: "49024d"; Languages: "pt_pt"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
-Root: HKLM; Subkey: "Software\Foxit Software\Foxit PDF Reader"; ValueName: "installLangid"; ValueType: String; ValueData: "49024d"; Languages: "pt_pt"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Preferences\Languages"; ValueName: "langid"; ValueType: String; ValueData: "49023d"; Languages: "pl"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKLM; Subkey: "Software\Foxit Software\Foxit PDF Reader"; ValueName: "installLangid"; ValueType: String; ValueData: "49023d"; Languages: "pl"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Preferences\Languages"; ValueName: "langid"; ValueType: String; ValueData: "49018d"; Languages: "it"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
@@ -3488,8 +3482,6 @@ Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Prefere
 Root: HKLM; Subkey: "Software\Foxit Software\Foxit PDF Reader"; ValueName: "installLangid"; ValueType: String; ValueData: "49007d"; Languages: "chs"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Preferences\Languages"; ValueName: "langid"; ValueType: String; ValueData: "49008d"; Languages: "tw"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKLM; Subkey: "Software\Foxit Software\Foxit PDF Reader"; ValueName: "installLangid"; ValueType: String; ValueData: "49008d"; Languages: "tw"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
-Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Preferences\Languages"; ValueName: "langid"; ValueType: String; ValueData: "49037d"; Languages: "hk"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
-Root: HKLM; Subkey: "Software\Foxit Software\Foxit PDF Reader"; ValueName: "installLangid"; ValueType: String; ValueData: "49037d"; Languages: "hk"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Preferences\Languages"; ValueName: "langid"; ValueType: String; ValueData: "49033d"; Languages: "jp"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKLM; Subkey: "Software\Foxit Software\Foxit PDF Reader"; ValueName: "installLangid"; ValueType: String; ValueData: "49033d"; Languages: "jp"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Preferences\Languages"; ValueName: "langid"; ValueType: String; ValueData: "49019d"; Languages: "ko"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
@@ -3617,18 +3609,6 @@ pt.AssocingFileExtension=Associando %1 com a extensão de arquivo...
 pt.AutoStartProgramGroupDescription=Startup:
 pt.AutoStartProgram=Iniciar automaticamente %1
 pt.AddonHostProgramNotFound=%1 não pôde ser localizado na pasta que você selecionou.%n%nVocê deseja continuar assim mesmo?
-pt_pt.NameAndVersion=%1 versão %2
-pt_pt.AdditionalIcons=Ícones adicionais:
-pt_pt.CreateDesktopIcon=Criar ícone no Ambiente de &Trabalho
-pt_pt.CreateQuickLaunchIcon=&Criar ícone na barra de Iniciação Rápida
-pt_pt.ProgramOnTheWeb=%1 na Web
-pt_pt.UninstallProgram=Desinstalar o %1
-pt_pt.LaunchProgram=Executar o %1
-pt_pt.AssocFileExtension=Associa&r o %1 aos ficheiros com a extensão %2
-pt_pt.AssocingFileExtension=A associar o %1 aos ficheiros com a extensão %2...
-pt_pt.AutoStartProgramGroupDescription=Inicialização Automática:
-pt_pt.AutoStartProgram=Iniciar %1 automaticamente
-pt_pt.AddonHostProgramNotFound=Não foi possível localizar %1 na pasta seleccionada.%n%nDeseja continuar de qualquer forma?
 pl.NameAndVersion=%1 (wersja %2)
 pl.AdditionalIcons=Dodatkowe skróty:
 pl.CreateDesktopIcon=Utwórz skrót na &pulpicie
@@ -3686,18 +3666,6 @@ chs.UninstallProgram=卸载%1
 chs.LaunchProgram=运行%1
 chs.AssocFileExtension=将 %1 与 %2 文件扩展名关联(&A)
 chs.AssocingFileExtension=正在将 %1 与 %2 文件扩展名关联...
-hk.NameAndVersion=%1 版本 %2
-hk.AdditionalIcons=附加圖示:
-hk.CreateDesktopIcon=建立桌面圖示(&D)
-hk.CreateQuickLaunchIcon=建立快速啟動圖示(&Q)
-hk.ProgramOnTheWeb=%1 的網站
-hk.UninstallProgram=解除安裝 %1
-hk.LaunchProgram=啟動 %1
-hk.AssocFileExtension=將 %1 與檔案副檔名 %2 產生關聯(&A)
-hk.AssocingFileExtension=正在將 %1 與檔案副檔名 %2 產生關聯...
-hk.AutoStartProgramGroupDescription=開啟:
-hk.AutoStartProgram=自動開啟 %1
-hk.AddonHostProgramNotFound=%1 無法在您所選的資料夾中找到。%n%n您是否還要繼續？
 tw.NameAndVersion=%1 版本 %2
 tw.AdditionalIcons=附加圖示:
 tw.CreateDesktopIcon=建立桌面圖示(&D)
@@ -3863,8 +3831,8 @@ en.ApplicationDescription=Foxit PDF Reader is a small, fast, and feature-rich PD
 en.MSICreationFeature=There is a different edition of Foxit PDF Reader currently installed on your computer. Are you sure you want to remove the previous edition and install this one?%n%nPlease be aware that you may lose some settings in the previously version and PDF creation is not available in Foxit PDF Reader 10.0. PDF viewing, commenting, etc. are still present. %n%nClick OK to continue or Cancel to cancel installation.
 en.EXECreationFeature=If you continue with this update, your older version of Foxit PDF Reader will be uninstalled automatically.%n%nPlease be aware that PDF creation is not available in Foxit PDF Reader 10.0. PDF viewing, commenting, etc. are still present.%n%nPlease click “Yes” to continue or "No" to exit the update.
 en.AdditionalTaskDlgCollectData=Help improve user &experience
-FeatureCEF=Dependent Libraries for Browser Plugin
-FeatureCEFDesc=The libraries are used to display web pages in Foxit PDF Reader
+en.FeatureCEF=Dependent Libraries for Browser Plugin
+en.FeatureCEFDesc=The libraries are used to display web pages in Foxit PDF Reader
 startmenufolder2=Add an icon to the Start Menu
 setDefaultReader2=Set Foxit PDF Reader as the default PDF viewer
 DisplayInBrowser2=Show PDF files in browsers
@@ -3873,25 +3841,25 @@ SetPrint2=Install as the default system printer
 CreateQuickLaunchIcon2=Create a Quick Launch icon
 en.AppPublisherURL=https://www.foxit.com/support/
 en.AppSupportURL=https://www.foxit.com/
-en.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit%20Reader&language=en-US&distributor=
-PrePublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit Reader&language=en-US&version=12.0&distributor=
+en.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit%20Reader&language=en-US&distributor=
+PrePublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit Reader&language=en-US&version=2023.3.0&distributor=
 en.AppPublisherURLCaptiion=www.foxit.com
-AppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=technical_q71&product=Foxit Reader&language=en-US&version=12.0&distributor=
-en.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=technical_q71&product=Foxit Reader&language=en-US&version=12.0&distributor=
-en.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=cpdf-home&product=Foxit Reader&language=en-US&version=12.0&distributor=
-en.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=en-US&version=12.0&edition=
+AppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=technical_q71&product=Foxit Reader&language=en-US&version=2023.3.0&distributor=
+en.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=technical_q71&product=Foxit Reader&language=en-US&version=2023.3.0&distributor=
+en.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=en-US&version=2023.3.0&distributor=
+en.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=en-US&version=2023.3.0&edition=
 chs.startmenufolder2=在开始菜单中添加图标
 chs.setDefaultReader2=设置福昕阅读器为默认PDF阅读器
 chs.DisplayInBrowser2=在浏览器中显示PDF文件
 chs.SetPrint2=安装并设置为默认系统打印机
 chs.CreateDesktopIcon2=创建桌面图标
 chs.CreateQuickLaunchIcon2=创建快速启动栏图标
-chs.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit%20Reader&language=zh-CN&distributor=
-chs.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=cpdf-home&product=Foxit Reader&language=zh-CN&version=12.0&distributor=
+chs.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit%20Reader&language=zh-CN&distributor=
+chs.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=zh-CN&version=2023.3.0&distributor=
 chs.AppPublisherURL=http://www.foxit.com/support/
 chs.AppSupportURL=http://www.foxit.com/
-chs.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=technical_q71&product=Foxit Reader&language=zh-CN&version=12.0&distributor=
-chs.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=zh-CN&version=12.0&distributor=
+chs.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=technical_q71&product=Foxit Reader&language=zh-CN&version=2023.3.0&distributor=
+chs.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=zh-CN&version=2023.3.0&distributor=
 da_DK.startmenufolder2=Tilføj et ikon til menuen Start
 da_DK.setDefaultReader2=Indstil Foxit PDF Reader som standard-PDF-fremviser
 da_DK.DisplayInBrowser2=Vis PDF-filer i browsere
@@ -3900,11 +3868,11 @@ da_DK.CreateDesktopIcon2=Lav ikon på skrivebordet
 da_DK.CreateQuickLaunchIcon2=Lav hurtigstart-ikon
 da_DK.AppPublisherURL=https://www.foxit.com/support/techsupport/
 da_DK.AppSupportURL=https://www.foxit.com/
-da_DK.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit%20Reader&language=da-DK&distributor=
-da_DK.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=technical_q71&product=Foxit Reader&language=da-DK&version=12.0&distributor=
+da_DK.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit%20Reader&language=da-DK&distributor=
+da_DK.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=technical_q71&product=Foxit Reader&language=da-DK&version=2023.3.0&distributor=
 da_DK.AppPublisherURLCaptiion=www.foxit.com
-da_DK.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=cpdf-home&product=Foxit Reader&language=da-DK&version=12.0&distributor=
-da_DK.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=da-DK&version=12.0&distributor=
+da_DK.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=da-DK&version=2023.3.0&distributor=
+da_DK.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=da-DK&version=2023.3.0&distributor=
 nb_NO.startmenufolder2=Legg til et ikon på startmenyen
 nb_NO.setDefaultReader2=Angi Foxit PDF Reader som standard PDF-visningsprogram.
 nb_NO.DisplayInBrowser2=Vis PDF-filer i nettlesere
@@ -3913,11 +3881,11 @@ nb_NO.CreateDesktopIcon2=Lag ikon på skrivebordet
 nb_NO.CreateQuickLaunchIcon2=Lag et Hurtigstarts-ikon
 nb_NO.AppPublisherURL=https://www.foxit.com/support/techsupport/
 nb_NO.AppSupportURL=https://www.foxit.com/
-nb_NO.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit%20Reader&language=nb-NO&distributor=
-nb_NO.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=technical_q71&product=Foxit Reader&language=nb-NO&version=12.0&distributor=
+nb_NO.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit%20Reader&language=nb-NO&distributor=
+nb_NO.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=technical_q71&product=Foxit Reader&language=nb-NO&version=2023.3.0&distributor=
 nb_NO.AppPublisherURLCaptiion=www.foxit.com
-nb_NO.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=cpdf-home&product=Foxit Reader&language=nb-NO&version=12.0&distributor=
-nb_NO.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=nb-NO&version=12.0&distributor=
+nb_NO.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=nb-NO&version=2023.3.0&distributor=
+nb_NO.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=nb-NO&version=2023.3.0&distributor=
 sv_SE.startmenufolder2=Lägg till en ikon på startmenyn
 sv_SE.setDefaultReader2=Ställ in Foxit PDF Reader som standardläsare för PDF
 sv_SE.DisplayInBrowser2=Visa PDF-filer i webbläsare
@@ -3926,11 +3894,11 @@ sv_SE.CreateDesktopIcon2=Skapa en ikon på skrivbordet
 sv_SE.CreateQuickLaunchIcon2=Skapa en ikon i Snabbstartfältet
 sv_SE.AppPublisherURL=https://www.foxit.com/support/techsupport/
 sv_SE.AppSupportURL=https://www.foxit.com/
-sv_SE.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit%20Reader&language=sv-SE&distributor=
-sv_SE.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=technical_q71&product=Foxit Reader&language=sv-SE&version=12.0&distributor=
+sv_SE.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit%20Reader&language=sv-SE&distributor=
+sv_SE.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=technical_q71&product=Foxit Reader&language=sv-SE&version=2023.3.0&distributor=
 sv_SE.AppPublisherURLCaptiion=www.foxit.com
-sv_SE.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=cpdf-home&product=Foxit Reader&language=sv-SE&version=12.0&distributor=
-sv_SE.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=sv-SE&version=12.0&distributor=
+sv_SE.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=sv-SE&version=2023.3.0&distributor=
+sv_SE.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=sv-SE&version=2023.3.0&distributor=
 fi_FI.startmenufolder2=Lisää kuvake Käynnistä-valikkoon
 fi_FI.setDefaultReader2=Aseta Foxit PDF Reader oletusarvoiseksi PDF-katseluohjelmaksi
 fi_FI.DisplayInBrowser2=Näytä PDF-tiedostot selaimissa
@@ -3939,24 +3907,11 @@ fi_FI.CreateDesktopIcon2=Luo kuvake työpöydälle
 fi_FI.CreateQuickLaunchIcon2=Luo kuvake pikakäynnistyspalkkiin
 fi_FI.AppPublisherURL=https://www.foxit.com/support/techsupport/
 fi_FI.AppSupportURL=https://www.foxit.com/
-fi_FI.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit%20Reader&language=fi-FI&distributor=
-fi_FI.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=technical_q71&product=Foxit Reader&language=fi-FI&version=12.0&distributor=
+fi_FI.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit%20Reader&language=fi-FI&distributor=
+fi_FI.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=technical_q71&product=Foxit Reader&language=fi-FI&version=2023.3.0&distributor=
 fi_FI.AppPublisherURLCaptiion=www.foxit.com
-fi_FI.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=cpdf-home&product=Foxit Reader&language=fi-FI&version=12.0&distributor=
-fi_FI.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=fi-FI&version=12.0&distributor=
-hk.startmenufolder2=新增圖示至開始功能表
-hk.setDefaultReader2=將 Foxit PDF Reader 設定為預設 PDF 檢視器
-hk.DisplayInBrowser2=在瀏覽器中顯示 PDF 檔案
-hk.SetPrint2=安裝為預設系統印表機
-hk.CreateDesktopIcon2=建立桌面圖示
-hk.CreateQuickLaunchIcon2=建立快速啟動圖示
-hk.AppPublisherURL=http://www.foxitsoftware.hk/support/techsupport/
-hk.AppSupportURL=http://www.foxitsoftware.hk/
-hk.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit%20Reader&language=zh-HK
-hk.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=technical_q71&product=Foxit Reader&language=zh-HK&version=12.0&edition=
-hk.AppPublisherURLCaptiion=www.foxit.com
-hk.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=cpdf-home&product=Foxit Reader&language=zh-HK&version=12.0&edition=
-hk.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=zh-HK&version=12.0&edition=
+fi_FI.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=fi-FI&version=2023.3.0&distributor=
+fi_FI.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=fi-FI&version=2023.3.0&distributor=
 tw.startmenufolder2=新增圖示至開始功能表
 tw.setDefaultReader2=將 Foxit PDF Reader 設定為預設 PDF 檢視器
 tw.DisplayInBrowser2=在瀏覽器中顯示 PDF 檔案
@@ -3965,11 +3920,11 @@ tw.CreateDesktopIcon2=建立桌面圖示
 tw.CreateQuickLaunchIcon2=建立快速啟動圖示
 tw.AppPublisherURL=http://www.foxitsoftware.tw/support/techsupport/
 tw.AppSupportURL=http://www.foxitsoftware.tw/
-tw.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit%20Reader&language=zh-TW&distributor=
+tw.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit%20Reader&language=zh-TW&distributor=
 tw.AppPublisherURLCaptiion=www.foxit.com
-tw.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=technical_q71&product=Foxit Reader&language=zh-TW&version=12.0&distributor=
-tw.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=cpdf-home&product=Foxit Reader&language=zh-TW&version=12.0&distributor=
-tw.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=zh-TW&version=12.0&distributor=
+tw.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=technical_q71&product=Foxit Reader&language=zh-TW&version=2023.3.0&distributor=
+tw.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=zh-TW&version=2023.3.0&distributor=
+tw.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=zh-TW&version=2023.3.0&distributor=
 de.startmenufolder2=Symbol zum Startmenü hinzufügen
 de.setDefaultReader2=Foxit PDF Reader als Standardprogramm für die PDF-Anzeige festlegen 
 de.DisplayInBrowser2=PDF-Dateien in Browsern anzeigen
@@ -3978,11 +3933,11 @@ de.CreateDesktopIcon2=Desktop-Symbol erstellen
 de.CreateQuickLaunchIcon2=Symbol in der Schnellstartleiste erstellen
 de.AppPublisherURL=https://www.foxit.com/german/support/
 de.AppSupportURL=https://www.foxit.com/german/
-de.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit%20Reader&language=de-DE&distributor=
-de.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=technical_q71&product=Foxit Reader&language=de-DE&version=12.0&distributor=
+de.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit%20Reader&language=de-DE&distributor=
+de.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=technical_q71&product=Foxit Reader&language=de-DE&version=2023.3.0&distributor=
 de.AppPublisherURLCaptiion=www.foxit.com
-de.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=cpdf-home&product=Foxit Reader&language=de-DE&version=12.0&distributor=
-de.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=de-DE&version=12.0&distributor=
+de.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=de-DE&version=2023.3.0&distributor=
+de.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=de-DE&version=2023.3.0&distributor=
 es.startmenufolder2=Agregar icono al menú Inicio
 es.setDefaultReader2=Establecer Foxit PDF Reader como el visor de PDF predeterminado 
 es.DisplayInBrowser2=Mostrar todos los archivos PDF en los navegadores
@@ -3991,11 +3946,11 @@ es.CreateDesktopIcon2=Crear un icono en el escritorio
 es.CreateQuickLaunchIcon2=Crear un icono de Inicio Rápido
 es.AppPublisherURL=https://www.foxit.com/spanish/support/
 es.AppSupportURL=https://www.foxit.com/spanish/
-es.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit%20Reader&language=es-419&distributor=
-es.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=technical_q71&product=Foxit Reader&language=es-419&version=12.0&distributor=
+es.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit%20Reader&language=es-419&distributor=
+es.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=technical_q71&product=Foxit Reader&language=es-419&version=2023.3.0&distributor=
 es.AppPublisherURLCaptiion=www.foxit.com
-es.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=cpdf-home&product=Foxit Reader&language=es-419&version=12.0&distributor=
-es.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=es-419&version=12.0&distributor=
+es.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=es-419&version=2023.3.0&distributor=
+es.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=es-419&version=2023.3.0&distributor=
 fr.startmenufolder2=Ajouter une icône au menu Démarrer
 fr.setDefaultReader2=Définir Foxit PDF Reader comme lecteur de PDF par défaut
 fr.DisplayInBrowser2=Afficher les fichiers PDF dans les navigateurs
@@ -4004,11 +3959,11 @@ fr.CreateDesktopIcon2=Créer une icône sur le Bureau
 fr.CreateQuickLaunchIcon2=Créer une icône dans la barre de Lancement rapide
 fr.AppPublisherURL=https://www.foxit.com/french/support/
 fr.AppSupportURL=https://www.foxit.com/french/
-fr.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit%20Reader&language=fr-FR&distributor=
-fr.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=technical_q71&product=Foxit Reader&language=fr-FR&version=12.0&distributor=
+fr.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit%20Reader&language=fr-FR&distributor=
+fr.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=technical_q71&product=Foxit Reader&language=fr-FR&version=2023.3.0&distributor=
 fr.AppPublisherURLCaptiion=www.foxit.com
-fr.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=cpdf-home&product=Foxit Reader&language=fr-FR&version=12.0&distributor=
-fr.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=fr-FR&version=12.0&distributor=
+fr.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=fr-FR&version=2023.3.0&distributor=
+fr.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=fr-FR&version=2023.3.0&distributor=
 nl.startmenufolder2=Een pictogram aan het menu Start toevoegen
 nl.setDefaultReader2=Foxit PDF Reader instellen als standaard PDF-reader
 nl.DisplayInBrowser2=PDF-bestanden in browsers weergeven
@@ -4017,11 +3972,11 @@ nl.CreateDesktopIcon2=Maak een snelkoppeling op het bureaublad
 nl.CreateQuickLaunchIcon2=Maak een snelkoppeling op de Snel starten werkbalk
 nl.AppPublisherURL=https://www.foxit.com/support/
 nl.AppSupportURL=https://www.foxit.com/
-nl.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit%20Reader&language=nl-NL&distributor=
-nl.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=technical_q71&product=Foxit Reader&language=nl-NL&version=12.0&distributor=
+nl.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit%20Reader&language=nl-NL&distributor=
+nl.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=technical_q71&product=Foxit Reader&language=nl-NL&version=2023.3.0&distributor=
 nl.AppPublisherURLCaptiion=www.foxit.com
-nl.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=cpdf-home&product=Foxit Reader&language=nl-NL&version=12.0&distributor=
-nl.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=nl-NL&version=12.0&distributor=
+nl.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=nl-NL&version=2023.3.0&distributor=
+nl.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=nl-NL&version=2023.3.0&distributor=
 pt.startmenufolder2=Adicionar um ícone ao Menu Iniciar
 pt.setDefaultReader2=Definir o Foxit PDF Reader como o visualizador de PDF padrão
 pt.DisplayInBrowser2=Mostrar arquivos PDF em navegadores
@@ -4030,24 +3985,11 @@ pt.CreateDesktopIcon2=Criar ícone no Ambiente de Trabalho
 pt.CreateQuickLaunchIcon2=Criar ícone na barra de Iniciação Rápida
 pt.AppPublisherURL=https://www.foxit.com/portuguese/support/
 pt.AppSupportURL=https://www.foxit.com/portuguese/
-pt.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit%20Reader&language=pt-BR&distributor=
-pt.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=technical_q71&product=Foxit Reader&language=pt-BR&version=12.0&distributor=
+pt.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit%20Reader&language=pt-BR&distributor=
+pt.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=technical_q71&product=Foxit Reader&language=pt-BR&version=2023.3.0&distributor=
 pt.AppPublisherURLCaptiion=www.foxit.com
-pt.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=cpdf-home&product=Foxit Reader&language=pt-BR&version=12.0&distributor=
-pt.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=pt-BR&version=12.0&distributor=
-pt_pt.startmenufolder2=Adicionar um ícone ao Menu Iniciar
-pt_pt.setDefaultReader2=Definir o Foxit PDF Reader como o &visualizador de PDF predefinido
-pt_pt.DisplayInBrowser2=Mostrar ficheiros PDF em navegadores
-pt_pt.SetPrint2=Instalar como impressora padrão do sistema
-pt_pt.CreateDesktopIcon2=Criar ícone no Ambiente de Trabalho
-pt_pt.CreateQuickLaunchIcon2=Criar ícone na barra de Iniciação Rápida
-pt_pt.AppPublisherURL=https://www.foxit.com/portuguese/support/
-pt_pt.AppSupportURL=https://www.foxit.com/portuguese/
-pt_pt.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit%20Reader&language=pt_pt
-pt_pt.PreAppBrowserURL=https://www.foxit.com/portuguese/support/showfaq_technical.php
-pt_pt.AppPublisherURLCaptiion=www.foxit.com
-pt_pt.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=cpdf-home&product=Foxit Reader&language=pt_pt&version=12.0&edition=
-pt_pt.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=pt_pt&version=12.0&edition=
+pt.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=pt-BR&version=2023.3.0&distributor=
+pt.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=pt-BR&version=2023.3.0&distributor=
 it.startmenufolder2=Aggiungi un'icona al Menu Avvio
 it.setDefaultReader2=Imposta Foxit PDF Reader come visualizzatore PDF predefinito 
 it.DisplayInBrowser2=Mostra file PDF nei browser
@@ -4056,11 +3998,11 @@ it.CreateDesktopIcon2=Crea un'icona sul desktop
 it.CreateQuickLaunchIcon2=Crea un'icona nella barra Avvio veloce
 it.AppPublisherURL=https://www.foxit.com/support/
 it.AppSupportURL=https://www.foxit.com/
-it.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit%20Reader&language=it-IT&distributor=
-it.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=technical_q71&product=Foxit Reader&language=it-IT&version=12.0&distributor=
+it.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit%20Reader&language=it-IT&distributor=
+it.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=technical_q71&product=Foxit Reader&language=it-IT&version=2023.3.0&distributor=
 it.AppPublisherURLCaptiion=www.foxit.com
-it.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=cpdf-home&product=Foxit Reader&language=it-IT&version=12.0&distributor=
-it.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=it-IT&version=12.0&distributor=
+it.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=it-IT&version=2023.3.0&distributor=
+it.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=it-IT&version=2023.3.0&distributor=
 ru.startmenufolder2=Добавить з&начок в меню "Пуск"
 ru.setDefaultReader2=Установить Foxit PDF Reader в качестве программы просмотра PDF-файлов по умолчанию
 ru.DisplayInBrowser2=Показывать PDF-файлы в браузерах
@@ -4069,11 +4011,11 @@ ru.CreateDesktopIcon2=Создать значок на Рабочем столе
 ru.CreateQuickLaunchIcon2=Создать значок в Панели быстрого запуска
 ru.AppPublisherURL=https://www.foxit.com/russian/support/
 ru.AppSupportURL=https://www.foxit.com/spanish/
-ru.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit%20Reader&language=ru-RU&distributor=
-ru.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=technical_q71&product=Foxit Reader&language=ru-RU&version=12.0&distributor=
+ru.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit%20Reader&language=ru-RU&distributor=
+ru.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=technical_q71&product=Foxit Reader&language=ru-RU&version=2023.3.0&distributor=
 ru.AppPublisherURLCaptiion=www.foxit.com
-ru.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=cpdf-home&product=Foxit Reader&language=ru-RU&version=12.0&distributor=
-ru.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=ru-RU&version=12.0&distributor=
+ru.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=ru-RU&version=2023.3.0&distributor=
+ru.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=ru-RU&version=2023.3.0&distributor=
 jp.startmenufolder2=スタートメニューにアイコンを追加
 jp.setDefaultReader2=Foxit PDF Reader を既定の PDF リーダーに設定
 jp.DisplayInBrowser2=ブラウザで PDF ファイルを表示
@@ -4082,11 +4024,11 @@ jp.CreateDesktopIcon2=デスクトップ上にアイコンを作成する
 jp.CreateQuickLaunchIcon2=クイック起動アイコンを作成する
 jp.AppPublisherURL=http://www.foxit.co.jp/support
 jp.AppSupportURL=http://www.foxit.co.jp/
-jp.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit%20Reader&language=ja-JP&distributor=
+jp.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit%20Reader&language=ja-JP&distributor=
 jp.AppPublisherURLCaptiion=http://www.foxit.co.jp/
-jp.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=cpdf-home&product=Foxit Reader&language=ja-JP&version=12.0&distributor=
-jp.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=technical_q71&product=Foxit Reader&language=ja-JP&version=12.0&distributor=
-jp.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=ja-JP&version=12.0&distributor=
+jp.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=ja-JP&version=2023.3.0&distributor=
+jp.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=technical_q71&product=Foxit Reader&language=ja-JP&version=2023.3.0&distributor=
+jp.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=ja-JP&version=2023.3.0&distributor=
 ko.startmenufolder2=시작 메뉴 및 아이콘 추가
 ko.setDefaultReader2=기본 PDF 뷰어로 Foxit PDF Reader 설정 
 ko.DisplayInBrowser2=브라우저에서 PDF 파일 보기
@@ -4095,18 +4037,18 @@ ko.CreateDesktopIcon2=바탕 화면에 바로가기 만들기
 ko.CreateQuickLaunchIcon2=빠른 실행 아이콘 만들기
 ko.AppPublisherURL=https://www.foxit.com/kr/support/faq.html
 ko.AppSupportURL=https://www.foxit.com/kr/
-ko.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit%20Reader&language=ko-KR&distributor=
+ko.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit%20Reader&language=ko-KR&distributor=
 ko.AppPublisherURLCaptiion=https://www.foxit.com
-ko.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=cpdf-home&product=Foxit Reader&language=ko-KR&version=12.0&distributor=
-ko.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=technical_q71&product=Foxit Reader&language=ko-KR&version=12.0&distributor=
-ko.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=ko-KR&version=12.0&distributor=
-pl.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=cpdf-home&product=Foxit Reader&language=pl-PL&version=12.0&edition=
+ko.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=ko-KR&version=2023.3.0&distributor=
+ko.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=technical_q71&product=Foxit Reader&language=ko-KR&version=2023.3.0&distributor=
+ko.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=ko-KR&version=2023.3.0&distributor=
+pl.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=pl-PL&version=2023.3.0&edition=
 pl.AppPublisherURL=https://www.foxit.com/support/
 pl.AppSupportURL=https://www.foxit.com/
-pl.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=home&product=Foxit%20Reader&language=pl-PL
+pl.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit%20Reader&language=pl-PL
 pl.AppPublisherURLCaptiion=https://www.foxit.com
-pl.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader12.0.0_install&title=technical_q71&product=Foxit Reader&language=pl-PL&version=12.0&edition=
-pl.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=pl-PL&version=12.0&edition=
+pl.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=technical_q71&product=Foxit Reader&language=pl-PL&version=2023.3.0&edition=
+pl.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=pl-PL&version=2023.3.0&edition=
 en.pdfviewer=PDF-Viewer files
 en.FullInstallation=Standard installation
 en.CustomInstallation=Custom installation
@@ -4124,8 +4066,6 @@ ru.path=ru
 ru.ReaderLang=ru_ru
 pt.path=pt
 pt.ReaderLang=pt_br
-pt_pt.path=pt_pt
-pt_pt.ReaderLang=pt_pt
 pl.path=pl
 pl.ReaderLang=pl_pl
 it.path=it
@@ -4136,8 +4076,6 @@ chs.path=chs
 chs.ReaderLang=zh_cn
 tw.path=tw
 tw.ReaderLang=tw_cn
-hk.path=hk
-hk.ReaderLang=hk_cn
 jp.path=jp
 jp.ReaderLang=jp_jp
 ko.path=ko
@@ -4585,91 +4523,6 @@ pt.EXECreationFeature=Se você continuar com esta atualização, sua versão ant
 pt.AdditionalTaskDlgCollectData=Ajude a melhorar a exp&eriência do usuário
 pt.FeatureCEF=Bibliotecas dependentes para o plugin do navegador
 pt.FeatureCEFDesc=As bibliotecas são usadas para exibir páginas da web no Foxit PDF Reader
-pt_pt.startmenufolder=Adicionar um &ícone ao Menu Iniciar
-pt_pt.pdfviewer=Ficheiros do Visualizador de PDFs
-pt_pt.FullInstallation=Instalação completa
-pt_pt.CustomInstallation=Instalação personalizada
-pt_pt.MaintenanceTitle=Manutenção do Programa
-pt_pt.MaintenanceDescription=Reparar ou remover o programa.
-pt_pt.Modify=Modificar
-pt_pt.Repair=Reparar
-pt_pt.Uninstall=Remover
-pt_pt.InstallV9_Plugin_descript=Transferir e instalar a home page e a barra de ferramentas V9 – recomendado (o browser será reiniciado e todas as páginas permanecerão iguais).
-pt_pt.ffaddin=Plug-in utilizado para abrir ficheiros PDF no browser
-pt_pt.ffse=Extensões da Shell
-pt_pt.setDefaultReader=&Predefinir Foxit PDF Reader como visualizador de PDF
-pt_pt.BeingSetDefault=Predefinir o Foxit PDF Reader como visualizador de PDFs
-pt_pt.BeingInstallFirelfoxPlugin=A instalar o suplemento para o Mozilla FireFox, Opera, Safari e Chrome
-pt_pt.BeingInstallPlugin=A instalar o suplemento
-pt_pt.BeingInstallSE=A instalar as Extensões da Shell
-pt_pt.DisplayInBrowser=Mostrar &ficheiros PDF em browsers
-pt_pt.ffSpellCheck=Idioma da Verificação Ortográfica Foxit
-pt_pt.BeingInstallSpellCheck=A Instalar o Idioma da Verificação Ortográfica Foxit
-pt_pt.WordAddin=Plug-in do Word
-pt_pt.BeingInstallWordAddin=A Instalar o Plug-in do Word
-pt_pt.BeingInstallPPTAddin=A Instalar o Plug-in do PowerPoint
-pt_pt.BeingInstallExcelAddin=A Instalar o Plug-in do Excel
-pt_pt.PPTAddin=Plug-in do PowerPoint
-pt_pt.ExcelAddin=Plug-in do Excel
-pt_pt.OutLookAddin=Plug-in do Outlook
-pt_pt.BeingInstallOutLookAddin=A Instalar o Plug-in do Outlook
-pt_pt.ConvertToPDF=Extensão da shell do Windows para converter PDFs
-pt_pt.SetPrint=Instalar como &impressora predefinida do sistema
-pt_pt.InstallPrint=Foxit PDF Reader Creator
-pt_pt.AppName=Foxit PDF Reader
-pt_pt.SafeModeDlgTitle=Definição do Modo de Leitura Segura
-pt_pt.SafeModeFeatureTitle=O Modo Seguro permite controlar as ações e transmissões de dados não autorizadas, incluindo ligações URL, inicialização de ficheiros externos e execução de funções JavaScript para evitar ataques de documentos maliciosos de forma eficiente. 
-pt_pt.SafeModeGroupBoxTitle=Gestor de Confiança
-pt_pt.SafeModeCheck=Ativar Modo de Leitura Segura
-pt_pt.SafeModeFeatureCaptionEnd=Também pode ativar ou desativar o Modo de Leitura Segura nas Preferências do Reader (Ficheiro->Preferências->Gestor de Confiança).
-pt_pt.UpdaterName=Módulos de Atualização Foxit
-pt_pt.FileInUseFoxitReader=O Foxit PDF Reader tem de ser fechado para a desinstalação continuar. Feche e clique em Repetir para continuar.
-pt_pt.FileInUseFoxitUpdater=O Foxit Updater tem de ser fechado para a instalação continuar. Feche e clique em Repetir para continuar.
-pt_pt.NewerVersion=Uma versão mais recente do Foxit PDF Reader já está instalada. 
-pt_pt.UninstallOldVersion=Uma versão antiga do Foxit PDF Reader foi instalada no seu computador. Desinstale-a antes de instalar a nova versão. Clique em OK para desinstalar.
-pt_pt.UninstallOldVersionConfirm=Uma versão antiga do Foxit PDF Reader foi instalada no seu computador. Desinstale-a antes de instalar a nova versão. Clique em Repetir para continuar com a instalação. 
-pt_pt.OlderVersion=Se continuar com a atualização, a versão mais antiga do Foxit PDF Reader será desinstalada automaticamente. Clique em "Sim" para continuar ou em "Não" para sair da atualização.
-pt_pt.MSIDETECTED=A instalação não teve êxito. Desinstale a versão anterior do Foxit PDF Reader antes de instalar a versão mais recente.
-pt_pt.CheckEnv=A verificar o ambiente de instalação
-pt_pt.FoxitReaderInstallerRunning=Existe outra instalação do Foxit PDF Reader em execução. Aguarde até a instalação ser concluída.
-pt_pt.FileWord=Feche o Microsoft Word para continuar com a instalação. Clique em Repetir para continuar.
-pt_pt.FileEXCEL=Feche o Microsoft Excel para continuar com a instalação. Clique em Repetir para continuar.
-pt_pt.FilePOWERPNT=Feche o Microsoft PowerPoint para continuar com a instalação. Clique em Repetir para continuar.
-pt_pt.FileOUTLOOK=Feche o Microsoft Outlook para continuar com a instalação. Clique em Repetir para continuar.
-pt_pt.IsClean=Quer remover as definições do Reader e os dados do histórico após a desinstalação?
-pt_pt.CountLabel=Clique em Instalar para continuar com a instalação ou clique em Anterior se quer rever ou alterar qualquer definição. 
-pt_pt.CountLabel2=Clique em Instalar para continuar com a reparação. As definições serão as mesmas da instalação original.
-pt_pt.PhantomName= Foxit PDF Editor
-pt_pt.Phantom_text=Precisa que a sua solução de PDF tenha mais funcionalidades? Muitos fluxos de trabalho necessitam das funcionalidades adicionais do Foxit PDF Editor. Expande as capacidades do Foxit PDF Reader para incluir:
-pt_pt.Phantom_and= Organizar documentos PDF (por exemplo, mover, eliminar, adicionar, simplificar, recortar e extrair páginas) 
-pt_pt.PhantomOCR= OCR de documentos digitalizados
-pt_pt.PhantomExport= Exportar outros formatos de ficheiro
-pt_pt.PhantomDevelop= Desenvolver formulários PDF
-pt_pt.PhantomProtect= Proteger ficheiros PDF (por exemplo, encriptação)
-pt_pt.PhantomURL= Saiba mais acerca do
-pt_pt.PhantomRadio=Instalar uma avaliação gratuita de 14 dias do Foxit PDF Editor
-pt_pt.PhantomRadio2=Não instalar uma avaliação gratuita de 14 dias do Foxit PDF Editor
-pt_pt.Phantomtilte= Foxit PDF Editor
-pt_pt.Phantomtilte2= Recomendado pelo Foxit PDF Reader
-pt_pt.PhantomEdit= Editar conteúdos do PDF
-pt_pt.PhantomDownload=Falha ao transferir. Visite o site da Foxit para transferir o Foxit PDF Editor.
-pt_pt.CuntReadyMemo=Tarefas adicionais:
-pt_pt.CloudTitle=O que Pode Fazer no Foxit Cloud
-pt_pt.CloudTitle1=Cloud Reading
-pt_pt.CloudDescription1=Leia os seus documentos sincronizados a partir de qualquer localização, com qualquer dispositivo e sempre que quiser.
-pt_pt.CloudTitle2=Submeter Formulários
-pt_pt.CloudDescription2=Um clique para submeter o seu formulário PDF concluído a outras pessoas.
-pt_pt.CloudTitle3=Traduzir
-pt_pt.CloudDescription3=Traduza documentos de texto em mais de 64 idiomas.
-pt_pt.CloudWebLink=Saber Mais
-pt_pt.cPDFFeature=Desativar funcionalidades do ConnectedPDF
-pt_pt.IsInstallReader=Existe uma edição diferente do Foxit PDF Reader instalada no computador. Quer mesmo remover a edição anterior e instalar esta? %nLembre-se de que se instalou a versão .msi do Foxit PDF Reader, poderá perder algumas definições.
-pt_pt.ConnectedPDF=ConnectedPDF
-pt_pt.DisableInternet=Disable all features which require internet connection
-pt_pt.ApplicationDescription=Foxit PDF Reader is a small, fast, and feature-rich PDF viewer which allows you to open, view, and print any PDF file. Foxit PDF Reader provides PDF creation and easy to use collaboration features like the ability to add annotations, fill out forms, and share information with friends and colleagues.
-pt_pt.MSICreationFeature=There is a different edition of Foxit PDF Reader currently installed on your computer. Are you sure %nyou want to remove the previous edition and install this one?%n%nPlease be aware that you may lose some settings in the previously version and %nPDF creation is not available in Foxit PDF Reader 10.0. PDF viewing, commenting, etc. are still present. %n%nClick OK to continue or Cancel to cancel installation.
-pt_pt.EXECreationFeature=If you continue with this update, your older version of Foxit PDF Reader will be uninstalled %nautomatically.%n%nPlease be aware that PDF creation is not available in Foxit PDF Reader 10.0. PDF viewing, %ncommenting, etc. are still present.%n%nPlease click “Yes” to continue or "No" to exit the update.
-pt_pt.AdditionalTaskDlgCollectData=Help improve user &experience
 pl.startmenufolder=Dodaj &ikonę do menu Start
 pl.pdfviewer=Pliki przeglądarki PDF
 pl.FullInstallation=Instalacja pełna
@@ -5460,91 +5313,6 @@ tw.EXECreationFeature=如果繼續進行此更新，則將自動卸載較舊的F
 tw.AdditionalTaskDlgCollectData=幫助改進使用者體驗(&E)
 tw.FeatureCEF=瀏覽器插件的依賴庫
 tw.FeatureCEFDesc=這些庫用於在 Foxit PDF Reader 中顯示網頁
-hk.startmenufolder=新增圖示至開始功能表(&I)
-hk.pdfviewer=PDF 檢視器檔案
-hk.FullInstallation=完整安裝
-hk.CustomInstallation=自訂安裝
-hk.MaintenanceTitle=程式維護
-hk.MaintenanceDescription=修復或移除程式。
-hk.Modify=修改
-hk.Repair=修復
-hk.Uninstall=移除
-hk.InstallV9_Plugin_descript=下載並安裝 V9 首頁和工具列 ¨C（建議）（瀏覽器將會重新啟動，所有頁面都會保持不變）。
-hk.ffaddin=用於在瀏覽器中開啟 PDF 檔案的外掛程式
-hk.ffse=殼層延伸模組
-hk.setDefaultReader=將 Foxit PDF Reader 設定為預設 PDF 檢視器(&V)
-hk.BeingSetDefault=將 Foxit PDF Reader 設定為預設 PDF 檢視器
-hk.BeingInstallFirelfoxPlugin=正在安裝 Mozilla FireFox、Opera、Safari 和 Chrome 的附加元件
-hk.BeingInstallPlugin=正在安裝附加元件
-hk.BeingInstallSE=正在安裝殼層延伸模組
-hk.DisplayInBrowser=在瀏覽器中顯示 PDF 檔案(&F)
-hk.ffSpellCheck=Foxit 拼字檢查語言
-hk.BeingInstallSpellCheck=正在安裝 Foxit 拼字檢查語言
-hk.WordAddin=Word 外掛程式
-hk.BeingInstallWordAddin=正在安裝 Word 外掛程式
-hk.BeingInstallPPTAddin=正在安裝 PPT 外掛程式
-hk.BeingInstallExcelAddin=正在安裝 Excel 外掛程式
-hk.PPTAddin=PPT 外掛程式
-hk.ExcelAddin=Excel 外掛程式
-hk.OutLookAddin=OutLook 外掛程式
-hk.BeingInstallOutLookAddin=正在安裝 OutLook 外掛程式
-hk.ConvertToPDF=用於轉換 PDF 的 Windows 殼層延伸模組
-hk.SetPrint=安裝為預設系統印表機(&P)
-hk.InstallPrint=Foxit PDF Reader Creator
-hk.AppName=Foxit PDF Reader
-hk.SafeModeDlgTitle=安全讀取模式設定
-hk.SafeModeFeatureTitle=安全模式可讓您控制未經授權的動作及資料傳輸，包括 URL 連線、啟動外部檔案及執行 JavaScript 功能，以有效避免惡意文件攻擊。 
-hk.SafeModeGroupBoxTitle=信任管理員
-hk.SafeModeCheck=啟用安全讀取模式
-hk.SafeModeFeatureCaptionEnd=您也可以從 Reader 的「喜好設定」(「檔案」->「喜好設定」->「信任管理員」)啟用或停用「安全讀取模式」。
-hk.UpdaterName=Foxit 更新模組
-hk.FileInUseFoxitReader=必須關閉 Foxit PDF Reader 才能繼續解除安裝。請將其關閉，然後按一下「重試」以繼續。
-hk.FileInUseFoxitUpdater=必須關閉 Foxit Updater 才能繼續安裝。請將其關閉，然後按一下「重試」以繼續。
-hk.NewerVersion=已安裝更新版本的 Foxit PDF Reader。 
-hk.UninstallOldVersion=您的電腦已安裝舊版 Foxit PDF Reader。請先將其解除安裝，再安裝此新版本。按一下「確定」以執行此作業。
-hk.UninstallOldVersionConfirm=您的電腦已安裝舊版 Foxit PDF Reader。請先將其解除安裝，再安裝此新版本。按一下「重試」以繼續安裝。 
-hk.OlderVersion=如果您繼續更新，則將自動解除安裝舊版 Foxit PDF Reader。請按一下「是」以繼續，或按一下「否」以結束更新。
-hk.MSIDETECTED=安裝失敗。請先解除安裝舊版 Foxit PDF Reader，然後再安裝最新版本。
-hk.CheckEnv=正在檢查安裝環境
-hk.FoxitReaderInstallerRunning=另一個 Foxit PDF Reader 安裝程式正在執行中。請等到目前的安裝程式完成。
-hk.FileWord=請關閉 Microsoft Word 以便繼續安裝。然後按一下「重試」以繼續。
-hk.FileEXCEL=請關閉 Microsoft Excel 以便繼續安裝。然後按一下「重試」以繼續。
-hk.FilePOWERPNT=請關閉 Microsoft Powerpoint 以便繼續安裝。然後按一下「重試」以繼續。
-hk.FileOUTLOOK=請關閉 Microsoft Outlook 以便繼續安裝。然後按一下「重試」以繼續。
-hk.IsClean=解除安裝後，是否要移除 Reader 設定及歷程記錄資料?
-hk.CountLabel=按一下「安裝」以繼續安裝，或按一下「返回」以檢閱或變更任何設定。 
-hk.CountLabel2=按一下「安裝」以繼續修復。設定將與原始安裝相同。
-hk.PhantomName= Foxit PDF Editor
-hk.Phantom_text=需要從 PDF 解決方案瞭解更多資訊？許多工作流程需要使用 Foxit PDF Editor 的額外功能。其延伸了 Foxit PDF Reader 的功能，以便包含：
-hk.Phantom_and= 組織 PDF 文件 (即，移動、刪除、新增、扁平化、裁剪和擷取頁面) 
-hk.PhantomOCR= 透過 OCR 辨識掃描的文件
-hk.PhantomExport= 匯出為其他檔案格式
-hk.PhantomDevelop= 製作 PDF 表單
-hk.PhantomProtect= 保護 PDF 檔案 (即，加密)
-hk.PhantomURL= 深入了解
-hk.PhantomRadio=安裝 Foxit PDF Editor 14 天免費試用版
-hk.PhantomRadio2=不要安裝 Foxit PDF Editor 14 天免費試用版
-hk.Phantomtilte= Foxit PDF Editor
-hk.Phantomtilte2= Foxit PDF Reader 建議
-hk.PhantomEdit= 編輯 PDF 內容
-hk.PhantomDownload=下載失敗。請造訪 Foxit 網站以下載 Foxit PDF Editor。
-hk.CuntReadyMemo=其他工作：
-hk.CloudTitle=您可以使用 Foxit 雲端做什麼
-hk.CloudTitle1=雲端讀取
-hk.CloudDescription1=使用任何裝置，隨時隨地同步讀取文件。
-hk.CloudTitle2=提交表單
-hk.CloudDescription2=按一下便可將您完成的 PDF 表單提交給其他人員。
-hk.CloudTitle3=翻譯
-hk.CloudDescription3=以超過 64 種語言翻譯文件文字。
-hk.CloudWebLink=深入了解
-hk.cPDFFeature=停用互聯 PDF 功能
-hk.IsInstallReader=您的計算機上目前安裝了不同版本的 Foxit PDF Reader。是否確定要刪除先前的版本並安裝此版本？%n請注意，如果您以前安裝了 .msi 版本的 Foxit PDF Reader，某些設定可能會丟失。
-hk.ConnectedPDF=互聯 PDF
-hk.DisableInternet=Disable all features which require internet connection
-hk.ApplicationDescription=Foxit PDF Reader is a small, fast, and feature-rich PDF viewer which allows you to open, view, and print any PDF file. Foxit PDF Reader provides PDF creation and easy to use collaboration features like the ability to add annotations, fill out forms, and share information with friends and colleagues.
-hk.MSICreationFeature=There is a different edition of Foxit PDF Reader currently installed on your computer. Are you sure %nyou want to remove the previous edition and install this one?%n%nPlease be aware that you may lose some settings in the previously version and %nPDF creation is not available in Foxit PDF Reader 10.0. PDF viewing, commenting, etc. are still present. %n%nClick OK to continue or Cancel to cancel installation.
-hk.EXECreationFeature=If you continue with this update, your older version of Foxit PDF Reader will be uninstalled %nautomatically.%n%nPlease be aware that PDF creation is not available in Foxit PDF Reader 10.0. PDF viewing, %ncommenting, etc. are still present.%n%nPlease click “Yes” to continue or "No" to exit the update.
-hk.AdditionalTaskDlgCollectData=Help improve user &experience
 ko.startmenufolder=시작 메뉴 및 아이콘 추가
 ko.pdfviewer=PDF-Viewer 파일
 ko.FullInstallation=표준 설치
@@ -5729,13 +5497,11 @@ Name: "es"; MessagesFile: "embedded\es.isl"; LicenseFile: "embedded\esLicense.rt
 Name: "de"; MessagesFile: "embedded\de.isl"; LicenseFile: "embedded\deLicense.rtf"; 
 Name: "fr"; MessagesFile: "embedded\fr.isl"; LicenseFile: "embedded\frLicense.rtf"; 
 Name: "pt"; MessagesFile: "embedded\pt.isl"; LicenseFile: "embedded\ptLicense.rtf"; 
-Name: "pt_pt"; MessagesFile: "embedded\pt_pt.isl"; LicenseFile: "embedded\pt_ptLicense.rtf"; 
 Name: "pl"; MessagesFile: "embedded\pl.isl"; LicenseFile: "embedded\plLicense.rtf"; 
 Name: "ru"; MessagesFile: "embedded\ru.isl"; LicenseFile: "embedded\ruLicense.rtf"; 
 Name: "nl"; MessagesFile: "embedded\nl.isl"; LicenseFile: "embedded\nlLicense.rtf"; 
 Name: "it"; MessagesFile: "embedded\it.isl"; LicenseFile: "embedded\itLicense.rtf"; 
 Name: "chs"; MessagesFile: "embedded\chs.isl"; LicenseFile: "embedded\chsLicense.rtf"; 
-Name: "hk"; MessagesFile: "embedded\hk.isl"; LicenseFile: "embedded\hkLicense.rtf"; 
 Name: "tw"; MessagesFile: "embedded\tw.isl"; LicenseFile: "embedded\twLicense.rtf"; 
 Name: "jp"; MessagesFile: "embedded\jp.isl"; LicenseFile: "embedded\jpLicense.rtf"; 
 Name: "ko"; MessagesFile: "embedded\ko.isl"; LicenseFile: "embedded\koLicense.rtf"; 

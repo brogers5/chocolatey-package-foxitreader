@@ -35,4 +35,4 @@ Sign documents in your own handwriting or utilize eSignature and verify the stat
 
 * `/NoShim` - Opt out of creating a shim, and removes any existing shim.
 
-## [Package Notes](https://github.com/brogers5/chocolatey-package-foxitreader/blob/v2023.2.0.2140800/PACKAGE-NOTES.md)
+## [Package Notes](https://github.com/brogers5/chocolatey-package-foxitreader/blob/v2023.3.0.23028/PACKAGE-NOTES.md)
