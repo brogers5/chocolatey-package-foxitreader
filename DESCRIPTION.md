@@ -1,12 +1,3 @@
-
----
-
-### [choco://foxitreader](choco://foxitreader)
-
-To use choco:// protocol URLs, install [(unofficial) choco:// Protocol support](https://community.chocolatey.org/packages/choco-protocol-support)
-
----
-
 ## Foxit PDF Reader
 
 The industry's most powerful PDF reader. View, annotate, form fill, and sign PDFs across your desktop, mobile device, and the web – no matter if you're at the office, home, or on the go.
