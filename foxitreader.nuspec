@@ -7,7 +7,7 @@
     <version>2024.2.0.25138</version>
     <authors>Foxit Software Incorporated</authors>
     <owners>ComFreek H.AlanStevens sublym0nal</owners>
-    <summary>Foxit PDF Reader: The Best PDF Reader</summary>
+    <summary>The industry's most powerful PDF Reader solution.</summary>
     <description><![CDATA[## Foxit PDF Reader
 
 The industry's most powerful PDF reader. View, annotate, form fill, and sign PDFs across your desktop, mobile device, and the web – no matter if you're at the office, home, or on the go.
@@ -37,7 +37,7 @@ Sign documents in your own handwriting or utilize eSignature and verify the stat
 * `/NoShim` - Opt out of creating a shim, and removes any existing shim.
 
 ## [Package Notes](https://github.com/brogers5/chocolatey-package-foxitreader/blob/v2024.2.0.25138/PACKAGE-NOTES.md)
-]]>    </description>
+]]></description>
     <projectUrl>https://www.foxit.com/pdf-reader/</projectUrl>
     <docsUrl>https://www.foxit.com/support/usermanuals.html</docsUrl>
     <packageSourceUrl>https://github.com/brogers5/chocolatey-package-foxitreader/tree/v2024.2.0.25138</packageSourceUrl>
