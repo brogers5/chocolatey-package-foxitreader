@@ -4,7 +4,7 @@
 AppName={cm:AppName}
 AppVerName={cm:AppName}
 AppId=Foxit Reader
-AppVersion=2024.1.0.23997
+AppVersion=2024.2.0.25138
 AppPublisher=Foxit Software Inc.
 AppPublisherURL={cm:AppSupportURL}0
 AppSupportURL={cm:AppPublisherURL}0
@@ -13,7 +13,7 @@ DefaultDirName={pf}\Foxit Software\Foxit PDF Reader
 DefaultGroupName={cm:AppName}
 UninstallDisplayIcon={app}\FoxitPDFReader.exe
 UninstallDisplayName={cm:AppName}
-OutputBaseFilename=tmpuzlrz2.tmp
+OutputBaseFilename=tmp1sgcrn.tmp
 Compression=lzma
 DisableDirPage=auto
 DisableProgramGroupPage=yes
@@ -760,9 +760,11 @@ Source: "{app}\Start\ja-JP\images\background-web-apps.jpg"; DestDir: "{app}\Star
 Source: "{app}\Start\ja-JP\images\foxit-logo-white.png"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ja-JP\images\foxit-pdf-editor-cloud-logo.jpg"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ja-JP\images\foxit-pdf-editor-logo.jpg"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\ja-JP\images\foxit-pdf-editor-logo.png"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ja-JP\images\foxit-pdf-editor-title-image.jpg"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ja-JP\images\foxit-pdf-editor-title-image_dark.jpg"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ja-JP\images\foxit-pdf-sdk-logo.jpg"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\Start\ja-JP\images\foxit-pdf-sdk-logo.png"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ja-JP\images\foxit-sign-logo.jpg"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ja-JP\images\foxit-sign-title-image.jpg"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\Start\ja-JP\images\foxit-sign-title-image_dark.jpg"; DestDir: "{app}\Start\ja-JP\images"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -1352,87 +1354,69 @@ Source: "{app}\Start\zh-TW\js\jquery-1.9.1.min.js"; DestDir: "{app}\Start\zh-TW\
 Source: "{app}\Start\zh-TW\js\nor.js"; DestDir: "{app}\Start\zh-TW\js"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\da-DK\CrashBanner.png"; DestDir: "{app}\skins\Classic\Thumbnail\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\da-DK\CrashBanner_4K.png"; DestDir: "{app}\skins\Classic\Thumbnail\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\skins\Classic\Thumbnail\da-DK\RibbonThumbnail.png"; DestDir: "{app}\skins\Classic\Thumbnail\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\da-DK\updatebanner.bmp"; DestDir: "{app}\skins\Classic\Thumbnail\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\da-DK\VerifyRegisKey.png"; DestDir: "{app}\skins\Classic\Thumbnail\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\de-DE\CrashBanner.png"; DestDir: "{app}\skins\Classic\Thumbnail\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\de-DE\CrashBanner_4K.png"; DestDir: "{app}\skins\Classic\Thumbnail\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\skins\Classic\Thumbnail\de-DE\RibbonThumbnail.png"; DestDir: "{app}\skins\Classic\Thumbnail\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\de-DE\updatebanner.bmp"; DestDir: "{app}\skins\Classic\Thumbnail\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\de-DE\VerifyRegisKey.png"; DestDir: "{app}\skins\Classic\Thumbnail\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\en-US\CrashBanner.png"; DestDir: "{app}\skins\Classic\Thumbnail\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\en-US\CrashBanner_4K.png"; DestDir: "{app}\skins\Classic\Thumbnail\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\skins\Classic\Thumbnail\en-US\RibbonThumbnail.png"; DestDir: "{app}\skins\Classic\Thumbnail\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\en-US\updatebanner.bmp"; DestDir: "{app}\skins\Classic\Thumbnail\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\en-US\VerifyRegisKey.png"; DestDir: "{app}\skins\Classic\Thumbnail\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\es-419\CrashBanner.png"; DestDir: "{app}\skins\Classic\Thumbnail\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\es-419\CrashBanner_4K.png"; DestDir: "{app}\skins\Classic\Thumbnail\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\skins\Classic\Thumbnail\es-419\RibbonThumbnail.png"; DestDir: "{app}\skins\Classic\Thumbnail\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\es-419\updatebanner.bmp"; DestDir: "{app}\skins\Classic\Thumbnail\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\es-419\VerifyRegisKey.png"; DestDir: "{app}\skins\Classic\Thumbnail\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\fi-FI\CrashBanner.png"; DestDir: "{app}\skins\Classic\Thumbnail\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\fi-FI\CrashBanner_4K.png"; DestDir: "{app}\skins\Classic\Thumbnail\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\skins\Classic\Thumbnail\fi-FI\RibbonThumbnail.png"; DestDir: "{app}\skins\Classic\Thumbnail\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\fi-FI\updatebanner.bmp"; DestDir: "{app}\skins\Classic\Thumbnail\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\fi-FI\VerifyRegisKey.png"; DestDir: "{app}\skins\Classic\Thumbnail\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\fr-FR\CrashBanner.png"; DestDir: "{app}\skins\Classic\Thumbnail\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\fr-FR\CrashBanner_4K.png"; DestDir: "{app}\skins\Classic\Thumbnail\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\skins\Classic\Thumbnail\fr-FR\RibbonThumbnail.png"; DestDir: "{app}\skins\Classic\Thumbnail\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\fr-FR\updatebanner.bmp"; DestDir: "{app}\skins\Classic\Thumbnail\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\fr-FR\VerifyRegisKey.png"; DestDir: "{app}\skins\Classic\Thumbnail\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\it-IT\CrashBanner.png"; DestDir: "{app}\skins\Classic\Thumbnail\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\it-IT\CrashBanner_4K.png"; DestDir: "{app}\skins\Classic\Thumbnail\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\skins\Classic\Thumbnail\it-IT\RibbonThumbnail.png"; DestDir: "{app}\skins\Classic\Thumbnail\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\it-IT\updatebanner.bmp"; DestDir: "{app}\skins\Classic\Thumbnail\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\it-IT\VerifyRegisKey.png"; DestDir: "{app}\skins\Classic\Thumbnail\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\ja-JP\CrashBanner.png"; DestDir: "{app}\skins\Classic\Thumbnail\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\ja-JP\CrashBanner_4K.png"; DestDir: "{app}\skins\Classic\Thumbnail\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\skins\Classic\Thumbnail\ja-JP\RibbonThumbnail.png"; DestDir: "{app}\skins\Classic\Thumbnail\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\ja-JP\VerifyRegisKey.png"; DestDir: "{app}\skins\Classic\Thumbnail\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\ko-KR\CrashBanner.png"; DestDir: "{app}\skins\Classic\Thumbnail\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\ko-KR\CrashBanner_4K.png"; DestDir: "{app}\skins\Classic\Thumbnail\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\skins\Classic\Thumbnail\ko-KR\RibbonThumbnail.png"; DestDir: "{app}\skins\Classic\Thumbnail\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\ko-KR\updatebanner.bmp"; DestDir: "{app}\skins\Classic\Thumbnail\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\ko-KR\VerifyRegisKey.png"; DestDir: "{app}\skins\Classic\Thumbnail\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\nb-NO\CrashBanner.png"; DestDir: "{app}\skins\Classic\Thumbnail\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\nb-NO\CrashBanner_4K.png"; DestDir: "{app}\skins\Classic\Thumbnail\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\skins\Classic\Thumbnail\nb-NO\RibbonThumbnail.png"; DestDir: "{app}\skins\Classic\Thumbnail\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\nb-NO\updatebanner.bmp"; DestDir: "{app}\skins\Classic\Thumbnail\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\nb-NO\VerifyRegisKey.png"; DestDir: "{app}\skins\Classic\Thumbnail\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\nl-NL\CrashBanner.png"; DestDir: "{app}\skins\Classic\Thumbnail\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\nl-NL\CrashBanner_4K.png"; DestDir: "{app}\skins\Classic\Thumbnail\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\skins\Classic\Thumbnail\nl-NL\RibbonThumbnail.png"; DestDir: "{app}\skins\Classic\Thumbnail\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\nl-NL\updatebanner.bmp"; DestDir: "{app}\skins\Classic\Thumbnail\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\nl-NL\VerifyRegisKey.png"; DestDir: "{app}\skins\Classic\Thumbnail\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\skins\Classic\Thumbnail\pl-PL\CrashBanner.png"; DestDir: "{app}\skins\Classic\Thumbnail\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\pl-PL\CrashBanner_4K.png"; DestDir: "{app}\skins\Classic\Thumbnail\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\skins\Classic\Thumbnail\pl-PL\CrashBanner_pl_pl.png"; DestDir: "{app}\skins\Classic\Thumbnail\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\skins\Classic\Thumbnail\pl-PL\RibbonThumbnail.png"; DestDir: "{app}\skins\Classic\Thumbnail\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\pl-PL\updatebanner.bmp"; DestDir: "{app}\skins\Classic\Thumbnail\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\pl-PL\VerifyRegisKey.png"; DestDir: "{app}\skins\Classic\Thumbnail\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\pt-BR\CrashBanner.png"; DestDir: "{app}\skins\Classic\Thumbnail\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\pt-BR\CrashBanner_4K.png"; DestDir: "{app}\skins\Classic\Thumbnail\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\skins\Classic\Thumbnail\pt-BR\RibbonThumbnail.png"; DestDir: "{app}\skins\Classic\Thumbnail\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\pt-BR\updatebanner.bmp"; DestDir: "{app}\skins\Classic\Thumbnail\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\pt-BR\VerifyRegisKey.png"; DestDir: "{app}\skins\Classic\Thumbnail\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\ru-RU\CrashBanner.png"; DestDir: "{app}\skins\Classic\Thumbnail\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\ru-RU\CrashBanner_4K.png"; DestDir: "{app}\skins\Classic\Thumbnail\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\skins\Classic\Thumbnail\ru-RU\RibbonThumbnail.png"; DestDir: "{app}\skins\Classic\Thumbnail\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\ru-RU\updatebanner.bmp"; DestDir: "{app}\skins\Classic\Thumbnail\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\ru-RU\VerifyRegisKey.png"; DestDir: "{app}\skins\Classic\Thumbnail\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\sv-SE\CrashBanner.png"; DestDir: "{app}\skins\Classic\Thumbnail\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\sv-SE\CrashBanner_4K.png"; DestDir: "{app}\skins\Classic\Thumbnail\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\skins\Classic\Thumbnail\sv-SE\RibbonThumbnail.png"; DestDir: "{app}\skins\Classic\Thumbnail\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\sv-SE\updatebanner.bmp"; DestDir: "{app}\skins\Classic\Thumbnail\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\sv-SE\VerifyRegisKey.png"; DestDir: "{app}\skins\Classic\Thumbnail\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\zh-CN\CrashBanner.png"; DestDir: "{app}\skins\Classic\Thumbnail\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\zh-CN\CrashBanner_4K.png"; DestDir: "{app}\skins\Classic\Thumbnail\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\skins\Classic\Thumbnail\zh-CN\Registration.png"; DestDir: "{app}\skins\Classic\Thumbnail\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\skins\Classic\Thumbnail\zh-CN\RibbonThumbnail.png"; DestDir: "{app}\skins\Classic\Thumbnail\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\zh-CN\updatebanner.bmp"; DestDir: "{app}\skins\Classic\Thumbnail\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\zh-CN\VerifyRegisKey.png"; DestDir: "{app}\skins\Classic\Thumbnail\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\zh-TW\CrashBanner.png"; DestDir: "{app}\skins\Classic\Thumbnail\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\zh-TW\CrashBanner_4K.png"; DestDir: "{app}\skins\Classic\Thumbnail\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
-Source: "{app}\skins\Classic\Thumbnail\zh-TW\RibbonThumbnail.png"; DestDir: "{app}\skins\Classic\Thumbnail\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\zh-TW\updatebanner.bmp"; DestDir: "{app}\skins\Classic\Thumbnail\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Classic\Thumbnail\zh-TW\VerifyRegisKey.png"; DestDir: "{app}\skins\Classic\Thumbnail\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\skins\Ribbon\Black\Black.xml"; DestDir: "{app}\skins\Ribbon\Black"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -1531,6 +1515,16 @@ Source: "{app}\auiresources\ActionWizard\ui\InstrutionDlg.ui.fx"; DestDir: "{app
 Source: "{app}\auiresources\ActionWizard\ui\manageactiondlg.ui.fx"; DestDir: "{app}\auiresources\ActionWizard\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\ActionWizard\ui\ManageCustom_dialog.ui.fx"; DestDir: "{app}\auiresources\ActionWizard\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\AiAssistant\ui\aiasstdlg.ui.fx"; DestDir: "{app}\auiresources\AiAssistant\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\AIPLabel\img\Consent Accept.png"; DestDir: "{app}\auiresources\AIPLabel\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\AIPLabel\img\Consent Accept@2x.png"; DestDir: "{app}\auiresources\AIPLabel\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\AIPLabel\img\loginIcon.png"; DestDir: "{app}\auiresources\AIPLabel\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\AIPLabel\img\loginIcon@2x.png"; DestDir: "{app}\auiresources\AIPLabel\img"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\AIPLabel\ui\CheckLicensePromptDlg.ui.fx"; DestDir: "{app}\auiresources\AIPLabel\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\AIPLabel\ui\JustificationRequiredDlg.ui.fx"; DestDir: "{app}\auiresources\AIPLabel\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\AIPLabel\ui\MSConsentAcceptDlg.ui.fx"; DestDir: "{app}\auiresources\AIPLabel\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\AIPLabel\ui\SelectLabelDlg.ui.fx"; DestDir: "{app}\auiresources\AIPLabel\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\AIPLabel\ui\UDPAddUsersDlg.ui.fx"; DestDir: "{app}\auiresources\AIPLabel\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\auiresources\AIPLabel\ui\UserLoginDlg.ui.fx"; DestDir: "{app}\auiresources\AIPLabel\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Bookmark\ui\AddPageFromBM.ui.fx"; DestDir: "{app}\auiresources\Bookmark\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Bookmark\ui\AddStructureElements.ui.fx"; DestDir: "{app}\auiresources\Bookmark\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\auiresources\Bookmark\ui\AppearancePropertyPage.ui.fx"; DestDir: "{app}\auiresources\Bookmark\ui"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2095,6 +2089,8 @@ Source: "{app}\lang\da-DK\ActionWizard_da-DK.ts.fx"; DestDir: "{app}\lang\da-DK"
 Source: "{app}\lang\da-DK\ActionWizard_strings_da-DK.xml.fx"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\da-DK\AiAssistant_da-DK.ts.fx"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\da-DK\AiAssistant_strings_da-DK.xml.fx"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\da-DK\AIPLabel_da-DK.ts.fx"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\da-DK\AIPLabel_strings_da-DK.xml.fx"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\da-DK\Bookmark_da-DK.ts.fx"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\da-DK\Bookmark_strings_da-DK.xml.fx"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\da-DK\da-DK.ts.fx"; DestDir: "{app}\lang\da-DK"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2133,6 +2129,8 @@ Source: "{app}\lang\de-DE\ActionWizard_de-DE.ts.fx"; DestDir: "{app}\lang\de-DE"
 Source: "{app}\lang\de-DE\ActionWizard_strings_de-DE.xml.fx"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\de-DE\AiAssistant_de-DE.ts.fx"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\de-DE\AiAssistant_strings_de-DE.xml.fx"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\de-DE\AIPLabel_de-DE.ts.fx"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\de-DE\AIPLabel_strings_de-DE.xml.fx"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\de-DE\Bookmark_de-DE.ts.fx"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\de-DE\Bookmark_strings_de-DE.xml.fx"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\de-DE\de-DE.ts.fx"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2169,6 +2167,7 @@ Source: "{app}\lang\de-DE\touchup_de-DE.ts.fx"; DestDir: "{app}\lang\de-DE"; Bef
 Source: "{app}\lang\de-DE\touchup_strings_de-DE.xml.fx"; DestDir: "{app}\lang\de-DE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\en-US\ActionWizard_strings_en-US.xml.fx"; DestDir: "{app}\lang\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\en-US\AiAssistant_strings_en-US.xml.fx"; DestDir: "{app}\lang\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\en-US\AIPLabel_strings_en-US.xml.fx"; DestDir: "{app}\lang\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\en-US\Bookmark_strings_en-US.xml.fx"; DestDir: "{app}\lang\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\en-US\DocProcess_strings_en-US.xml.fx"; DestDir: "{app}\lang\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\en-US\Email_strings_en-US.xml.fx"; DestDir: "{app}\lang\en-US"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2191,6 +2190,8 @@ Source: "{app}\lang\es-419\ActionWizard_es-419.ts.fx"; DestDir: "{app}\lang\es-4
 Source: "{app}\lang\es-419\ActionWizard_strings_es-419.xml.fx"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\es-419\AiAssistant_es-419.ts.fx"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\es-419\AiAssistant_strings_es-419.xml.fx"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\es-419\AIPLabel_es-419.ts.fx"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\es-419\AIPLabel_strings_es-419.xml.fx"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\es-419\Bookmark_es-419.ts.fx"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\es-419\Bookmark_strings_es-419.xml.fx"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\es-419\DocProcess_es-419.ts.fx"; DestDir: "{app}\lang\es-419"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2229,6 +2230,8 @@ Source: "{app}\lang\fi-FI\ActionWizard_fi-FI.ts.fx"; DestDir: "{app}\lang\fi-FI"
 Source: "{app}\lang\fi-FI\ActionWizard_strings_fi-FI.xml.fx"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fi-FI\AiAssistant_fi-FI.ts.fx"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fi-FI\AiAssistant_strings_fi-FI.xml.fx"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\fi-FI\AIPLabel_fi-FI.ts.fx"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\fi-FI\AIPLabel_strings_fi-FI.xml.fx"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fi-FI\Bookmark_fi-FI.ts.fx"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fi-FI\Bookmark_strings_fi-FI.xml.fx"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fi-FI\DocProcess_fi-FI.ts.fx"; DestDir: "{app}\lang\fi-FI"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2267,6 +2270,8 @@ Source: "{app}\lang\fr-FR\ActionWizard_fr-FR.ts.fx"; DestDir: "{app}\lang\fr-FR"
 Source: "{app}\lang\fr-FR\ActionWizard_strings_fr-FR.xml.fx"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fr-FR\AiAssistant_fr-FR.ts.fx"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fr-FR\AiAssistant_strings_fr-FR.xml.fx"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\fr-FR\AIPLabel_fr-FR.ts.fx"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\fr-FR\AIPLabel_strings_fr-FR.xml.fx"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fr-FR\Bookmark_fr-FR.ts.fx"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fr-FR\Bookmark_strings_fr-FR.xml.fx"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\fr-FR\DocProcess_fr-FR.ts.fx"; DestDir: "{app}\lang\fr-FR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2305,6 +2310,8 @@ Source: "{app}\lang\it-IT\ActionWizard_it-IT.ts.fx"; DestDir: "{app}\lang\it-IT"
 Source: "{app}\lang\it-IT\ActionWizard_strings_it-IT.xml.fx"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\it-IT\AiAssistant_it-IT.ts.fx"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\it-IT\AiAssistant_strings_it-IT.xml.fx"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\it-IT\AIPLabel_it-IT.ts.fx"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\it-IT\AIPLabel_strings_it-IT.xml.fx"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\it-IT\Bookmark_it-IT.ts.fx"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\it-IT\Bookmark_strings_it-IT.xml.fx"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\it-IT\DocProcess_it-IT.ts.fx"; DestDir: "{app}\lang\it-IT"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2343,6 +2350,8 @@ Source: "{app}\lang\ja-JP\ActionWizard_ja-JP.ts.fx"; DestDir: "{app}\lang\ja-JP"
 Source: "{app}\lang\ja-JP\ActionWizard_strings_ja-JP.xml.fx"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ja-JP\AiAssistant_ja-JP.ts.fx"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ja-JP\AiAssistant_strings_ja-JP.xml.fx"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\ja-JP\AIPLabel_ja-JP.ts.fx"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\ja-JP\AIPLabel_strings_ja-JP.xml.fx"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ja-JP\Bookmark_ja-JP.ts.fx"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ja-JP\Bookmark_strings_ja-JP.xml.fx"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ja-JP\DocProcess_ja-JP.ts.fx"; DestDir: "{app}\lang\ja-JP"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2381,6 +2390,8 @@ Source: "{app}\lang\ko-KR\ActionWizard_ko-KR.ts.fx"; DestDir: "{app}\lang\ko-KR"
 Source: "{app}\lang\ko-KR\ActionWizard_strings_ko-KR.xml.fx"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ko-KR\AiAssistant_ko-KR.ts.fx"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ko-KR\AiAssistant_strings_ko-KR.xml.fx"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\ko-KR\AIPLabel_ko-KR.ts.fx"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\ko-KR\AIPLabel_strings_ko-KR.xml.fx"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ko-KR\Bookmark_ko-KR.ts.fx"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ko-KR\Bookmark_strings_ko-KR.xml.fx"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ko-KR\DocProcess_ko-KR.ts.fx"; DestDir: "{app}\lang\ko-KR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2419,6 +2430,8 @@ Source: "{app}\lang\nb-NO\ActionWizard_nb-NO.ts.fx"; DestDir: "{app}\lang\nb-NO"
 Source: "{app}\lang\nb-NO\ActionWizard_strings_nb-NO.xml.fx"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nb-NO\AiAssistant_nb-NO.ts.fx"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nb-NO\AiAssistant_strings_nb-NO.xml.fx"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\nb-NO\AIPLabel_nb-NO.ts.fx"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\nb-NO\AIPLabel_strings_nb-NO.xml.fx"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nb-NO\Bookmark_nb-NO.ts.fx"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nb-NO\Bookmark_strings_nb-NO.xml.fx"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nb-NO\DocProcess_nb-NO.ts.fx"; DestDir: "{app}\lang\nb-NO"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2457,6 +2470,8 @@ Source: "{app}\lang\nl-NL\ActionWizard_nl-NL.ts.fx"; DestDir: "{app}\lang\nl-NL"
 Source: "{app}\lang\nl-NL\ActionWizard_strings_nl-NL.xml.fx"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nl-NL\AiAssistant_nl-NL.ts.fx"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nl-NL\AiAssistant_strings_nl-NL.xml.fx"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\nl-NL\AIPLabel_nl-NL.ts.fx"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\nl-NL\AIPLabel_strings_nl-NL.xml.fx"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nl-NL\Bookmark_nl-NL.ts.fx"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nl-NL\Bookmark_strings_nl-NL.xml.fx"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\nl-NL\DocProcess_nl-NL.ts.fx"; DestDir: "{app}\lang\nl-NL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2495,6 +2510,8 @@ Source: "{app}\lang\pl-PL\ActionWizard_pl-PL.ts.fx"; DestDir: "{app}\lang\pl-PL"
 Source: "{app}\lang\pl-PL\ActionWizard_strings_pl-PL.xml.fx"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pl-PL\AiAssistant_pl-PL.ts.fx"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pl-PL\AiAssistant_strings_pl-PL.xml.fx"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\pl-PL\AIPLabel_pl-PL.ts.fx"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\pl-PL\AIPLabel_strings_pl-PL.xml.fx"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pl-PL\Bookmark_pl-PL.ts.fx"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pl-PL\Bookmark_strings_pl-PL.xml.fx"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pl-PL\DocProcess_pl-PL.ts.fx"; DestDir: "{app}\lang\pl-PL"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2533,6 +2550,8 @@ Source: "{app}\lang\pt-BR\ActionWizard_pt-BR.ts.fx"; DestDir: "{app}\lang\pt-BR"
 Source: "{app}\lang\pt-BR\ActionWizard_strings_pt-BR.xml.fx"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pt-BR\AiAssistant_pt-BR.ts.fx"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pt-BR\AiAssistant_strings_pt-BR.xml.fx"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\pt-BR\AIPLabel_pt-BR.ts.fx"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\pt-BR\AIPLabel_strings_pt-BR.xml.fx"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pt-BR\Bookmark_pt-BR.ts.fx"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pt-BR\Bookmark_strings_pt-BR.xml.fx"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\pt-BR\DocProcess_pt-BR.ts.fx"; DestDir: "{app}\lang\pt-BR"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2571,6 +2590,8 @@ Source: "{app}\lang\ru-RU\ActionWizard_ru-RU.ts.fx"; DestDir: "{app}\lang\ru-RU"
 Source: "{app}\lang\ru-RU\ActionWizard_strings_ru-RU.xml.fx"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ru-RU\AiAssistant_ru-RU.ts.fx"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ru-RU\AiAssistant_strings_ru-RU.xml.fx"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\ru-RU\AIPLabel_ru-RU.ts.fx"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\ru-RU\AIPLabel_strings_ru-RU.xml.fx"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ru-RU\Bookmark_ru-RU.ts.fx"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ru-RU\Bookmark_strings_ru-RU.xml.fx"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\ru-RU\DocProcess_ru-RU.ts.fx"; DestDir: "{app}\lang\ru-RU"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2609,6 +2630,8 @@ Source: "{app}\lang\sv-SE\ActionWizard_strings_sv-SE.xml.fx"; DestDir: "{app}\la
 Source: "{app}\lang\sv-SE\ActionWizard_sv-SE.ts.fx"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\sv-SE\AiAssistant_strings_sv-SE.xml.fx"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\sv-SE\AiAssistant_sv-SE.ts.fx"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\sv-SE\AIPLabel_strings_sv-SE.xml.fx"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\sv-SE\AIPLabel_sv-SE.ts.fx"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\sv-SE\Bookmark_strings_sv-SE.xml.fx"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\sv-SE\Bookmark_sv-SE.ts.fx"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\sv-SE\DocProcess_strings_sv-SE.xml.fx"; DestDir: "{app}\lang\sv-SE"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2647,6 +2670,8 @@ Source: "{app}\lang\zh-CN\ActionWizard_strings_zh-CN.xml.fx"; DestDir: "{app}\la
 Source: "{app}\lang\zh-CN\ActionWizard_zh-CN.ts.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\AiAssistant_strings_zh-CN.xml.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\AiAssistant_zh-CN.ts.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\zh-CN\AIPLabel_strings_zh-CN.xml.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\zh-CN\AIPLabel_zh-CN.ts.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\Bookmark_strings_zh-CN.xml.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\Bookmark_zh-CN.ts.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-CN\DocProcess_strings_zh-CN.xml.fx"; DestDir: "{app}\lang\zh-CN"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -2687,6 +2712,8 @@ Source: "{app}\lang\zh-TW\ActionWizard_strings_zh-TW.xml.fx"; DestDir: "{app}\la
 Source: "{app}\lang\zh-TW\ActionWizard_zh-TW.ts.fx"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-TW\AiAssistant_strings_zh-TW.xml.fx"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-TW\AiAssistant_zh-TW.ts.fx"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\zh-TW\AIPLabel_strings_zh-TW.xml.fx"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\lang\zh-TW\AIPLabel_zh-TW.ts.fx"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-TW\Bookmark_strings_zh-TW.xml.fx"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-TW\Bookmark_zh-TW.ts.fx"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\lang\zh-TW\DocProcess_strings_zh-TW.xml.fx"; DestDir: "{app}\lang\zh-TW"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
@@ -3358,8 +3385,6 @@ Source: "{tmp}\dlgbmp_de_de.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: 
 Source: "{tmp}\dlgbmp250_de_de.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp_pt_br.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp250_pt_br.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
-Source: "{tmp}\dlgbmp_pt_pt.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
-Source: "{tmp}\dlgbmp250_pt_pt.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp_pl_pl.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp250_pl_pl.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp_ru_ru.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
@@ -3372,8 +3397,6 @@ Source: "{tmp}\dlgbmp_zh_cn.bmp"; DestDir: "{tmp}"; BeforeInstall: "ChangeDispla
 Source: "{tmp}\dlgbmp250_zh_cn.bmp"; DestDir: "{tmp}"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp_tw_cn.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp250_tw_cn.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
-Source: "{tmp}\dlgbmp_hk_cn.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
-Source: "{tmp}\dlgbmp250_hk_cn.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp_jp_jp.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp250_jp_jp.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
 Source: "{tmp}\dlgbmp_ko_kr.bmp"; DestDir: "{tmp}"; MinVersion: 0.0,5.0; Flags: deleteafterinstall dontcopy 
@@ -3471,8 +3494,6 @@ Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Prefere
 Root: HKLM; Subkey: "Software\Foxit Software\Foxit PDF Reader"; ValueName: "installLangid"; ValueType: String; ValueData: "49027d"; Languages: "ru"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Preferences\Languages"; ValueName: "langid"; ValueType: String; ValueData: "49025d"; Languages: "pt"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKLM; Subkey: "Software\Foxit Software\Foxit PDF Reader"; ValueName: "installLangid"; ValueType: String; ValueData: "49025d"; Languages: "pt"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
-Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Preferences\Languages"; ValueName: "langid"; ValueType: String; ValueData: "49024d"; Languages: "pt_pt"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
-Root: HKLM; Subkey: "Software\Foxit Software\Foxit PDF Reader"; ValueName: "installLangid"; ValueType: String; ValueData: "49024d"; Languages: "pt_pt"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Preferences\Languages"; ValueName: "langid"; ValueType: String; ValueData: "49023d"; Languages: "pl"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKLM; Subkey: "Software\Foxit Software\Foxit PDF Reader"; ValueName: "installLangid"; ValueType: String; ValueData: "49023d"; Languages: "pl"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Preferences\Languages"; ValueName: "langid"; ValueType: String; ValueData: "49018d"; Languages: "it"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
@@ -3483,8 +3504,6 @@ Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Prefere
 Root: HKLM; Subkey: "Software\Foxit Software\Foxit PDF Reader"; ValueName: "installLangid"; ValueType: String; ValueData: "49007d"; Languages: "chs"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Preferences\Languages"; ValueName: "langid"; ValueType: String; ValueData: "49008d"; Languages: "tw"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKLM; Subkey: "Software\Foxit Software\Foxit PDF Reader"; ValueName: "installLangid"; ValueType: String; ValueData: "49008d"; Languages: "tw"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
-Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Preferences\Languages"; ValueName: "langid"; ValueType: String; ValueData: "49037d"; Languages: "hk"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
-Root: HKLM; Subkey: "Software\Foxit Software\Foxit PDF Reader"; ValueName: "installLangid"; ValueType: String; ValueData: "49037d"; Languages: "hk"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Preferences\Languages"; ValueName: "langid"; ValueType: String; ValueData: "49033d"; Languages: "jp"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKLM; Subkey: "Software\Foxit Software\Foxit PDF Reader"; ValueName: "installLangid"; ValueType: String; ValueData: "49033d"; Languages: "jp"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
 Root: HKCU; Subkey: "Software\Foxit Software\Foxit PDF Reader\Continuous\Preferences\Languages"; ValueName: "langid"; ValueType: String; ValueData: "49019d"; Languages: "ko"; MinVersion: 0.0,5.0; Flags: uninsdeletevalue 
@@ -3612,18 +3631,6 @@ pt.AssocingFileExtension=Associando %1 com a extensão de arquivo...
 pt.AutoStartProgramGroupDescription=Startup:
 pt.AutoStartProgram=Iniciar automaticamente %1
 pt.AddonHostProgramNotFound=%1 não pôde ser localizado na pasta que você selecionou.%n%nVocê deseja continuar assim mesmo?
-pt_pt.NameAndVersion=%1 versão %2
-pt_pt.AdditionalIcons=Ícones adicionais:
-pt_pt.CreateDesktopIcon=Criar ícone no Ambiente de &Trabalho
-pt_pt.CreateQuickLaunchIcon=&Criar ícone na barra de Iniciação Rápida
-pt_pt.ProgramOnTheWeb=%1 na Web
-pt_pt.UninstallProgram=Desinstalar o %1
-pt_pt.LaunchProgram=Executar o %1
-pt_pt.AssocFileExtension=Associa&r o %1 aos ficheiros com a extensão %2
-pt_pt.AssocingFileExtension=A associar o %1 aos ficheiros com a extensão %2...
-pt_pt.AutoStartProgramGroupDescription=Inicialização Automática:
-pt_pt.AutoStartProgram=Iniciar %1 automaticamente
-pt_pt.AddonHostProgramNotFound=Não foi possível localizar %1 na pasta seleccionada.%n%nDeseja continuar de qualquer forma?
 pl.NameAndVersion=%1 (wersja %2)
 pl.AdditionalIcons=Dodatkowe skróty:
 pl.CreateDesktopIcon=Utwórz skrót na &pulpicie
@@ -3681,18 +3688,6 @@ chs.UninstallProgram=卸载%1
 chs.LaunchProgram=运行%1
 chs.AssocFileExtension=将 %1 与 %2 文件扩展名关联(&A)
 chs.AssocingFileExtension=正在将 %1 与 %2 文件扩展名关联...
-hk.NameAndVersion=%1 版本 %2
-hk.AdditionalIcons=附加圖示:
-hk.CreateDesktopIcon=建立桌面圖示(&D)
-hk.CreateQuickLaunchIcon=建立快速啟動圖示(&Q)
-hk.ProgramOnTheWeb=%1 的網站
-hk.UninstallProgram=解除安裝 %1
-hk.LaunchProgram=啟動 %1
-hk.AssocFileExtension=將 %1 與檔案副檔名 %2 產生關聯(&A)
-hk.AssocingFileExtension=正在將 %1 與檔案副檔名 %2 產生關聯...
-hk.AutoStartProgramGroupDescription=開啟:
-hk.AutoStartProgram=自動開啟 %1
-hk.AddonHostProgramNotFound=%1 無法在您所選的資料夾中找到。%n%n您是否還要繼續？
 tw.NameAndVersion=%1 版本 %2
 tw.AdditionalIcons=附加圖示:
 tw.CreateDesktopIcon=建立桌面圖示(&D)
@@ -3858,8 +3853,8 @@ en.ApplicationDescription=Foxit PDF Reader is a small, fast, and feature-rich PD
 en.MSICreationFeature=There is a different edition of Foxit PDF Reader currently installed on your computer. Are you sure you want to remove the previous edition and install this one?%n%nPlease be aware that you may lose some settings in the previously version and PDF creation is not available in Foxit PDF Reader 10.0. PDF viewing, commenting, etc. are still present. %n%nClick OK to continue or Cancel to cancel installation.
 en.EXECreationFeature=If you continue with this update, your older version of Foxit PDF Reader will be uninstalled automatically.%n%nPlease be aware that PDF creation is not available in Foxit PDF Reader 10.0. PDF viewing, commenting, etc. are still present.%n%nPlease click “Yes” to continue or "No" to exit the update.
 en.AdditionalTaskDlgCollectData=Help improve user &experience
-FeatureCEF=Dependent Libraries for Browser Plugin
-FeatureCEFDesc=The libraries are used to display web pages in Foxit PDF Reader
+en.FeatureCEF=Dependent Libraries for Browser Plugin
+en.FeatureCEFDesc=The libraries are used to display web pages in Foxit PDF Reader
 startmenufolder2=Add an icon to the Start Menu
 setDefaultReader2=Set Foxit PDF Reader as the default PDF viewer
 DisplayInBrowser2=Show PDF files in browsers
@@ -3939,19 +3934,6 @@ fi_FI.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_
 fi_FI.AppPublisherURLCaptiion=www.foxit.com
 fi_FI.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=fi-FI&version=2023.3.0&distributor=
 fi_FI.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=fi-FI&version=2023.3.0&distributor=
-hk.startmenufolder2=新增圖示至開始功能表
-hk.setDefaultReader2=將 Foxit PDF Reader 設定為預設 PDF 檢視器
-hk.DisplayInBrowser2=在瀏覽器中顯示 PDF 檔案
-hk.SetPrint2=安裝為預設系統印表機
-hk.CreateDesktopIcon2=建立桌面圖示
-hk.CreateQuickLaunchIcon2=建立快速啟動圖示
-hk.AppPublisherURL=http://www.foxitsoftware.hk/support/techsupport/
-hk.AppSupportURL=http://www.foxitsoftware.hk/
-hk.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit%20Reader&language=zh-HK
-hk.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=technical_q71&product=Foxit Reader&language=zh-HK&version=2023.3.0&edition=
-hk.AppPublisherURLCaptiion=www.foxit.com
-hk.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=zh-HK&version=2023.3.0&edition=
-hk.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=zh-HK&version=2023.3.0&edition=
 tw.startmenufolder2=新增圖示至開始功能表
 tw.setDefaultReader2=將 Foxit PDF Reader 設定為預設 PDF 檢視器
 tw.DisplayInBrowser2=在瀏覽器中顯示 PDF 檔案
@@ -4030,19 +4012,6 @@ pt.PreAppBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_sou
 pt.AppPublisherURLCaptiion=www.foxit.com
 pt.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=pt-BR&version=2023.3.0&distributor=
 pt.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=pt-BR&version=2023.3.0&distributor=
-pt_pt.startmenufolder2=Adicionar um ícone ao Menu Iniciar
-pt_pt.setDefaultReader2=Definir o Foxit PDF Reader como o &visualizador de PDF predefinido
-pt_pt.DisplayInBrowser2=Mostrar ficheiros PDF em navegadores
-pt_pt.SetPrint2=Instalar como impressora padrão do sistema
-pt_pt.CreateDesktopIcon2=Criar ícone no Ambiente de Trabalho
-pt_pt.CreateQuickLaunchIcon2=Criar ícone na barra de Iniciação Rápida
-pt_pt.AppPublisherURL=https://www.foxit.com/portuguese/support/
-pt_pt.AppSupportURL=https://www.foxit.com/portuguese/
-pt_pt.PublisherURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=home&product=Foxit%20Reader&language=pt_pt
-pt_pt.PreAppBrowserURL=https://www.foxit.com/portuguese/support/showfaq_technical.php
-pt_pt.AppPublisherURLCaptiion=www.foxit.com
-pt_pt.cPDFBrowserURL=http://globe-map.foxitservice.com/go.php?do=redirect&utm_source=client-app&utm_medium=button&utm_campaign=reader2023.3.0_install&title=cpdf-home&product=Foxit Reader&language=pt_pt&version=2023.3.0&edition=
-pt_pt.connectedpdfURL=http://globe-map.foxitservice.com/go.php?do=redirect&title=cloud-reading&product=Foxit Reader&language=pt_pt&version=2023.3.0&edition=
 it.startmenufolder2=Aggiungi un'icona al Menu Avvio
 it.setDefaultReader2=Imposta Foxit PDF Reader come visualizzatore PDF predefinito 
 it.DisplayInBrowser2=Mostra file PDF nei browser
@@ -4119,8 +4088,6 @@ ru.path=ru
 ru.ReaderLang=ru_ru
 pt.path=pt
 pt.ReaderLang=pt_br
-pt_pt.path=pt_pt
-pt_pt.ReaderLang=pt_pt
 pl.path=pl
 pl.ReaderLang=pl_pl
 it.path=it
@@ -4131,8 +4098,6 @@ chs.path=chs
 chs.ReaderLang=zh_cn
 tw.path=tw
 tw.ReaderLang=tw_cn
-hk.path=hk
-hk.ReaderLang=hk_cn
 jp.path=jp
 jp.ReaderLang=jp_jp
 ko.path=ko
@@ -4580,91 +4545,6 @@ pt.EXECreationFeature=Se você continuar com esta atualização, sua versão ant
 pt.AdditionalTaskDlgCollectData=Ajude a melhorar a exp&eriência do usuário
 pt.FeatureCEF=Bibliotecas dependentes para o plugin do navegador
 pt.FeatureCEFDesc=As bibliotecas são usadas para exibir páginas da web no Foxit PDF Reader
-pt_pt.startmenufolder=Adicionar um &ícone ao Menu Iniciar
-pt_pt.pdfviewer=Ficheiros do Visualizador de PDFs
-pt_pt.FullInstallation=Instalação completa
-pt_pt.CustomInstallation=Instalação personalizada
-pt_pt.MaintenanceTitle=Manutenção do Programa
-pt_pt.MaintenanceDescription=Reparar ou remover o programa.
-pt_pt.Modify=Modificar
-pt_pt.Repair=Reparar
-pt_pt.Uninstall=Remover
-pt_pt.InstallV9_Plugin_descript=Transferir e instalar a home page e a barra de ferramentas V9 – recomendado (o browser será reiniciado e todas as páginas permanecerão iguais).
-pt_pt.ffaddin=Plug-in utilizado para abrir ficheiros PDF no browser
-pt_pt.ffse=Extensões da Shell
-pt_pt.setDefaultReader=&Predefinir Foxit PDF Reader como visualizador de PDF
-pt_pt.BeingSetDefault=Predefinir o Foxit PDF Reader como visualizador de PDFs
-pt_pt.BeingInstallFirelfoxPlugin=A instalar o suplemento para o Mozilla FireFox, Opera, Safari e Chrome
-pt_pt.BeingInstallPlugin=A instalar o suplemento
-pt_pt.BeingInstallSE=A instalar as Extensões da Shell
-pt_pt.DisplayInBrowser=Mostrar &ficheiros PDF em browsers
-pt_pt.ffSpellCheck=Idioma da Verificação Ortográfica Foxit
-pt_pt.BeingInstallSpellCheck=A Instalar o Idioma da Verificação Ortográfica Foxit
-pt_pt.WordAddin=Plug-in do Word
-pt_pt.BeingInstallWordAddin=A Instalar o Plug-in do Word
-pt_pt.BeingInstallPPTAddin=A Instalar o Plug-in do PowerPoint
-pt_pt.BeingInstallExcelAddin=A Instalar o Plug-in do Excel
-pt_pt.PPTAddin=Plug-in do PowerPoint
-pt_pt.ExcelAddin=Plug-in do Excel
-pt_pt.OutLookAddin=Plug-in do Outlook
-pt_pt.BeingInstallOutLookAddin=A Instalar o Plug-in do Outlook
-pt_pt.ConvertToPDF=Extensão da shell do Windows para converter PDFs
-pt_pt.SetPrint=Instalar como &impressora predefinida do sistema
-pt_pt.InstallPrint=Foxit PDF Reader Creator
-pt_pt.AppName=Foxit PDF Reader
-pt_pt.SafeModeDlgTitle=Definição do Modo de Leitura Segura
-pt_pt.SafeModeFeatureTitle=O Modo Seguro permite controlar as ações e transmissões de dados não autorizadas, incluindo ligações URL, inicialização de ficheiros externos e execução de funções JavaScript para evitar ataques de documentos maliciosos de forma eficiente. 
-pt_pt.SafeModeGroupBoxTitle=Gestor de Confiança
-pt_pt.SafeModeCheck=Ativar Modo de Leitura Segura
-pt_pt.SafeModeFeatureCaptionEnd=Também pode ativar ou desativar o Modo de Leitura Segura nas Preferências do Reader (Ficheiro->Preferências->Gestor de Confiança).
-pt_pt.UpdaterName=Módulos de Atualização Foxit
-pt_pt.FileInUseFoxitReader=O Foxit PDF Reader tem de ser fechado para a desinstalação continuar. Feche e clique em Repetir para continuar.
-pt_pt.FileInUseFoxitUpdater=O Foxit Updater tem de ser fechado para a instalação continuar. Feche e clique em Repetir para continuar.
-pt_pt.NewerVersion=Uma versão mais recente do Foxit PDF Reader já está instalada. 
-pt_pt.UninstallOldVersion=Uma versão antiga do Foxit PDF Reader foi instalada no seu computador. Desinstale-a antes de instalar a nova versão. Clique em OK para desinstalar.
-pt_pt.UninstallOldVersionConfirm=Uma versão antiga do Foxit PDF Reader foi instalada no seu computador. Desinstale-a antes de instalar a nova versão. Clique em Repetir para continuar com a instalação. 
-pt_pt.OlderVersion=Se continuar com a atualização, a versão mais antiga do Foxit PDF Reader será desinstalada automaticamente. Clique em "Sim" para continuar ou em "Não" para sair da atualização.
-pt_pt.MSIDETECTED=A instalação não teve êxito. Desinstale a versão anterior do Foxit PDF Reader antes de instalar a versão mais recente.
-pt_pt.CheckEnv=A verificar o ambiente de instalação
-pt_pt.FoxitReaderInstallerRunning=Existe outra instalação do Foxit PDF Reader em execução. Aguarde até a instalação ser concluída.
-pt_pt.FileWord=Feche o Microsoft Word para continuar com a instalação. Clique em Repetir para continuar.
-pt_pt.FileEXCEL=Feche o Microsoft Excel para continuar com a instalação. Clique em Repetir para continuar.
-pt_pt.FilePOWERPNT=Feche o Microsoft PowerPoint para continuar com a instalação. Clique em Repetir para continuar.
-pt_pt.FileOUTLOOK=Feche o Microsoft Outlook para continuar com a instalação. Clique em Repetir para continuar.
-pt_pt.IsClean=Quer remover as definições do Reader e os dados do histórico após a desinstalação?
-pt_pt.CountLabel=Clique em Instalar para continuar com a instalação ou clique em Anterior se quer rever ou alterar qualquer definição. 
-pt_pt.CountLabel2=Clique em Instalar para continuar com a reparação. As definições serão as mesmas da instalação original.
-pt_pt.PhantomName= Foxit PDF Editor
-pt_pt.Phantom_text=Precisa que a sua solução de PDF tenha mais funcionalidades? Muitos fluxos de trabalho necessitam das funcionalidades adicionais do Foxit PDF Editor. Expande as capacidades do Foxit PDF Reader para incluir:
-pt_pt.Phantom_and= Organizar documentos PDF (por exemplo, mover, eliminar, adicionar, simplificar, recortar e extrair páginas) 
-pt_pt.PhantomOCR= OCR de documentos digitalizados
-pt_pt.PhantomExport= Exportar outros formatos de ficheiro
-pt_pt.PhantomDevelop= Desenvolver formulários PDF
-pt_pt.PhantomProtect= Proteger ficheiros PDF (por exemplo, encriptação)
-pt_pt.PhantomURL= Saiba mais acerca do
-pt_pt.PhantomRadio=Instalar uma avaliação gratuita de 14 dias do Foxit PDF Editor
-pt_pt.PhantomRadio2=Não instalar uma avaliação gratuita de 14 dias do Foxit PDF Editor
-pt_pt.Phantomtilte= Foxit PDF Editor
-pt_pt.Phantomtilte2= Recomendado pelo Foxit PDF Reader
-pt_pt.PhantomEdit= Editar conteúdos do PDF
-pt_pt.PhantomDownload=Falha ao transferir. Visite o site da Foxit para transferir o Foxit PDF Editor.
-pt_pt.CuntReadyMemo=Tarefas adicionais:
-pt_pt.CloudTitle=O que Pode Fazer no Foxit Cloud
-pt_pt.CloudTitle1=Cloud Reading
-pt_pt.CloudDescription1=Leia os seus documentos sincronizados a partir de qualquer localização, com qualquer dispositivo e sempre que quiser.
-pt_pt.CloudTitle2=Submeter Formulários
-pt_pt.CloudDescription2=Um clique para submeter o seu formulário PDF concluído a outras pessoas.
-pt_pt.CloudTitle3=Traduzir
-pt_pt.CloudDescription3=Traduza documentos de texto em mais de 64 idiomas.
-pt_pt.CloudWebLink=Saber Mais
-pt_pt.cPDFFeature=Desativar funcionalidades do ConnectedPDF
-pt_pt.IsInstallReader=Existe uma edição diferente do Foxit PDF Reader instalada no computador. Quer mesmo remover a edição anterior e instalar esta? %nLembre-se de que se instalou a versão .msi do Foxit PDF Reader, poderá perder algumas definições.
-pt_pt.ConnectedPDF=ConnectedPDF
-pt_pt.DisableInternet=Disable all features which require internet connection
-pt_pt.ApplicationDescription=Foxit PDF Reader is a small, fast, and feature-rich PDF viewer which allows you to open, view, and print any PDF file. Foxit PDF Reader provides PDF creation and easy to use collaboration features like the ability to add annotations, fill out forms, and share information with friends and colleagues.
-pt_pt.MSICreationFeature=There is a different edition of Foxit PDF Reader currently installed on your computer. Are you sure %nyou want to remove the previous edition and install this one?%n%nPlease be aware that you may lose some settings in the previously version and %nPDF creation is not available in Foxit PDF Reader 10.0. PDF viewing, commenting, etc. are still present. %n%nClick OK to continue or Cancel to cancel installation.
-pt_pt.EXECreationFeature=If you continue with this update, your older version of Foxit PDF Reader will be uninstalled %nautomatically.%n%nPlease be aware that PDF creation is not available in Foxit PDF Reader 10.0. PDF viewing, %ncommenting, etc. are still present.%n%nPlease click “Yes” to continue or "No" to exit the update.
-pt_pt.AdditionalTaskDlgCollectData=Help improve user &experience
 pl.startmenufolder=Dodaj &ikonę do menu Start
 pl.pdfviewer=Pliki przeglądarki PDF
 pl.FullInstallation=Instalacja pełna
@@ -5249,7 +5129,7 @@ sv_SE.PhantomExport= Exportera till andra filformat
 sv_SE.PhantomDevelop= Utveckla PDF-formulär
 sv_SE.PhantomProtect= Skydda PDF-filer (dvs. kryptera)
 sv_SE.PhantomURL= Läs mer om
-sv_SE.PhantomRadio=Installera en kostnadsfri utvärderingsversion av Foxit PDF Editor som du kan använda i 14 dagar
+sv_SE.PhantomRadio=Installera en kostnadsfri utvärderingsversion av Foxit PDF Editor som
 sv_SE.PhantomRadio2=Installera inte 14 dagars prov av Foxit PDF Editor
 sv_SE.Phantomtilte= Foxit PDF Editor
 sv_SE.Phantomtilte2= Rekommenderas av Foxit PDF Reader
@@ -5455,91 +5335,6 @@ tw.EXECreationFeature=如果繼續進行此更新，則將自動卸載較舊的F
 tw.AdditionalTaskDlgCollectData=幫助改進使用者體驗(&E)
 tw.FeatureCEF=瀏覽器插件的依賴庫
 tw.FeatureCEFDesc=這些庫用於在 Foxit PDF Reader 中顯示網頁
-hk.startmenufolder=新增圖示至開始功能表(&I)
-hk.pdfviewer=PDF 檢視器檔案
-hk.FullInstallation=完整安裝
-hk.CustomInstallation=自訂安裝
-hk.MaintenanceTitle=程式維護
-hk.MaintenanceDescription=修復或移除程式。
-hk.Modify=修改
-hk.Repair=修復
-hk.Uninstall=移除
-hk.InstallV9_Plugin_descript=下載並安裝 V9 首頁和工具列 ¨C（建議）（瀏覽器將會重新啟動，所有頁面都會保持不變）。
-hk.ffaddin=用於在瀏覽器中開啟 PDF 檔案的外掛程式
-hk.ffse=殼層延伸模組
-hk.setDefaultReader=將 Foxit PDF Reader 設定為預設 PDF 檢視器(&V)
-hk.BeingSetDefault=將 Foxit PDF Reader 設定為預設 PDF 檢視器
-hk.BeingInstallFirelfoxPlugin=正在安裝 Mozilla FireFox、Opera、Safari 和 Chrome 的附加元件
-hk.BeingInstallPlugin=正在安裝附加元件
-hk.BeingInstallSE=正在安裝殼層延伸模組
-hk.DisplayInBrowser=在瀏覽器中顯示 PDF 檔案(&F)
-hk.ffSpellCheck=Foxit 拼字檢查語言
-hk.BeingInstallSpellCheck=正在安裝 Foxit 拼字檢查語言
-hk.WordAddin=Word 外掛程式
-hk.BeingInstallWordAddin=正在安裝 Word 外掛程式
-hk.BeingInstallPPTAddin=正在安裝 PPT 外掛程式
-hk.BeingInstallExcelAddin=正在安裝 Excel 外掛程式
-hk.PPTAddin=PPT 外掛程式
-hk.ExcelAddin=Excel 外掛程式
-hk.OutLookAddin=OutLook 外掛程式
-hk.BeingInstallOutLookAddin=正在安裝 OutLook 外掛程式
-hk.ConvertToPDF=用於轉換 PDF 的 Windows 殼層延伸模組
-hk.SetPrint=安裝為預設系統印表機(&P)
-hk.InstallPrint=Foxit PDF Reader Creator
-hk.AppName=Foxit PDF Reader
-hk.SafeModeDlgTitle=安全讀取模式設定
-hk.SafeModeFeatureTitle=安全模式可讓您控制未經授權的動作及資料傳輸，包括 URL 連線、啟動外部檔案及執行 JavaScript 功能，以有效避免惡意文件攻擊。 
-hk.SafeModeGroupBoxTitle=信任管理員
-hk.SafeModeCheck=啟用安全讀取模式
-hk.SafeModeFeatureCaptionEnd=您也可以從 Reader 的「喜好設定」(「檔案」->「喜好設定」->「信任管理員」)啟用或停用「安全讀取模式」。
-hk.UpdaterName=Foxit 更新模組
-hk.FileInUseFoxitReader=必須關閉 Foxit PDF Reader 才能繼續解除安裝。請將其關閉，然後按一下「重試」以繼續。
-hk.FileInUseFoxitUpdater=必須關閉 Foxit Updater 才能繼續安裝。請將其關閉，然後按一下「重試」以繼續。
-hk.NewerVersion=已安裝更新版本的 Foxit PDF Reader。 
-hk.UninstallOldVersion=您的電腦已安裝舊版 Foxit PDF Reader。請先將其解除安裝，再安裝此新版本。按一下「確定」以執行此作業。
-hk.UninstallOldVersionConfirm=您的電腦已安裝舊版 Foxit PDF Reader。請先將其解除安裝，再安裝此新版本。按一下「重試」以繼續安裝。 
-hk.OlderVersion=如果您繼續更新，則將自動解除安裝舊版 Foxit PDF Reader。請按一下「是」以繼續，或按一下「否」以結束更新。
-hk.MSIDETECTED=安裝失敗。請先解除安裝舊版 Foxit PDF Reader，然後再安裝最新版本。
-hk.CheckEnv=正在檢查安裝環境
-hk.FoxitReaderInstallerRunning=另一個 Foxit PDF Reader 安裝程式正在執行中。請等到目前的安裝程式完成。
-hk.FileWord=請關閉 Microsoft Word 以便繼續安裝。然後按一下「重試」以繼續。
-hk.FileEXCEL=請關閉 Microsoft Excel 以便繼續安裝。然後按一下「重試」以繼續。
-hk.FilePOWERPNT=請關閉 Microsoft Powerpoint 以便繼續安裝。然後按一下「重試」以繼續。
-hk.FileOUTLOOK=請關閉 Microsoft Outlook 以便繼續安裝。然後按一下「重試」以繼續。
-hk.IsClean=解除安裝後，是否要移除 Reader 設定及歷程記錄資料?
-hk.CountLabel=按一下「安裝」以繼續安裝，或按一下「返回」以檢閱或變更任何設定。 
-hk.CountLabel2=按一下「安裝」以繼續修復。設定將與原始安裝相同。
-hk.PhantomName= Foxit PDF Editor
-hk.Phantom_text=需要從 PDF 解決方案瞭解更多資訊？許多工作流程需要使用 Foxit PDF Editor 的額外功能。其延伸了 Foxit PDF Reader 的功能，以便包含：
-hk.Phantom_and= 組織 PDF 文件 (即，移動、刪除、新增、扁平化、裁剪和擷取頁面) 
-hk.PhantomOCR= 透過 OCR 辨識掃描的文件
-hk.PhantomExport= 匯出為其他檔案格式
-hk.PhantomDevelop= 製作 PDF 表單
-hk.PhantomProtect= 保護 PDF 檔案 (即，加密)
-hk.PhantomURL= 深入了解
-hk.PhantomRadio=安裝 Foxit PDF Editor 14 天免費試用版
-hk.PhantomRadio2=不要安裝 Foxit PDF Editor 14 天免費試用版
-hk.Phantomtilte= Foxit PDF Editor
-hk.Phantomtilte2= Foxit PDF Reader 建議
-hk.PhantomEdit= 編輯 PDF 內容
-hk.PhantomDownload=下載失敗。請造訪 Foxit 網站以下載 Foxit PDF Editor。
-hk.CuntReadyMemo=其他工作：
-hk.CloudTitle=您可以使用 Foxit 雲端做什麼
-hk.CloudTitle1=雲端讀取
-hk.CloudDescription1=使用任何裝置，隨時隨地同步讀取文件。
-hk.CloudTitle2=提交表單
-hk.CloudDescription2=按一下便可將您完成的 PDF 表單提交給其他人員。
-hk.CloudTitle3=翻譯
-hk.CloudDescription3=以超過 64 種語言翻譯文件文字。
-hk.CloudWebLink=深入了解
-hk.cPDFFeature=停用互聯 PDF 功能
-hk.IsInstallReader=您的計算機上目前安裝了不同版本的 Foxit PDF Reader。是否確定要刪除先前的版本並安裝此版本？%n請注意，如果您以前安裝了 .msi 版本的 Foxit PDF Reader，某些設定可能會丟失。
-hk.ConnectedPDF=互聯 PDF
-hk.DisableInternet=Disable all features which require internet connection
-hk.ApplicationDescription=Foxit PDF Reader is a small, fast, and feature-rich PDF viewer which allows you to open, view, and print any PDF file. Foxit PDF Reader provides PDF creation and easy to use collaboration features like the ability to add annotations, fill out forms, and share information with friends and colleagues.
-hk.MSICreationFeature=There is a different edition of Foxit PDF Reader currently installed on your computer. Are you sure %nyou want to remove the previous edition and install this one?%n%nPlease be aware that you may lose some settings in the previously version and %nPDF creation is not available in Foxit PDF Reader 10.0. PDF viewing, commenting, etc. are still present. %n%nClick OK to continue or Cancel to cancel installation.
-hk.EXECreationFeature=If you continue with this update, your older version of Foxit PDF Reader will be uninstalled %nautomatically.%n%nPlease be aware that PDF creation is not available in Foxit PDF Reader 10.0. PDF viewing, %ncommenting, etc. are still present.%n%nPlease click “Yes” to continue or "No" to exit the update.
-hk.AdditionalTaskDlgCollectData=Help improve user &experience
 ko.startmenufolder=시작 메뉴 및 아이콘 추가
 ko.pdfviewer=PDF-Viewer 파일
 ko.FullInstallation=표준 설치
@@ -5724,13 +5519,11 @@ Name: "es"; MessagesFile: "embedded\es.isl"; LicenseFile: "embedded\esLicense.rt
 Name: "de"; MessagesFile: "embedded\de.isl"; LicenseFile: "embedded\deLicense.rtf"; 
 Name: "fr"; MessagesFile: "embedded\fr.isl"; LicenseFile: "embedded\frLicense.rtf"; 
 Name: "pt"; MessagesFile: "embedded\pt.isl"; LicenseFile: "embedded\ptLicense.rtf"; 
-Name: "pt_pt"; MessagesFile: "embedded\pt_pt.isl"; LicenseFile: "embedded\pt_ptLicense.rtf"; 
 Name: "pl"; MessagesFile: "embedded\pl.isl"; LicenseFile: "embedded\plLicense.rtf"; 
 Name: "ru"; MessagesFile: "embedded\ru.isl"; LicenseFile: "embedded\ruLicense.rtf"; 
 Name: "nl"; MessagesFile: "embedded\nl.isl"; LicenseFile: "embedded\nlLicense.rtf"; 
 Name: "it"; MessagesFile: "embedded\it.isl"; LicenseFile: "embedded\itLicense.rtf"; 
 Name: "chs"; MessagesFile: "embedded\chs.isl"; LicenseFile: "embedded\chsLicense.rtf"; 
-Name: "hk"; MessagesFile: "embedded\hk.isl"; LicenseFile: "embedded\hkLicense.rtf"; 
 Name: "tw"; MessagesFile: "embedded\tw.isl"; LicenseFile: "embedded\twLicense.rtf"; 
 Name: "jp"; MessagesFile: "embedded\jp.isl"; LicenseFile: "embedded\jpLicense.rtf"; 
 Name: "ko"; MessagesFile: "embedded\ko.isl"; LicenseFile: "embedded\koLicense.rtf"; 
