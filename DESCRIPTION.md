@@ -22,6 +22,10 @@ Integrate with leading cloud storage services and popular enterprise CMS. Collab
 
 Sign documents in your own handwriting or utilize eSignature and verify the status of digital signatures. Be safe from vulnerabilities by utilizing Trust Manager/Safe Mode, ASLR & DEP, Disable JavaScript, and Security Warning Dialogs.
 
+#### AI Assistant
+
+Foxit PDF Reader’s integration with ChatGPT empowers users with AI-driven features that help increase productivity and streamline document processing across various devices and operating systems.
+
 ## Package Parameters
 
 * `/NoShim` - Opt out of creating a shim, and removes any existing shim.
