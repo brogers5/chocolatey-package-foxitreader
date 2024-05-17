@@ -4,7 +4,7 @@
   <metadata>
     <id>foxitreader</id>
     <title>Foxit PDF Reader</title>
-    <version>2024.2.0.25138</version>
+    <version>2024.2.1.25153</version>
     <authors>Foxit Software Incorporated</authors>
     <owners>ComFreek H.AlanStevens sublym0nal</owners>
     <summary>The industry's most powerful PDF Reader solution.</summary>
@@ -32,15 +32,19 @@ Integrate with leading cloud storage services and popular enterprise CMS. Collab
 
 Sign documents in your own handwriting or utilize eSignature and verify the status of digital signatures. Be safe from vulnerabilities by utilizing Trust Manager/Safe Mode, ASLR & DEP, Disable JavaScript, and Security Warning Dialogs.
 
+#### AI Assistant
+
+Foxit PDF Reader’s integration with ChatGPT empowers users with AI-driven features that help increase productivity and streamline document processing across various devices and operating systems.
+
 ## Package Parameters
 
 * `/NoShim` - Opt out of creating a shim, and removes any existing shim.
 
-## [Package Notes](https://github.com/brogers5/chocolatey-package-foxitreader/blob/v2024.2.0.25138/PACKAGE-NOTES.md)
+## [Package Notes](https://github.com/brogers5/chocolatey-package-foxitreader/blob/v2024.2.1.25153/PACKAGE-NOTES.md)
 ]]></description>
     <projectUrl>https://www.foxit.com/pdf-reader/</projectUrl>
     <docsUrl>https://www.foxit.com/support/usermanuals.html</docsUrl>
-    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-foxitreader/tree/v2024.2.0.25138</packageSourceUrl>
+    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-foxitreader/tree/v2024.2.1.25153</packageSourceUrl>
     <releaseNotes>https://www.foxit.com/pdf-reader/version-history.html</releaseNotes>
     <tags>Foxit PDF Reader office cross-platform freeware</tags>
     <licenseUrl>https://www.foxit.com/pdf-editor/eula.html</licenseUrl>
