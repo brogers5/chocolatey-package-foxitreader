@@ -4,7 +4,7 @@
 AppName={cm:AppName}
 AppVerName={cm:AppName}
 AppId=Foxit Reader
-AppVersion=2024.2.1.25153
+AppVersion=2024.2.2.25170
 AppPublisher=Foxit Software Inc.
 AppPublisherURL={cm:AppSupportURL}0
 AppSupportURL={cm:AppPublisherURL}0
@@ -13,7 +13,7 @@ DefaultDirName={pf}\Foxit Software\Foxit PDF Reader
 DefaultGroupName={cm:AppName}
 UninstallDisplayIcon={app}\FoxitPDFReader.exe
 UninstallDisplayName={cm:AppName}
-OutputBaseFilename=tmphwwsuc.tmp
+OutputBaseFilename=tmpz5r4j5.tmp
 Compression=lzma
 DisableDirPage=auto
 DisableProgramGroupPage=yes
@@ -1470,6 +1470,7 @@ Source: "{app}\stamps\Standard Templates\Arrow Stamp(Deep Green).pdf"; DestDir: 
 Source: "{app}\stamps\Standard Templates\Arrow Stamp(Green).pdf"; DestDir: "{app}\stamps\Standard Templates"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\stamps\Standard Templates\Arrow Stamp(Purple).pdf"; DestDir: "{app}\stamps\Standard Templates"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\stamps\Standard Templates\Circle Stamp(Blue).pdf"; DestDir: "{app}\stamps\Standard Templates"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
+Source: "{app}\stamps\Standard Templates\Circle Stamp(Red).pdf"; DestDir: "{app}\stamps\Standard Templates"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\stamps\Standard Templates\Diamond Stamp(Blue).pdf"; DestDir: "{app}\stamps\Standard Templates"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\stamps\Standard Templates\Diamond Stamp(Green).pdf"; DestDir: "{app}\stamps\Standard Templates"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
 Source: "{app}\stamps\Standard Templates\Ellipse Stamp(Green).pdf"; DestDir: "{app}\stamps\Standard Templates"; BeforeInstall: "ChangeDisplay"; MinVersion: 0.0,5.0; 
