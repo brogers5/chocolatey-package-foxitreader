@@ -53,11 +53,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-    $versionHistoryUri = 'https://www.foxit.com/pdf-reader/version-history.html'
     $userAgent = 'Update checker of Chocolatey Community Package ''foxitreader'''
-    $versionHistoryPage = Invoke-WebRequest -Uri $versionHistoryUri -UserAgent $userAgent -UseBasicParsing
-
-    $softwareVersion = [version] [regex]::Matches($versionHistoryPage.Content, '(?i)<h3[^>]*>(Foxit Reader|Version) (.*)</h3>').Groups[2].Value
 
     # Using a non-English language selection to be directed toward the L10N installer binary.
     $canonicalUrl = 'https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&softwareVersion=&package_type=exe&language=L10N'
@@ -74,6 +70,18 @@ function global:au_GetLatest {
 
     $redirectedUriSegments = $redirectedRequestUri.Segments
     $redirectedUriLocalDirectory = $redirectedRequestUri.AbsolutePath.TrimEnd($redirectedUriSegments[$redirectedUriSegments.Length - 1])
+
+    #Confirm that the redirected URL is actually for the intended version.
+    $versionHistoryUri = 'https://www.foxit.com/pdf-reader/version-history.html'
+    $versionHistoryPage = Invoke-WebRequest -Uri $versionHistoryUri -UserAgent $userAgent -UseBasicParsing
+    $softwareVersion = [version] [regex]::Matches($versionHistoryPage.Content, '(?i)<h3[^>]*>(Foxit Reader|Version) (.*)</h3>').Groups[2].Value
+
+    $servedVersion = Get-Version -Version $redirectedUriLocalDirectory
+    if ($servedVersion.Version -lt $softwareVersion) {
+        #Foxit sometimes misconfigures their server and serves an old version.
+        #To avoid an erroneous forced package update, aborting the update check.
+        throw "$($Latest.PackageName)'s website is currently serving v$($servedVersion.Version), but this is older than the latest version (v$softwareVersion)!"
+    }
 
     if ($softwareVersion.Build -eq 0) {
         $fileNameVersion = "$($softwareVersion.Major)$($softwareVersion.Minor)"
@@ -127,4 +135,15 @@ function global:au_GetLatest {
     }
 }
 
-Update-Package -ChecksumFor None -NoReadme -Force:$Force
+try {
+    Update-Package -ChecksumFor None -NoReadme -Force:$Force
+}
+catch {
+    $ignore = 'but this is older than the latest version'
+    if ($_ -match $ignore) { 
+        Write-Warning $_ ; 'ignore'
+    } 
+    else { 
+        throw $_ 
+    }
+}
