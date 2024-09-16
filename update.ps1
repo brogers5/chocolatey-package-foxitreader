@@ -76,8 +76,10 @@ function global:au_GetLatest {
     $versionHistoryPage = Invoke-WebRequest -Uri $versionHistoryUri -UserAgent $userAgent -UseBasicParsing
     $softwareVersion = [version] [regex]::Matches($versionHistoryPage.Content, '(?i)<h3[^>]*>(Foxit Reader|Version) (.*)</h3>').Groups[2].Value
 
+    $softwareVersionWithoutPatch = New-Object -TypeName System.Version -ArgumentList $softwareVersion.Major, $softwareVersion.Minor, $softwareVersion.Build
+
     $servedVersion = Get-Version -Version $redirectedUriLocalDirectory
-    if ($servedVersion.Version -lt $softwareVersion) {
+    if ($servedVersion.Version -lt $softwareVersionWithoutPatch) {
         #Foxit sometimes misconfigures their server and serves an old version.
         #To avoid an erroneous forced package update, aborting the update check.
         throw "$($Latest.PackageName)'s website is currently serving v$($servedVersion.Version), but this is older than the latest version (v$softwareVersion)!"
