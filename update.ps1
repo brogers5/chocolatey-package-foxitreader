@@ -56,7 +56,7 @@ function global:au_GetLatest {
     $userAgent = 'Update checker of Chocolatey Community Package ''foxitreader'''
 
     # Using a non-English language selection to be directed toward the L10N installer binary.
-    $canonicalUrl = 'https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&softwareVersion=&package_type=exe&language=L10N'
+    $canonicalUrl = 'https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&softwareVersion=&package_type=exe&language=German'
 
     # Foxit's version directory placement has not been consistent. Source a server-local path dynamically.
     $headResponse = Invoke-WebRequest -Uri $canonicalUrl -UserAgent $userAgent -Method Head -MaximumRedirection 1 -SkipHttpErrorCheck
