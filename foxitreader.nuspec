@@ -51,7 +51,7 @@ Foxit PDF Reader’s integration with ChatGPT empowers users with AI-driven feat
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.jsdelivr.net/gh/brogers5/chocolatey-package-foxitreader@2debc1705b7ac1cc4ad610ad1f682293a5f81a65/FoxitReader.png</iconUrl>
     <copyright>2024 © Foxit Software Incorporated. All rights reserved.</copyright>
-    <mailingListUrl>https://kb.foxit.com/hc/en-us/community/topics/5008047080724-Foxit-PDF-Reader</mailingListUrl>
+    <mailingListUrl>https://kb.foxit.com/s/group/0F9Uk0000000FALKA2/foxit-pdf-reader</mailingListUrl>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.0.0" />
     </dependencies>
