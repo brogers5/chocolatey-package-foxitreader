@@ -4,7 +4,7 @@
   <metadata>
     <id>foxitreader</id>
     <title>Foxit PDF Reader</title>
-    <version>2024.4.0.27683</version>
+    <version>2025.1.0.27937</version>
     <authors>Foxit Software Incorporated</authors>
     <owners>ComFreek H.AlanStevens sublym0nal</owners>
     <summary>The industry's most powerful PDF Reader solution.</summary>
@@ -40,17 +40,17 @@ Foxit PDF Reader’s integration with ChatGPT empowers users with AI-driven feat
 
 * `/NoShim` - Opt out of creating a shim, and removes any existing shim.
 
-## [Package Notes](https://github.com/brogers5/chocolatey-package-foxitreader/blob/v2024.4.0.27683/PACKAGE-NOTES.md)
+## [Package Notes](https://github.com/brogers5/chocolatey-package-foxitreader/blob/v2025.1.0.27937/PACKAGE-NOTES.md)
 ]]></description>
     <projectUrl>https://www.foxit.com/pdf-reader/</projectUrl>
     <docsUrl>https://www.foxit.com/support/usermanuals.html</docsUrl>
-    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-foxitreader/tree/v2024.4.0.27683</packageSourceUrl>
+    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-foxitreader/tree/v2025.1.0.27937</packageSourceUrl>
     <releaseNotes>https://www.foxit.com/pdf-reader/version-history.html</releaseNotes>
     <tags>Foxit PDF Reader office cross-platform freeware</tags>
     <licenseUrl>https://www.foxit.com/pdf-editor/eula.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.jsdelivr.net/gh/brogers5/chocolatey-package-foxitreader@2debc1705b7ac1cc4ad610ad1f682293a5f81a65/FoxitReader.png</iconUrl>
-    <copyright>2024 © Foxit Software Incorporated. All rights reserved.</copyright>
+    <copyright>2025 © Foxit Software Incorporated. All rights reserved.</copyright>
     <mailingListUrl>https://kb.foxit.com/s/group/0F9Uk0000000FALKA2/foxit-pdf-reader</mailingListUrl>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.0.0" />
