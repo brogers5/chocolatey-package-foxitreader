@@ -2,14 +2,14 @@
 param([switch] $Force)
 Import-Module au
 
-function Get-InstallScript($FilePath) {
-    if (!(Get-Command 'innounp.exe' -ErrorAction SilentlyContinue)) {
+$userAgent = 'Update checker of Chocolatey Community Package ''foxitreader'''
+
+function Get-InstallScript([string] $InFile, [string] $OutFile) {
+    if (!(Get-Command -Name 'innounp.exe' -CommandType Application -ErrorAction SilentlyContinue)) {
         Write-Information 'innounp is not available on PATH, installing...'
         choco install innounp -y
     }
-
-    $installScriptFileName = 'install_script.iss'
-    innounp -x $FilePath $installScriptFileName -y
+    innounp -x $InFile $OutFile -y
 }
 
 function Set-DocumentVersion($RelativeFilePath) {
@@ -25,10 +25,14 @@ function Set-DocumentVersion($RelativeFilePath) {
 
 function global:au_BeforeUpdate ($Package) {
     $tempFilePath = New-TemporaryFile
-    Invoke-WebRequest -Uri $Latest.Url32 -OutFile $tempFilePath
 
+    Invoke-WebRequest -Uri $Latest.Url32 -OutFile $tempFilePath
     $Latest.Checksum32 = (Get-FileHash -Path $tempFilePath -Algorithm SHA256).Hash.ToLower()
-    Get-InstallScript -FilePath $tempFilePath
+    Get-InstallScript -InFile $tempFilePath -OutFile 'install_script_x86.iss'
+
+    Invoke-WebRequest -Uri $Latest.Url64 -OutFile $tempFilePath
+    $Latest.Checksum64 = (Get-FileHash -Path $tempFilePath -Algorithm SHA256).Hash.ToLower()
+    Get-InstallScript -InFile $tempFilePath -OutFile 'install_script_x64.iss'
 
     Remove-Item $tempFilePath -Force
 
@@ -46,14 +50,36 @@ function global:au_SearchReplace {
             '(<copyright>)[^<]*(</copyright>)'               = "`${1}$($(Get-Date -Format yyyy)) © Foxit Software Incorporated. All rights reserved.`$2"
         }
         'tools\chocolateyInstall.ps1'   = @{
-            "(^[$]?\s*url\s*=\s*)('.*')"      = "`$1'$($Latest.Url32)'"
-            "(^[$]?\s*checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
+            "(^[$]?\s*url\s*=\s*)('.*')"        = "`$1'$($Latest.Url32)'"
+            "(^[$]?\s*checksum\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum32)'"
+            "(^[$]?\s*url64bit\s*=\s*)('.*')"   = "`$1'$($Latest.Url64)'"
+            "(^[$]?\s*checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
         }
     }
 }
 
+function Confirm-ForcedUpdateNecessity([version] $SoftwareVersion, [string] $Uri, [string] $ETagFile) {
+    $headRequest = Invoke-WebRequest -Uri $uri -Method Head -UserAgent $userAgent
+    $currentETagValue = $headRequest.Headers['ETag']
+
+    [xml] $nuspec = Get-Content -Path "$($Latest.PackageName).nuspec"
+    $lastPackageVersion = [version] $nuspec.package.metadata.version
+
+    if (!($global:au_Force -or $Force)) {
+        #Check whether the ETag value has changed to determine if we need to force an update
+        $lastETagInfo = Get-Content -Path $ETagFile -Encoding UTF8
+        if ($lastETagInfo -ne $currentETagValue) {
+            if ($softwareVersion -le $lastPackageVersion) {
+                Write-Warning 'Updated ETag detected, forcing package update'
+                $global:au_Force = $true
+            }
+        }
+    }
+
+    $currentETagValue | Out-File -FilePath $ETagFile -Encoding UTF8
+}
+
 function global:au_GetLatest {
-    $userAgent = 'Update checker of Chocolatey Community Package ''foxitreader'''
     $canonicalUrl = 'https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&language=ML'
 
     # Foxit's version directory placement has not been consistent. Source a server-local path dynamically.
@@ -92,27 +118,11 @@ function global:au_GetLatest {
 
     # Probe specifically for Multi-Language Promotion with Editor EXE installer, as the canonical URL may sometimes point to a different installer type
     # Using cdn01 specifically to avoid HTTP 403 (Forbidden) errors
-    $url32 = "https://cdn01.foxitsoftware.com$($redirectedUriLocalDirectory)FoxitPDFReader$($fileNameVersion)_L10N_Setup_Prom.exe"
+    $url32 = "https://cdn01.foxitsoftware.com$($redirectedUriLocalDirectory)FoxitPDFReader$($fileNameVersion)_L10N_Setup_Prom_x86.exe"
+    $url64 = "https://cdn01.foxitsoftware.com$($redirectedUriLocalDirectory)FoxitPDFReader$($fileNameVersion)_L10N_Setup_Prom_x64.exe"
 
-    $headRequest = Invoke-WebRequest -Uri $url32 -Method Head -UserAgent $userAgent
-    $currentETagValue = $headRequest.Headers['ETag']
-    $etagFilePath = '.\ETag.txt'
-
-    [xml] $nuspec = Get-Content -Path "$($Latest.PackageName).nuspec"
-    $lastPackageVersion = [version] $nuspec.package.metadata.version
-
-    if (!($global:au_Force -or $Force)) {
-        #Check whether the ETag value has changed to determine if we need to force an update
-        $lastETagInfo = Get-Content -Path $etagFilePath -Encoding UTF8
-        if ($lastETagInfo -ne $currentETagValue) {
-            if ($softwareVersion -le $lastPackageVersion) {
-                Write-Warning 'Updated ETag detected, forcing package update'
-                $global:au_Force = $true
-            }
-        }
-    }
-
-    $currentETagValue | Out-File -FilePath $etagFilePath -Encoding UTF8
+    Confirm-ForcedUpdateNecessity -SoftwareVersion $softwareVersion -Uri $url32 -ETagFile 'ETag_x86.txt'
+    Confirm-ForcedUpdateNecessity -SoftwareVersion $softwareVersion -Uri $url64 -ETagFile 'ETag_x64.txt'
 
     $packageVersion = $softwareVersion.ToString()
 
@@ -131,6 +141,7 @@ function global:au_GetLatest {
 
     return @{
         Url32   = $url32
+        Url64   = $url64
         Version = $packageVersion
     }
 }
