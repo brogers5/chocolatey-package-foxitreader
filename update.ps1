@@ -72,13 +72,16 @@ function global:au_GetLatest {
     $canonicalUrl = 'https://www.foxit.com/downloads/latest.html?product=Foxit-Reader&platform=Windows&language=ML'
 
     # Foxit's version directory placement has not been consistent. Source a server-local path dynamically.
-    $headResponse = Invoke-WebRequest -Uri $canonicalUrl -UserAgent $userAgent -Method Head -MaximumRedirection 1 -SkipHttpErrorCheck
+    $response = Invoke-WebRequest -Uri $canonicalUrl -UserAgent $userAgent -Method Get -MaximumRedirection 0 -SkipHttpErrorCheck
 
-    if ($null -ne $headResponse.BaseResponse.ResponseUri) {
-        $redirectedRequestUri = $headResponse.BaseResponse.ResponseUri
+    if ($null -ne $response.BaseResponse.ResponseUri) {
+        $redirectedRequestUri = $response.BaseResponse.ResponseUri
     }
-    elseif ($null -ne $headResponse.BaseResponse.RequestMessage.RequestUri) {
-        $redirectedRequestUri = $headResponse.BaseResponse.RequestMessage.RequestUri
+    elseif ($null -ne $response.Headers['Location']) {
+        $redirectedRequestUri = [uri] $response.Headers['Location'][0]
+    }
+    elseif ($null -ne $response.BaseResponse.RequestMessage.RequestUri) {
+        $redirectedRequestUri = $response.BaseResponse.RequestMessage.RequestUri
     }
 
     $redirectedUriSegments = $redirectedRequestUri.Segments
