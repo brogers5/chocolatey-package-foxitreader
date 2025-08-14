@@ -4,7 +4,7 @@
   <metadata>
     <id>foxitreader</id>
     <title>Foxit PDF Reader</title>
-    <version>2025.1.0.27937</version>
+    <version>2025.2.0.33046</version>
     <authors>Foxit Software Incorporated</authors>
     <owners>ComFreek H.AlanStevens sublym0nal</owners>
     <summary>The industry's most powerful PDF Reader solution.</summary>
@@ -40,11 +40,11 @@ Foxit PDF Reader’s integration with ChatGPT empowers users with AI-driven feat
 
 * `/NoShim` - Opt out of creating a shim, and removes any existing shim.
 
-## [Package Notes](https://github.com/brogers5/chocolatey-package-foxitreader/blob/v2025.1.0.27937/PACKAGE-NOTES.md)
+## [Package Notes](https://github.com/brogers5/chocolatey-package-foxitreader/blob/v2025.2.0.33046/PACKAGE-NOTES.md)
 ]]></description>
     <projectUrl>https://www.foxit.com/pdf-reader/</projectUrl>
     <docsUrl>https://www.foxit.com/support/usermanuals.html</docsUrl>
-    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-foxitreader/tree/v2025.1.0.27937</packageSourceUrl>
+    <packageSourceUrl>https://github.com/brogers5/chocolatey-package-foxitreader/tree/v2025.2.0.33046</packageSourceUrl>
     <releaseNotes>https://www.foxit.com/pdf-reader/version-history.html</releaseNotes>
     <tags>Foxit PDF Reader office cross-platform freeware</tags>
     <licenseUrl>https://www.foxit.com/pdf-editor/eula.html</licenseUrl>
