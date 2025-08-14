@@ -9,7 +9,7 @@ $installationArgs = @{
     checksumType   = 'sha256'
     checksum64     = '31db3256b8f5ec55ec9bc5a278a03c938802ed17a61fe6394e196e5fa4fed1bd'
     checksumType64 = 'sha256'
-    silentArgs     = "/verysilent /log=`"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).Install.log`""
+    silentArgs     = "/install /quiet /norestart /log `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).Install.log`""
     validExitCodes = @(0)
 }
 
@@ -21,7 +21,7 @@ if ($pp.NoShim) {
     Uninstall-BinFile -Name $shimName
 }
 else {
-    $installLocation = Get-AppInstallLocation -AppNamePattern 'Foxit *Reader'
+    $installLocation = Get-AppInstallLocation -AppNamePattern 'Foxit PDF Reader'
     if ($null -ne $installLocation) {
         $shimPath = Join-Path -Path $installLocation -ChildPath 'FoxitPDFReader.exe'
         Install-BinFile -Name $shimName -Path $shimPath -UseStart

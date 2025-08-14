@@ -4,14 +4,6 @@ Import-Module au
 
 $userAgent = 'Update checker of Chocolatey Community Package ''foxitreader'''
 
-function Get-InstallScript([string] $InFile, [string] $OutFile) {
-    if (!(Get-Command -Name 'innounp.exe' -CommandType Application -ErrorAction SilentlyContinue)) {
-        Write-Information 'innounp is not available on PATH, installing...'
-        choco install innounp -y
-    }
-    innounp -x $InFile $OutFile -y
-}
-
 function Set-DocumentVersion($RelativeFilePath) {
     $fileContents = Get-Content -Path $RelativeFilePath -Encoding UTF8
     $fileContents = $fileContents -replace '/blob/v.*\/', "/blob/v$($Latest.Version)/"
@@ -28,17 +20,14 @@ function global:au_BeforeUpdate ($Package) {
 
     Invoke-WebRequest -Uri $Latest.Url32 -OutFile $tempFilePath
     $Latest.Checksum32 = (Get-FileHash -Path $tempFilePath -Algorithm SHA256).Hash.ToLower()
-    Get-InstallScript -InFile $tempFilePath -OutFile 'install_script_x86.iss'
 
     Invoke-WebRequest -Uri $Latest.Url64 -OutFile $tempFilePath
     $Latest.Checksum64 = (Get-FileHash -Path $tempFilePath -Algorithm SHA256).Hash.ToLower()
-    Get-InstallScript -InFile $tempFilePath -OutFile 'install_script_x64.iss'
 
     Remove-Item $tempFilePath -Force
 
     $descriptionRelativePath = '.\DESCRIPTION.md'
     Set-DocumentVersion -RelativeFilePath $descriptionRelativePath
-    Set-DocumentVersion -RelativeFilePath '.\PACKAGE-NOTES.md'
 
     Set-DescriptionFromReadme -Package $Package -ReadmePath $descriptionRelativePath
 }
