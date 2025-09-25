@@ -9,7 +9,7 @@ $installationArgs = @{
     checksumType   = 'sha256'
     checksum64     = 'f72daae81be3e848ebaf0c0bf70e4030e4a266ea0f6f232f08f30324971cbc6c'
     checksumType64 = 'sha256'
-    silentArgs     = "/install /quiet /norestart /log `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).Install.log`""
+    silentArgs     = "/quiet /log `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).Install.log`""
     validExitCodes = @(0)
 }
 
