@@ -1,4 +1,15 @@
 ﻿$ErrorActionPreference = 'Stop'
+$toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
+. $toolsDir\helpers.ps1
+
+[version] $softwareVersion = '2025.2.1.33197'
+$currentVersion = Get-CurrentVersion
+
+if ($currentVersion -gt $softwareVersion) {
+    Write-Warning "A newer version of Foxit PDF Reader (v$currentVersion) was detected."
+    Write-Warning 'By default, the installer may exit without overwriting the newer version.'
+    Write-Warning 'If this behavior is undesired, pass "/force" as an additional install argument.'
+}
 
 $installationArgs = @{
     packageName    = $env:ChocolateyPackageName
