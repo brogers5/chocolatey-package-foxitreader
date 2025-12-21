@@ -39,10 +39,11 @@ function global:au_SearchReplace {
             '(<copyright>)[^<]*(</copyright>)'               = "`${1}$($(Get-Date -Format yyyy)) © Foxit Software Incorporated. All rights reserved.`$2"
         }
         'tools\chocolateyInstall.ps1'   = @{
-            "(^[$]?\s*url\s*=\s*)('.*')"        = "`$1'$($Latest.Url32)'"
-            "(^[$]?\s*checksum\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum32)'"
-            "(^[$]?\s*url64bit\s*=\s*)('.*')"   = "`$1'$($Latest.Url64)'"
-            "(^[$]?\s*checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
+            '(^\[version\] [$]softwareVersion\s*=\s*)(''.*'')' = "`$1'$($Latest.SoftwareVersion)'"
+            "(^[$]?\s*url\s*=\s*)('.*')"                       = "`$1'$($Latest.Url32)'"
+            "(^[$]?\s*checksum\s*=\s*)('.*')"                  = "`$1'$($Latest.Checksum32)'"
+            "(^[$]?\s*url64bit\s*=\s*)('.*')"                  = "`$1'$($Latest.Url64)'"
+            "(^[$]?\s*checksum64\s*=\s*)('.*')"                = "`$1'$($Latest.Checksum64)'"
         }
     }
 }
@@ -132,9 +133,10 @@ function global:au_GetLatest {
     }
 
     return @{
-        Url32   = $url32
-        Url64   = $url64
-        Version = $packageVersion
+        SoftwareVersion = $softwareVersion
+        Url32           = $url32
+        Url64           = $url64
+        Version         = $packageVersion
     }
 }
 
