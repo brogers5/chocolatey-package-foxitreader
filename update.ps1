@@ -114,7 +114,7 @@ function global:au_GetLatest {
     $url32 = "https://cdn01.foxitsoftware.com$($redirectedUriLocalDirectory)FoxitPDFReader$($fileNameVersion)_L10N_Setup_Prom_x86.exe"
     $url64 = "https://cdn01.foxitsoftware.com$($redirectedUriLocalDirectory)FoxitPDFReader$($fileNameVersion)_L10N_Setup_Prom_x64.exe"
 
-    # Confirm-ForcedUpdateNecessity -SoftwareVersion $softwareVersion -Uri $url32 -ETagFile 'ETag_x86.txt'
+    Confirm-ForcedUpdateNecessity -SoftwareVersion $softwareVersion -Uri $url32 -ETagFile 'ETag_x86.txt'
     Confirm-ForcedUpdateNecessity -SoftwareVersion $softwareVersion -Uri $url64 -ETagFile 'ETag_x64.txt'
 
     $packageVersion = $softwareVersion.ToString()
