@@ -48,12 +48,16 @@ function global:au_SearchReplace {
     }
 }
 
+function Get-LastPackageVersion {
+    [xml] $nuspec = Get-Content -Path "$($Latest.PackageName).nuspec"
+    return [version] $nuspec.package.metadata.version
+}
+
 function Confirm-ForcedUpdateNecessity([version] $SoftwareVersion, [string] $Uri, [string] $ETagFile) {
     $headRequest = Invoke-WebRequest -Uri $uri -Method Head -UserAgent $userAgent
     $currentETagValue = $headRequest.Headers['ETag']
 
-    [xml] $nuspec = Get-Content -Path "$($Latest.PackageName).nuspec"
-    $lastPackageVersion = [version] $nuspec.package.metadata.version
+    $lastPackageVersion = Get-LastPackageVersion
 
     if (!($global:au_Force -or $Force)) {
         #Check whether the ETag value has changed to determine if we need to force an update
@@ -118,6 +122,7 @@ function global:au_GetLatest {
     Confirm-ForcedUpdateNecessity -SoftwareVersion $softwareVersion -Uri $url64 -ETagFile 'ETag_x64.txt'
 
     $packageVersion = $softwareVersion.ToString()
+    $lastPackageVersion = Get-LastPackageVersion
 
     if ($global:au_Force -or $Force) {
         if ($softwareVersion -le $lastPackageVersion) {
