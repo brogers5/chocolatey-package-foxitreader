@@ -2,6 +2,7 @@
 param([switch] $Force)
 Import-Module au
 
+$currentPath = (Split-Path $MyInvocation.MyCommand.Definition)
 $userAgent = 'Update checker of Chocolatey Community Package ''foxitreader'''
 
 function Set-DocumentVersion($RelativeFilePath) {
@@ -15,6 +16,15 @@ function Set-DocumentVersion($RelativeFilePath) {
     [System.IO.File]::WriteAllText($absoluteFilePath, $output, $encoding)
 }
 
+function Get-LastPackageVersionChecksums {
+    $installScriptPath = Join-Path -Path $currentPath -ChildPath 'tools' | Join-Path -ChildPath 'chocolateyInstall.ps1'
+
+    return @{
+        Checksum32 = (Select-String -Path $installScriptPath -Pattern "(^[$]?\s*checksum\s*=\s*)('(.*)')").Matches.Groups[3].Value
+        Checksum64 = (Select-String -Path $installScriptPath -Pattern "(^[$]?\s*checksum64\s*=\s*)('(.*)')").Matches.Groups[3].Value
+    }
+}
+
 function global:au_BeforeUpdate ($Package) {
     $tempFilePath = New-TemporaryFile
 
@@ -25,6 +35,11 @@ function global:au_BeforeUpdate ($Package) {
     $Latest.Checksum64 = (Get-FileHash -Path $tempFilePath -Algorithm SHA256).Hash.ToLower()
 
     Remove-Item $tempFilePath -Force
+
+    $lastChecksums = Get-LastPackageVersionChecksums
+    if ($global:au_Force -and ($lastChecksums.Checksum32 -eq $Latest.Checksum32) -and ($lastChecksums.Checksum64 -eq $Latest.Checksum64)) {
+        throw "An updated ETag for $($Latest.PackageName) was detected, but the installer checksums are still identical to the last package version!"
+    }
 
     $descriptionRelativePath = '.\DESCRIPTION.md'
     Set-DocumentVersion -RelativeFilePath $descriptionRelativePath
@@ -149,7 +164,7 @@ try {
     Update-Package -ChecksumFor None -NoReadme -Force:$Force
 }
 catch {
-    $ignore = 'but this is older than the latest version'
+    $ignore = 'but (this is older than the latest version|the installer checksums are still identical)'
     if ($_ -match $ignore) { 
         Write-Warning $_ ; 'ignore'
     } 
