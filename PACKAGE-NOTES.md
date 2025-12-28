@@ -10,9 +10,7 @@ Closure of each process is intentionally avoided by this package to prevent acci
 
 ---
 
-Foxit Software produces several different installers for Foxit PDF Reader. Available options can be summarized as either English or Multi-Language (L10N) installer variants, both of which support industry-specific editions: Personal ("Clean" [English only] and "Promotion with Editor" [both variants]), Education, and Enterprise; which may be distributed as either an EXE (all editions) or MSI (Enterprise only).
-
-This package specifically consumes the Multi-Language Promotion with Editor EXE installer to strike a balance between supporting localization ([as preferred for the Community Repository](https://docs.chocolatey.org/en-us/create/create-packages#internationalization-and-localization-of-packages)), ease of implementing localization (as non-English languages [require transformation of the distributed MSI with external MST files](https://kb.foxit.com/s/articles/25516456191764-GPO-Deployments-of-Multiple-Language-installer)) and suitability for personal use (as Foxit Software [hides the Enterprise MSIs behind a contact form submission](https://www.foxit.com/pdf-reader/enterprise-register.html)).
+Foxit Software produces a few different installer packaging options for Foxit PDF Reader. This package specifically consumes the Multi-Language Promotion with Editor EXE installers to strike a balance between supporting localization ([as preferred for the Community Repository](https://docs.chocolatey.org/en-us/create/create-packages#internationalization-and-localization-of-packages)), ease of implementing localization (as non-English languages [require transformation of the distributed MSI with external MST files](https://kb.foxit.com/s/articles/25516456191764-GPO-Deployments-of-Multiple-Language-installer)) and suitability for personal use (as Foxit Software [hides the Enterprise MSIs behind a contact form submission](https://www.foxit.com/pdf-reader/enterprise-register.html)).
 
 ---
 
