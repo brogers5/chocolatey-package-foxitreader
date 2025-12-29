@@ -41,7 +41,7 @@ function global:au_BeforeUpdate ($Package) {
         $32BitInstallerIsSame = $lastChecksums.Checksum32 -eq $Latest.Checksum32
         $64BitInstallerIsSame = $lastChecksums.Checksum64 -eq $Latest.Checksum64
         if ($32BitInstallerIsSame -and $64BitInstallerIsSame) {
-            throw "An updated ETag for $($Latest.PackageName) was detected, but the installer checksums are still identical to the last package version!"
+            throw "A possible update for $($Latest.PackageName) was detected, but the installer checksums are still identical to the last package version!"
         }
 
         if (!$32BitInstallerIsSame) {
@@ -79,24 +79,26 @@ function Get-LastPackageVersion {
     return [version] $nuspec.package.metadata.version
 }
 
-function Confirm-ForcedDownloadNecessity([version] $SoftwareVersion, [string] $Uri, [string] $ETagFile) {
+function Confirm-ForcedDownloadNecessity([version] $SoftwareVersion, [string] $Uri, [string] $CacheFile) {
     $headRequest = Invoke-WebRequest -Uri $uri -Method Head -UserAgent $userAgent
-    $currentETagValue = $headRequest.Headers['ETag']
-
-    $lastPackageVersion = Get-LastPackageVersion
+    $headerName = 'Last-Modified'
+    $currentValue = $headRequest.Headers[$headerName][0]
+    $currentDateTime = [DateTime]::ParseExact($currentValue, 'R', [System.Globalization.CultureInfo]::InvariantCulture)
 
     if (!($global:au_Force -or $Force)) {
-        #Check whether the ETag value has changed to determine if we need to force installer downloads
-        $lastETagInfo = Get-Content -Path $ETagFile -Encoding UTF8
-        if ($lastETagInfo -ne $currentETagValue) {
+        #Check whether the value has changed to determine if we need to force installer downloads
+        $lastValue = Get-Content -Path $CacheFile -Encoding UTF8
+        $lastDateTime = [DateTime]::ParseExact($lastValue, 'R', [System.Globalization.CultureInfo]::InvariantCulture)
+        if ($lastDateTime -lt $currentDateTime) {
+            $lastPackageVersion = Get-LastPackageVersion
             if ($softwareVersion -le $lastPackageVersion) {
-                Write-Warning 'Updated ETag detected, redownloading installers to confirm whether any checksums have changed...'
+                Write-Warning "Updated $headerName header detected, redownloading installers to confirm whether any checksums have changed..."
                 $global:au_Force = $true
             }
         }
     }
 
-    $currentETagValue | Out-File -FilePath $ETagFile -Encoding UTF8
+    $currentValue | Out-File -FilePath $CacheFile -Encoding UTF8
 }
 
 function global:au_GetLatest {
@@ -144,8 +146,8 @@ function global:au_GetLatest {
     $url32 = "https://cdn01.foxitsoftware.com$($redirectedUriLocalDirectory)FoxitPDFReader$($fileNameVersion)_L10N_Setup_Prom_x86.exe"
     $url64 = "https://cdn01.foxitsoftware.com$($redirectedUriLocalDirectory)FoxitPDFReader$($fileNameVersion)_L10N_Setup_Prom_x64.exe"
 
-    Confirm-ForcedDownloadNecessity -SoftwareVersion $softwareVersion -Uri $url32 -ETagFile 'ETag_x86.txt'
-    Confirm-ForcedDownloadNecessity -SoftwareVersion $softwareVersion -Uri $url64 -ETagFile 'ETag_x64.txt'
+    Confirm-ForcedDownloadNecessity -SoftwareVersion $softwareVersion -Uri $url32 -CacheFile 'Last-Modified_x86.txt'
+    Confirm-ForcedDownloadNecessity -SoftwareVersion $softwareVersion -Uri $url64 -CacheFile 'Last-Modified_x64.txt'
 
     $packageVersion = $softwareVersion.ToString()
     $lastPackageVersion = Get-LastPackageVersion
