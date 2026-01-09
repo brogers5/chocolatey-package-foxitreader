@@ -102,33 +102,29 @@ function Confirm-ForcedDownloadNecessity([version] $SoftwareVersion, [string] $U
 }
 
 function global:au_GetLatest {
-    $canonicalUrl = 'https://www.foxit.com/downloads/latest/?product=Foxit-Reader&platform=Windows&language=ML'
+    $session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
+    $productCatalogUrl = 'https://www.foxit.com/products/catalog/'
 
-    # Foxit's version directory placement has not been consistent. Source a server-local path dynamically.
-    $response = Invoke-WebRequest -Uri $canonicalUrl -UserAgent $userAgent -Method Get -MaximumRedirection 0 -SkipHttpErrorCheck -ErrorAction SilentlyContinue
+    #Grab a Bearer token that is required to authenticate with Foxit's API
+    Invoke-WebRequest -Uri $productCatalogUrl -UserAgent $userAgent -WebSession $session
+    $token = $session.Cookies.GetCookies($productCatalogUrl) | Where-Object { $_.Name -eq 'token' }
+    $token = $token -replace '^token=', ''
+    $token = ConvertTo-SecureString -String $token -AsPlainText -Force
 
-    if ($null -ne $response.BaseResponse.ResponseUri) {
-        $redirectedRequestUri = $response.BaseResponse.ResponseUri
-    }
-    elseif ($null -ne $response.Headers['Location']) {
-        $redirectedRequestUri = [uri] $response.Headers['Location'][0]
-    }
-    elseif ($null -ne $response.BaseResponse.RequestMessage.RequestUri) {
-        $redirectedRequestUri = $response.BaseResponse.RequestMessage.RequestUri
-    }
+    #Query the API for the current version being served on the website
+    $apiEndpointUrl = 'https://www.foxit.com/foxit-api/form/showDownloadForm/?form_id=download-reader&platform=Windows'
+    $apiResponse = Invoke-RestMethod -Uri $apiEndpointUrl -UserAgent $userAgent -Authentication Bearer -Token $token
+    $rawVersionObject = $apiResponse.data.version
+    $servedVersion = $rawVersionObject.PSObject.Properties.Value
 
-    $redirectedUriSegments = $redirectedRequestUri.Segments
-    $redirectedUriLocalDirectory = $redirectedRequestUri.AbsolutePath.TrimEnd($redirectedUriSegments[$redirectedUriSegments.Length - 1])
-
-    #Confirm that the redirected URL is actually for the intended version.
+    #Confirm that the served URL is actually for the intended version.
     $versionHistoryUri = 'https://www.foxit.com/pdf-reader/version-history.html'
     $versionHistoryPage = Invoke-WebRequest -Uri $versionHistoryUri -UserAgent $userAgent -UseBasicParsing
     $softwareVersion = [version] [regex]::Matches($versionHistoryPage.Content, '(?i)<h3[^>]*>(Foxit Reader|Version) (.*)</h3>').Groups[2].Value
 
     $softwareVersionWithoutPatch = New-Object -TypeName System.Version -ArgumentList $softwareVersion.Major, $softwareVersion.Minor, $softwareVersion.Build
-
-    $servedVersion = Get-Version -Version $redirectedUriLocalDirectory
-    if ($servedVersion.Version -lt $softwareVersionWithoutPatch) {
+    
+    if ($servedVersion -lt $softwareVersionWithoutPatch) {
         #Foxit sometimes misconfigures their server and serves an old version.
         #To avoid an erroneous forced package update, aborting the update check.
         throw "$($Latest.PackageName)'s website is currently serving v$($servedVersion.Version), but this is older than the latest version (v$softwareVersion)!"
@@ -140,6 +136,26 @@ function global:au_GetLatest {
     else {
         $fileNameVersion = "$($softwareVersion.Major)$($softwareVersion.Minor)$($softwareVersion.Build)"
     }
+
+    # Foxit's version directory placement has not been consistent. Source a server-local path dynamically.
+    # $canonicalUrl = "https://www.foxit.com/foxit-api/form/latest/?product=Foxit-Reader&platform=Windows&version=$($servedVersion)&package_type=exe&language=ML"
+    # $response = Invoke-WebRequest -Uri $canonicalUrl -UserAgent $userAgent -Method Get -MaximumRedirection 0 -SkipHttpErrorCheck -ErrorAction SilentlyContinue
+
+    # if ($null -ne $response.BaseResponse.ResponseUri) {
+    #     $redirectedRequestUri = $response.BaseResponse.ResponseUri
+    # }
+    # elseif ($null -ne $response.Headers['Location']) {
+    #     $redirectedRequestUri = [uri] $response.Headers['Location'][0]
+    # }
+    # elseif ($null -ne $response.BaseResponse.RequestMessage.RequestUri) {
+    #     $redirectedRequestUri = $response.BaseResponse.RequestMessage.RequestUri
+    # }
+
+    # $redirectedUriSegments = $redirectedRequestUri.Segments
+    # $redirectedUriLocalDirectory = $redirectedRequestUri.AbsolutePath.TrimEnd($redirectedUriSegments[$redirectedUriSegments.Length - 1])
+
+    #TODO: Monitor Foxit's download endpoint for invalid request regression fix, using inferred hard-coded path for now
+    $redirectedUriLocalDirectory = "/product/reader/desktop/win/$($softwareVersion.Major).$($softwareVersion.Minor).$($softwareVersion.Build)/"
 
     # Probe specifically for Multi-Language Promotion with Editor EXE installer, as the canonical URL may sometimes point to a different installer type
     # Using cdn01 specifically to avoid HTTP 403 (Forbidden) errors
