@@ -138,29 +138,17 @@ function global:au_GetLatest {
     }
 
     # Foxit's version directory placement has not been consistent. Source a server-local path dynamically.
-    # $canonicalUrl = "https://www.foxit.com/foxit-api/form/latest/?product=Foxit-Reader&platform=Windows&version=$($servedVersion)&package_type=exe&language=ML"
-    # $response = Invoke-WebRequest -Uri $canonicalUrl -UserAgent $userAgent -Method Get -MaximumRedirection 0 -SkipHttpErrorCheck -ErrorAction SilentlyContinue
+    $canonicalUrl = "https://www.foxit.com/foxit-api/form/latest/?product=Foxit-Reader&platform=Windows&version=$($servedVersion)&package_type=exe&language=ML"
+    $response = Invoke-RestMethod -Uri $canonicalUrl -UserAgent $userAgent -Authentication Bearer -Token $token
+    $downloadUri = [uri] $response.data
 
-    # if ($null -ne $response.BaseResponse.ResponseUri) {
-    #     $redirectedRequestUri = $response.BaseResponse.ResponseUri
-    # }
-    # elseif ($null -ne $response.Headers['Location']) {
-    #     $redirectedRequestUri = [uri] $response.Headers['Location'][0]
-    # }
-    # elseif ($null -ne $response.BaseResponse.RequestMessage.RequestUri) {
-    #     $redirectedRequestUri = $response.BaseResponse.RequestMessage.RequestUri
-    # }
-
-    # $redirectedUriSegments = $redirectedRequestUri.Segments
-    # $redirectedUriLocalDirectory = $redirectedRequestUri.AbsolutePath.TrimEnd($redirectedUriSegments[$redirectedUriSegments.Length - 1])
-
-    #TODO: Monitor Foxit's download endpoint for invalid request regression fix, using inferred hard-coded path for now
-    $redirectedUriLocalDirectory = "/product/reader/desktop/win/$($softwareVersion.Major).$($softwareVersion.Minor).$($softwareVersion.Build)/"
+    $downloadUriSegments = $downloadUri.Segments
+    $downloadUriLocalDirectory = $downloadUri.AbsolutePath.TrimEnd($downloadUriSegments[$downloadUriSegments.Length - 1])
 
     # Probe specifically for Multi-Language Promotion with Editor EXE installer, as the canonical URL may sometimes point to a different installer type
     # Using cdn01 specifically to avoid HTTP 403 (Forbidden) errors
-    $url32 = "https://cdn01.foxitsoftware.com$($redirectedUriLocalDirectory)FoxitPDFReader$($fileNameVersion)_L10N_Setup_Prom_x86.exe"
-    $url64 = "https://cdn01.foxitsoftware.com$($redirectedUriLocalDirectory)FoxitPDFReader$($fileNameVersion)_L10N_Setup_Prom_x64.exe"
+    $url32 = "https://cdn01.foxitsoftware.com$($downloadUriLocalDirectory)FoxitPDFReader$($fileNameVersion)_L10N_Setup_Prom_x86.exe"
+    $url64 = "https://cdn01.foxitsoftware.com$($downloadUriLocalDirectory)FoxitPDFReader$($fileNameVersion)_L10N_Setup_Prom_x64.exe"
 
     Confirm-ForcedDownloadNecessity -SoftwareVersion $softwareVersion -Uri $url32 -CacheFile 'Last-Modified_x86.txt'
     Confirm-ForcedDownloadNecessity -SoftwareVersion $softwareVersion -Uri $url64 -CacheFile 'Last-Modified_x64.txt'
