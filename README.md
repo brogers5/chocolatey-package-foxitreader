@@ -54,6 +54,6 @@ To forcibly create an updated package (regardless of whether a new software vers
 ```
 
 >[!Note]
->The update script stores the last [`ETag`](https://developer.mozilla.org/docs/Web/HTTP/Headers/ETag) value served with the download, in order to detect possible silent updates (which would require a new package to update the installer's checksum). If a new value is detected, package updates will be forced, even if `-Force` was not passed.
+>The update script stores the last [`Last-Modified`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Last-Modified) value served with the download, in order to detect possible silent updates (which would require a new package to update the installer's checksum). If a new value is detected, package updates will be forced, even if `-Force` was not passed.
 
 Before submitting a pull request, please [test the package](https://docs.chocolatey.org/en-us/community-repository/moderation/package-verifier#steps-for-each-package) using the [Chocolatey Testing Environment](https://github.com/chocolatey-community/chocolatey-test-environment) first.
