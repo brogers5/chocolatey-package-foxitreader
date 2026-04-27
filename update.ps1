@@ -111,11 +111,11 @@ function global:au_GetLatest {
     $token = $token -replace '^token=', ''
     $token = ConvertTo-SecureString -String $token -AsPlainText -Force
 
-    #Query the API for the current version being served on the website
+    #Query the API for the latest version being served on the website
     $apiEndpointUrl = 'https://www.foxit.com/foxit-api/form/showDownloadForm/?form_id=download-reader&platform=Windows'
     $apiResponse = Invoke-RestMethod -Uri $apiEndpointUrl -UserAgent $userAgent -Authentication Bearer -Token $token
     $rawVersionObject = $apiResponse.data.version
-    $servedVersion = $rawVersionObject.PSObject.Properties.Value
+    $servedVersion = ($rawVersionObject.PSObject.Properties.Name | Sort-Object { [version]$_ } -Descending | Select-Object -First 1)
 
     #Confirm that the served URL is actually for the intended version.
     $versionHistoryUri = 'https://www.foxit.com/pdf-reader/version-history.html'
