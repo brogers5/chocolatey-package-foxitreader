@@ -2,7 +2,7 @@
 $toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
 . $toolsDir\helpers.ps1
 
-[version] $softwareVersion = '2026.1.1.36485'
+[version] $softwareVersion = '2026.1.2.36540'
 $currentVersion = Get-CurrentVersion
 
 if ($currentVersion -gt $softwareVersion) {
@@ -14,11 +14,11 @@ if ($currentVersion -gt $softwareVersion) {
 $installationArgs = @{
     packageName    = $env:ChocolateyPackageName
     fileType       = 'EXE'
-    url            = 'https://cdn01.foxitsoftware.com/product/reader/desktop/win/2026.1.1/FoxitPDFReader202611_L10N_Setup_Prom_x86.exe'
-    url64bit       = 'https://cdn01.foxitsoftware.com/product/reader/desktop/win/2026.1.1/FoxitPDFReader202611_L10N_Setup_Prom_x64.exe'
-    checksum       = '4ca045cd3828a78e2c744563509d07cf41bb3ddf150890d291e4aa711a300732'
+    url            = 'https://cdn01.foxitsoftware.com/product/reader/desktop/win/2026.1.2/FoxitPDFReader202612_L10N_Setup_Prom_x86.exe'
+    url64bit       = 'https://cdn01.foxitsoftware.com/product/reader/desktop/win/2026.1.2/FoxitPDFReader202612_L10N_Setup_Prom_x64.exe'
+    checksum       = '8b82960168857882007f2b6a0eda474268b1d5485d43b0c1551385c7f39901b6'
     checksumType   = 'sha256'
-    checksum64     = 'a730326133337d8b7e49745e014fc4e8309a11f2a631061175cb29c37407b2df'
+    checksum64     = 'cf0831059f6609e32a397e18b8f5f11f8d49ae688b7d9b9338dcb88f2132e903'
     checksumType64 = 'sha256'
     silentArgs     = "/quiet /log `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).Install.log`""
     validExitCodes = @(0)

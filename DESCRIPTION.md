@@ -30,4 +30,4 @@ Foxit PDF Reader’s integration with ChatGPT empowers users with AI-driven feat
 
 * `/NoShim` - Opt out of creating a shim, and removes any existing shim.
 
-## [Package Notes](https://github.com/brogers5/chocolatey-package-foxitreader/blob/v2026.1.1.36485/PACKAGE-NOTES.md)
+## [Package Notes](https://github.com/brogers5/chocolatey-package-foxitreader/blob/v2026.1.2.36540/PACKAGE-NOTES.md)
