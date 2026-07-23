@@ -96,7 +96,11 @@ function Confirm-ForcedDownloadNecessity([version] $SoftwareVersion, [string] $U
         #Check whether the value has changed to determine if we need to force installer downloads
         $lastValue = Get-Content -Path $CacheFile -Encoding UTF8
         $lastDateTime = [DateTime]::ParseExact($lastValue, 'R', [System.Globalization.CultureInfo]::InvariantCulture)
-        if ($lastDateTime -lt $currentDateTime) {
+        if ($lastDateTime -ne $currentDateTime) {
+            if ($lastDateTime -gt $currentDateTime) {
+                Write-Warning "The $headerName header has been updated to an earlier date!"
+            }
+
             $lastPackageVersion = Get-LastPackageVersion
             if ($softwareVersion -le $lastPackageVersion) {
                 Write-Warning "Updated $headerName header detected, redownloading installers to confirm whether any checksums have changed..."
