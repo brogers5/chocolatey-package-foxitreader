@@ -80,7 +80,14 @@ function Get-LastPackageVersion {
 }
 
 function Confirm-ForcedDownloadNecessity([version] $SoftwareVersion, [string] $Uri, [string] $CacheFile) {
-    $headRequest = Invoke-WebRequest -Uri $uri -Method Head -UserAgent $userAgent
+    $headers = @{
+        'User-Agent'    = 'PostmanRuntime/7.55.1'
+        'Accept'        = '*/*'
+        'Cache-Control' = 'no-cache'
+        'Connection'    = 'keep-alive'
+    }
+
+    $headRequest = Invoke-WebRequest -Uri $Uri -Method Head -Headers $headers
     $headerName = 'Last-Modified'
     $currentValue = $headRequest.Headers[$headerName][0]
     $currentDateTime = [DateTime]::ParseExact($currentValue, 'R', [System.Globalization.CultureInfo]::InvariantCulture)
